@@ -88,7 +88,7 @@ foreach($cart as $id => $qty){
 					<td class="CartProductThumb"><div> <a href="<?php echo $url; ?>menu.php?id=<?php echo $product['id'] ?>"><img src="<?php echo $url.'uploads/'.$product['gambar']; ?>" alt="img" width="120px"></a> </div></td>
 					<td><div class="CartDescription">
 					<h4> <a href="<?php echo $url; ?>menu.php?id=<?php echo $product['id'] ?>"><?= $product['nama'] ?></a> </h4>
-					<div class="price"><?php echo  "Rp ".number_format($product['harga'], 2, ',', '.') ?></div>
+					<div class="price"><?php echo  "Rp ".number_format($product['harga'], 0, ',', '.') ?></div>
 					</div></td>
                                         
 					<td>
@@ -99,13 +99,13 @@ foreach($cart as $id => $qty){
 						<input class="form-control" type="number" name="qty" value="<?php echo $qty; ?>" onchange="this.form.submit()">
 						</form>
 					</td>
-					<td class="price"><?php echo number_format($t, 2, ',', '.') ?></td>
+					<td class="price"><?php echo number_format($t, 0, ',', '.') ?></td>
 					<td><a href="<?php echo $url; ?>keranjang.php?delete_cart=yes&&act=beli&&produk_id=<?php echo $id; ?>" title="Delete"> <i class="glyphicon glyphicon-trash fa-2x"></i></a></td>
 				</tr>
 <?php } } ?>
 				<tr style="background:#c3ebf8;font-weight:bold;">
 					<td colspan="3">SUB TOTAL</td>
-                                        <td><?php echo number_format($total, 2, ',', '.') ?></td>
+                                        <td><?php echo number_format($total, 0, ',', '.') ?></td>
 										<td>&nbsp;</td>
 				</tr>
 				</tbody>
@@ -122,7 +122,7 @@ foreach($cart as $id => $qty){
             
            <tr>
                <td style="background:#fafafa;"><b>Total</b></td>
-               <td><b><?php echo "Rp ".number_format($total, 2, ',', '.') ?></a></td>
+               <td><b><?php echo "Rp ".number_format($total, 0, ',', '.') ?></a></td>
            </tr>
        </table>
        <form action="<?php echo  $url.'order.php' ?>" method="POST"> 
