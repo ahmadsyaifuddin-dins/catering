@@ -42,7 +42,7 @@ if (!empty($_POST)) {
 <head>
     <meta charset="UTF-8">
     <title>Login Form</title>
-    <link rel='stylesheet' href='<?php echo $url; ?>assets/bootstrap/css/bootstrap.min.css'>
+    <link rel='stylesheet' href='<?php echo $url; ?>assets/bootstrap/css/bootstrap_old.min.css'>
     <link rel="stylesheet" href="<?php echo $url; ?>assets/css/style_login.css">
 </head>
 <body>
