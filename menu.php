@@ -86,7 +86,7 @@
 					$k = mysqli_query($konek, "SELECT * FROM produk");
 					while($data = mysqli_fetch_array($k)){
 				?>
-				<div class="col-md-4">
+				<div class="col-sm-4">
 					<div class="panel panel-default">
 						<div class="panel-body">
 							<a href="<?php echo $url; ?>menu.php?id=<?php echo $data['id'] ?>">
