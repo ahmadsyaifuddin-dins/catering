@@ -6,7 +6,7 @@
 <font color="black">
 		<div class="col-md-9">
 			<div class="row">
-			<div class="col-md-12">
+			<div class="col-md-14">
 			<h3>Favorite Menu</h3>
 				
 				<?php 
