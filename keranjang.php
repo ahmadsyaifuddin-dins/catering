@@ -13,7 +13,7 @@
             $cart = [];
         }
         $pid = $_GET['produk_id'];
-        $qty = 20;
+        $qty = 1;
         
         if(isset($_GET['update_cart'])){
             if(isset($cart[$pid]))
