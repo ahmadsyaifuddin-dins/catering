@@ -146,7 +146,7 @@
 								$user = mysqli_fetch_array($katpro);
 					?>
 					<td><?php echo $user['nama'] ?></td> 
-					<td><?php echo 'Rp.' . number_format($data->total, 2,',','.') ?></td> 
+					<td><?php echo 'Rp.' . number_format($data->total, 0,',','.') ?></td> 
 					<td><?php echo $data->status ?></td> 
 					<td>
 						<a class="btn btn-sm btn-warning" href="pembayaran.php?act=detail&id=<?php echo $data->id ?>">Detail</a>

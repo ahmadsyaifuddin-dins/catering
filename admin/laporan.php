@@ -46,8 +46,8 @@
 							<td><?php echo $data->nama; ?></td>
 							<td><?php echo $data->tanggal_digunakan; ?></td>
 							<td><?php echo $data->tanggal_pesan; ?></td>
-							<td><?php echo "Rp. " .number_format($totalHarga, 2, ",", "."); ?></td>
-							<td><?php echo "Rp. " .number_format($data->ongkir, 2, ",", "."); ?></td>
+							<td><?php echo "Rp. " .number_format($totalHarga, 0, ",", "."); ?></td>
+							<td><?php echo "Rp. " .number_format($data->ongkir, 0, ",", "."); ?></td>
 							<td><?php echo $data->status; ?></td>
 						</tr>
 						<?php
@@ -60,11 +60,11 @@
 						</font>
 					</td>
 					<td>
-						<font size="3"><?php echo "Rp. ". number_format($totalSemua, 2, ",", "."); ?></font>
+						<font size="3"><?php echo "Rp. ". number_format($totalSemua, 0, ",", "."); ?></font>
 					</td>
 					<td>
 						<font size="3">
-							<?php echo "Rp. ". number_format($totalOngkir, 2, ",", "."); ?>
+							<?php echo "Rp. ". number_format($totalOngkir, 0, ",", "."); ?>
 						</font>
 					</td>
 					<td></td>
