@@ -12,7 +12,7 @@
     <title><?php echo $title; ?></title>
 
     <!-- Bootstrap core CSS -->
-    <link href="<?php echo $url ?>assets/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="<?php echo $url ?>assets/bootstrap/css/bootstrap_old.min.css" rel="stylesheet">
     <link href="<?php echo $url ?>assets/bootstrap/css/datetimepicker.css" rel="stylesheet">
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug 
