@@ -166,7 +166,7 @@
 	<div class="row">
 		<div class="col-md-3">
 			<div class="warna-bg" style="width:100%; height:auto; padding-top:3px;padding-bottom:3px; padding-left:10px;">
-			<h4><font color="white">Kategori Menu</h4>
+			<h4><font color="white">Kategori Menu <i class="fa-solid fa-utensils"></i> </h4>
 			</div>
 			<ul class="kategori">
 				<?php 
@@ -181,7 +181,7 @@
 				<?php } ?>
 			</ul>
 			<div class="warna-bg" style="width:100%; height:auto; padding-top:3px;padding-bottom:3px; padding-left:10px; 	margin-bottom:15px;">
-				<h4><font color="white">Keranjang Belanja</h4>
+				<h4><font color="white">Keranjang Belanja <i class="fa-solid fa-bucket"></i> </h4>
 			</div>
 			<div style=" width:100%; height:auto; padding-top:3px;padding-bottom:3px; padding-left:10px; 	margin-bottom:15px; border: 1px dashed #000;">
 			
