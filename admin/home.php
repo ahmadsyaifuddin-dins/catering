@@ -1,15 +1,8 @@
 <?php 
 	include"../inc/config.php"; 
 	include"inc/header.php";
-	
-?> 
-<?php include"inc/footer.php"; 
-?>
+?>	
 
-<div class="col-md-9">
-			<div class="row">
-			<div class="col-md-12">
-			<h3>Favorite Menu</h3>
 
 
 <!DOCTYPE html>
@@ -22,14 +15,17 @@
 </head>
 <body>
 	
+<div class="container">
+			<div class="row">
+			<div class="col-sm-12">
+			<h2>Admin Home</h2>
+			</div>
+			</div>
+</div>
 
 
-
-
-
-
-
-
+<?php include"inc/footer.php"; 
+?>
 
 </body>
 </html>
