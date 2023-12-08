@@ -58,15 +58,15 @@
 			</tr> 
 			<tr>
 				<td>Total Bayar</td>
-				<td><b><?php echo "Rp. " . number_format($totalBayar, 2, ",", "."); ?></b></td>
+				<td><b><?php echo "Rp. " . number_format($totalBayar, 0, ",", "."); ?></b></td>
 			</tr>
 			<tr>
 				<td>Dibayar</td>
-				<td><?php echo "Rp. " . number_format($totalPembayaran, 2, ",", "."); ?></td>
+				<td><?php echo "Rp. " . number_format($totalPembayaran, 0, ",", "."); ?></td>
 			</tr>
 			<tr>
 				<td>Kekurangan</td>
-				<td><?php echo "Rp. " . number_format($totalBayar - $totalPembayaran, 2, ",", "."); ?></td>
+				<td><?php echo "Rp. " . number_format($totalBayar - $totalPembayaran, 0, ",", "."); ?></td>
 			</tr>
 			<tr>
 				<td>Status</td>
@@ -99,12 +99,12 @@
 						$p = mysqli_fetch_object($katpro);
 					?>
 					<td><?php echo $p->nama ?></td> 
-					<td><?php echo number_format($p->harga, 2, ',', '.')  ?></td>  
+					<td><?php echo number_format($p->harga, 0, ',', '.')  ?></td>  
 					<td><?php echo $data->qty ?></td>
 					<?php $t = $data->qty*$p->harga; 
 						$total += $t;
 					?>
-					<td><?php echo number_format($t, 2, ',', '.')  ?></td>  
+					<td><?php echo number_format($t, 0, ',', '.')  ?></td>  
 					<!--td>
 						<a class="btn btn-sm btn-warning" href="detail_pesanan.php?id=<?php echo $data->id ?>">Detail</a>
 						<a class="btn btn-sm btn-success" href="pesanan.php?act=edit&&id=<?php echo $data->id ?>">Edit</a>
@@ -120,7 +120,7 @@
 					<h5><b><?php  echo $kota ? $kota : "Tidak di ketahui"; ?></b></h5>
 					</td>
 					<td class="text-bold">
-					<h5><b><?php  echo number_format($ongkir, 2, ',', '.') ?></b></h5>
+					<h5><b><?php  echo number_format($ongkir, 0, ',', '.') ?></b></h5>
 					</td>
 				</tr>
 				<tr>
@@ -128,7 +128,7 @@
 					<h5><b>TOTAL HARGA</b></h5>
 					</td>
 					<td class="text-bold">
-					<h5><b><?php  echo number_format($total + $ongkir, 2, ',', '.') ?></b></h5>
+					<h5><b><?php  echo number_format($total + $ongkir, 0, ',', '.') ?></b></h5>
 					</td>
 				</tr>
 			</tbody> 
