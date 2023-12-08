@@ -79,7 +79,7 @@
 			
 		<div class="col-md-9">
 			<div class="row">
-			<div class="col-md-12">
+			<div class="col-md-14">
 			<hr>
 			<h3><font color="black">Daftar Semua Menu</h3>
 				<?php 
