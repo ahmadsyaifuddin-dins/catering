@@ -51,7 +51,7 @@
 				 
 				</div>   
 				<div class="col-md-12 content-menu">
-				<h3>Riwayaat Pemesanan </h3>
+				<h3>Riwayat Pemesanan </h3>
 					<hr>
 					<table class="table table-striped table-hove"> 
 			<thead> 
