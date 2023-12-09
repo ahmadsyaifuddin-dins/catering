@@ -106,7 +106,7 @@
 					<td><?php echo $data->subjek ?></td> 
 					<td><?php echo $data->pesan ?></td> 
 					<td>
-						<a class="btn btn-sm btn-success" href="kontak.php?act=edit&&id=<?php echo $data->id ?>">Edit</a>
+						<a class="btn btn-sm btn-success" href="kontak.php?act=edit&&id=<?php echo $data->id ?>">Edit <i class="fa-solid fa-user-pen"></i> </a>
 						<a class="btn btn-sm btn-danger" href="kontak.php?act=delete&&id=<?php echo $data->id ?>">Delete <i class="fa-solid fa-trash"></i> </a>
 					</td> 
 				</tr>
