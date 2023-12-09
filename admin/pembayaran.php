@@ -151,7 +151,7 @@
 					<td>
 						<a class="btn btn-sm btn-warning" href="pembayaran.php?act=detail&id=<?php echo $data->id ?>">Detail</a>
 						<a class="btn btn-sm btn-success" href="detail_pesanan.php?id=<?php echo $data->id_pesanan ?>">Pesanan</a>
-						<a class="btn btn-sm btn-danger" href="pembayaran.php?act=delete&&id=<?php echo $data->id ?>">Delete</a>
+						<a class="btn btn-sm btn-danger" href="pembayaran.php?act=delete&&id=<?php echo $data->id ?>">Delete <i class="fa-solid fa-trash"></i> </a>
 					</td> 
 				</tr>
 		<?php } ?>

@@ -125,8 +125,8 @@
 					<td><?php echo $data->alamat ?></td> 
 					<td><?php echo $data->status ?></td> 
 					<td>
-						<a class="btn btn-sm btn-success" href="user.php?act=edit&&id=<?php echo $data->id ?>">Edit</a>
-						<a class="btn btn-sm btn-danger" href="user.php?act=delete&&id=<?php echo $data->id ?>">Delete</a>
+						<a class="btn btn-sm btn-success" href="user.php?act=edit&&id=<?php echo $data->id ?>">Edit <i class="fa-solid fa-user-pen"></i> </a>
+						<a class="btn btn-sm btn-danger" href="user.php?act=delete&&id=<?php echo $data->id ?>">Delete <i class="fa-solid fa-trash"></i> </a>
 					</td> 
 				</tr>
 		<?php } ?>
