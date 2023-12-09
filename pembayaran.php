@@ -61,11 +61,11 @@
 			<div class="row col-md-6">
 			<form action="" method="post" enctype="multipart/form-data">
 				<label>Total</label><br>
-				<input type="text" class="form-control" name="total" value="<?php echo 'Rp. ' . number_format($total+$pesanan->ongkir, 2,',','.'); ?>" disabled required><br>
+				<input type="text" class="form-control" name="total" value="<?php echo 'Rp. ' . number_format($total+$pesanan->ongkir, 0,',','.'); ?>" disabled required><br>
 				<label>Dibayar</label><br>
-				<input type="text" class="form-control" name="dibayar" value="<?php echo "Rp. ". number_format($totalPembayaran, 2, ",", "."); ?>" disabled required><br>
+				<input type="text" class="form-control" name="dibayar" value="<?php echo "Rp. ". number_format($totalPembayaran, 0, ",", "."); ?>" disabled required><br>
 				<label>Kekurangan</label><br>
-				<input type="text" class="form-control" name="kekurangan" value="<?php echo "Rp. ". number_format($total+$pesanan->ongkir-$totalPembayaran, 2, ",", "."); ?>" disabled required><br>
+				<input type="text" class="form-control" name="kekurangan" value="<?php echo "Rp. ". number_format($total+$pesanan->ongkir-$totalPembayaran, 0, ",", "."); ?>" disabled required><br>
 				<label>Bayar</label><br>
 				<input type="number" class="form-control" name="bayar" required><br>
 				<label>Bukti Pembayaran</label><br>
