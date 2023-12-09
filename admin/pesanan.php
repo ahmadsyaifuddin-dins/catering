@@ -102,7 +102,7 @@
 					<td><?php echo $data->telephone ?></td> 
 					<td><?php echo $data->status ?></td> 
 					<td>
-						<a class="btn btn-sm btn-warning" href="detail_pesanan.php?id=<?php echo $data->id ?>">Detail <i class="fa-solid fa-circle-info"></i> </a>
+						<a class="btn btn-sm btn-info" href="detail_pesanan.php?id=<?php echo $data->id ?>">Detail <i class="fa-solid fa-circle-info"></i> </a>
 						<a class="btn btn-sm btn-success" href="pesanan.php?act=edit&&id=<?php echo $data->id ?>">Edit <i class="fa-solid fa-pen-to-square"></i> </a>
 						<a class="btn btn-sm btn-danger" href="pesanan.php?act=delete&&id=<?php echo $data->id ?>">Delete <i class="fa-solid fa-trash"></i> </a>
 					</td> 

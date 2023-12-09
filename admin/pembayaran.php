@@ -125,7 +125,7 @@
 		</div>
 
 		<h4>Daftar pembayaran Masuk (<?php echo ($j>0)?$j:0; ?>)</h4>
-		<a href="pembayaran.php?act=info" class="btn btn-info">Info</a>
+		<a href="pembayaran.php?act=info" class="btn btn-info">Info <i class="fa-solid fa-circle-info"></i> </a>
 		<hr>
 		<table class="table table-striped table-hover"> 
 			<thead> 
@@ -149,7 +149,7 @@
 					<td><?php echo 'Rp.' . number_format($data->total, 0,',','.') ?></td> 
 					<td><?php echo $data->status ?></td> 
 					<td>
-						<a class="btn btn-sm btn-warning" href="pembayaran.php?act=detail&id=<?php echo $data->id ?>">Detail <i class="fa-solid fa-circle-info"></i> </a>
+						<a class="btn btn-sm btn-info" href="pembayaran.php?act=detail&id=<?php echo $data->id ?>">Detail <i class="fa-solid fa-circle-info"></i> </a>
 						<a class="btn btn-sm btn-success" href="detail_pesanan.php?id=<?php echo $data->id_pesanan ?>">Pesanan <i class="fa-solid fa-comment-dots"></i> </a>
 						<a class="btn btn-sm btn-danger" href="pembayaran.php?act=delete&&id=<?php echo $data->id ?>">Delete <i class="fa-solid fa-trash"></i> </a>
 					</td> 
