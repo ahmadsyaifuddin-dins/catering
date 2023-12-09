@@ -48,7 +48,7 @@
 			$j = mysqli_num_rows($q);
 		?>
 		<h4>Daftar Produk (<?php echo ($j>0)?$j:0; ?>)</h4>
-		<a class="btn btn-sm btn-primary" href="produk.php?act=create">Add Data</a>
+		<a class="btn btn-sm btn-primary" href="produk.php?act=create">Tambah Produk <i class="fa-solid fa-plus"></i> </a>
 		<hr>
 		<?php
 			if(!empty($_GET)){

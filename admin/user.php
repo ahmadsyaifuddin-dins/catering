@@ -38,7 +38,7 @@
 			$j = mysqli_num_rows($q);
 		?>
 		<h4>Daftar user Masuk (<?php echo ($j>0)?$j:0; ?>)</h4>
-		<a class="btn btn-sm btn-primary" href="user.php?act=create">Add Data</a>
+		<a class="btn btn-sm btn-primary" href="user.php?act=create">Add Data <i class="fa-solid fa-user-plus"></i> </a>
 		<hr>
 		<?php
 			if(!empty($_GET)){
