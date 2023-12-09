@@ -5,7 +5,7 @@
 	<div class="container footer" style="margin-top:20px;" >
 		<br/>
 		<footer class="text-center">
-			<div class="col-md-12"> Asai's Kitchen | AS Katering Online
+			<div class="col-md-12">&#169; Asai's Kitchen <span id="year"> </span> | AS Katering Online
 			<br>
 			<br>
 			</div>
@@ -44,6 +44,9 @@
 					// format: 'HH:mm'
 				// });
 			});
+
+			// Get Year Dynamic
+			document.getElementById("year").innerHTML = new Date().getFullYear();
 		</script>
   </body>
 </html>
