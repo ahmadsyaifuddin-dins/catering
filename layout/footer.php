@@ -5,7 +5,7 @@
 	<div class="container footer" style="margin-top:20px;" >
 		<br/>
 		<footer class="text-center">
-			<div class="col-md-12"> Asai's Kitchen || AS Chatering Online
+			<div class="col-md-12"> Asai's Kitchen | AS Chatering Online
 			<br>
 			<br>
 			</div>
