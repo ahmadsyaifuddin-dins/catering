@@ -61,7 +61,7 @@
 				<h2>
                    Keranjang anda :
                 </h2>
-				<table class="table table-striped" style="width:100%">
+				<table class="table table-bordered table-striped" style="width:100%">
 				<thead>
 				<tr style="background:#c3ebf8;font-weight:bold;">
 					<td style="width:15%"> Produk </td>
