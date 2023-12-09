@@ -1,7 +1,7 @@
 	<div class="container" style="margin-top:20px;">
 		<footer class="text-center">
 		<hr>
-			<div class="col-md-12">Asai's Kitchen || AS Chatering Online
+			<div class="col-md-12">Asai's Kitchen | AS Katering Online
 			<br>
 			<br>
 			</div>
