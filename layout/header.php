@@ -206,7 +206,7 @@
                                 
                         ?>
 				
-				<a href="<?php echo $url; ?>keranjang.php">Lihat Detail</a>
+				<a href="<?php echo $url; ?>keranjang.php">Lihat Keranjang Belanja</a>
 			</div>
 			<div class="row col-md-12">
 					

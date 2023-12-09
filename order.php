@@ -98,7 +98,7 @@
 								$kota = mysqli_query($konek, "select*from kota");
 								while($kp = mysqli_fetch_array($kota)){
 							?>
-							<option value="<?php echo $kp['id']; ?>"><?php echo $kp['nama'] ?> - <?php echo "Rp ".number_format($kp['ongkir'], 2, ',', '.'); ?></option>
+							<option value="<?php echo $kp['id']; ?>"><?php echo $kp['nama'] ?> - <?php echo "Rp ".number_format($kp['ongkir'], 0, ',', '.'); ?></option>
 								<?php } ?>
 						</select><br>						
 						<input type="submit" name="form-order" value="Proses" class="btn btn-success">
@@ -135,7 +135,7 @@ foreach($cart as $id => $qty){
 					<td class="CartProductThumb"><div> <a href="<?php echo $url; ?>menu.php?id=<?php echo $product['id'] ?>"><img src="<?php echo $url.'uploads/'.$product['gambar']; ?>" alt="img" width="120px"></a> </div></td>
 					<td><div class="CartDescription">
 					<h4> <a href="<?php echo $url; ?>menu.php?id=<?php echo $product['id'] ?>"><?= $product['nama'] ?></a> </h4>
-					<div class="price"><?php echo  "Rp ".number_format($product['harga'], 2, ',', '.') ?></div>
+					<div class="price"><?php echo  "Rp ".number_format($product['harga'], 0, ',', '.') ?></div>
 					</div></td>          
 					<td> 
 						<?php echo $qty ?> pcs
