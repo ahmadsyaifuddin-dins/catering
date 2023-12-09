@@ -127,7 +127,7 @@
 		<h4>Daftar pembayaran Masuk (<?php echo ($j>0)?$j:0; ?>)</h4>
 		<a href="pembayaran.php?act=info" class="btn btn-info">Info <i class="fa-solid fa-circle-info"></i> </a>
 		<hr>
-		<table class="table table-striped table-hover"> 
+		<table class="table table-bordered table-striped table-hover"> 
 			<thead> 
 				<tr> 
 					<th>#</th> 
