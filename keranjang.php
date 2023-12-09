@@ -59,7 +59,7 @@
 				
 				
 				<h2>
-                   Keranjang anda :
+                   Keranjang anda 
                 </h2>
 				<table class="table table-bordered table-striped" style="width:100%">
 				<thead>
@@ -127,7 +127,7 @@ foreach($cart as $id => $qty){
        </table>
        <form action="<?php echo  $url.'order.php' ?>" method="POST"> 
            <input type="hidden" name="okay" value="cart">
-           <button <?php echo ($total == 0)? 'disabled' : '' ?> type="submit" class="btn btn-primary">Selesai Belanja &raquo;</button>
+           <button <?php echo ($total == 0)? 'disabled' : '' ?> type="submit" class="btn btn-primary">Selesai Belanja ✓</button>
        </form>
     </div>
 			
