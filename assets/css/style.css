@@ -57,7 +57,9 @@ table th {
 }
 
 body {
-  background-color: #EEE;
+  /* background-color: #EEE; */
+  background-image: url(../img/bg.png);
+
 }
 
 
