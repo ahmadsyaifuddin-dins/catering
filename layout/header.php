@@ -206,7 +206,7 @@
                                 
                         ?>
 				
-				<a href="<?php echo $url; ?>keranjang.php">Lihat Keranjang Belanja</a>
+				<a href="<?php echo $url; ?>keranjang.php">Lihat Keranjang Belanja <i class="fa-solid fa-bucket"></i> </a>
 			</div>
 			<div class="row col-md-12">
 					
