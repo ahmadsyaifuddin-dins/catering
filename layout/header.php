@@ -74,7 +74,7 @@
 			<?php 
 				$user = mysqli_fetch_object(mysqli_query($konek, "SELECT*FROM user where id='$_SESSION[iam_user]'"));
 			?>
-      <li><a href="<?php echo $url ?>pembayaran.php">Pembayaran</a></li>      
+      <li><a href="<?php echo $url ?>pembayaran.php"> <i class="fa-solid fa-money-bill-1-wave"></i> Pembayaran</a></li>      
 			<li class="dropdown">
 				
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Hi <?php echo $user->nama; ?> <span class="caret"></span></a>
