@@ -76,11 +76,11 @@
 			?>
       <li><a href="<?php echo $url ?>pembayaran.php"> <i class="fa-solid fa-money-bill-1-wave"></i> Pembayaran</a></li>      
 			<li class="dropdown">
-				
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Hi <?php echo $user->nama; ?> <span class="caret"></span></a>
+
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <i class="fa-solid fa-user"></i> Hi <?php echo $user->nama; ?> <span class="caret"></span></a>
               <ul class="dropdown-menu">
-                <li><a href="<?php echo $url ?>profile.php">Profil</a></li> 
-                <li><a href="<?php echo $url ?>logout.php">Logout</a></li>  
+                <li><a href="<?php echo $url ?>profile.php"> <i class="fa-solid fa-address-card"></i> Profil</a></li> 
+                <li><a href="<?php echo $url ?>logout.php"> <i class="fa-solid fa-right-from-bracket"></i> Logout</a></li>  
               </ul>
             </li>
 			<?php }else{ ?>
