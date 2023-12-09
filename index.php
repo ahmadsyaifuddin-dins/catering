@@ -6,7 +6,7 @@
 <font color="black">
 		<div class="col-md-9">
 			<div class="row">
-			<div class="col-md-14">
+			<div class="col-md-13">
 			<h3>Favorite Menu</h3>
 				
 				<?php 
@@ -36,7 +36,7 @@
 			</div>
 			</div>
 			<div class="row">
-			<div class="col-md-12">
+			<div class="col-md-13">
 			<hr>
 			<h3>Menu Terbaru</h3>
 				<?php 
