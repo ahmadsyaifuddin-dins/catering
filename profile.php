@@ -17,9 +17,9 @@
 			<div class="col-md-12">
 		 
 			<h3>Profile : <?php echo $user->nama; ?></h3>
-				<hr>
-				<div class="col-md-6	 content-menu" style="margin-top:-20px;">
-				 <table class="table table-striped">
+				<br>
+			<div class="col-md-6 content-menu" style="margin-top:-20px;">
+				 <table class="table table-bordered table-striped">
 					<tr>
 						<td>Nama</td>
 						<td>:</td>
@@ -52,8 +52,8 @@
 				</div>   
 				<div class="col-md-12 content-menu">
 				<h3>Riwayat Pemesanan </h3>
-					<hr>
-					<table class="table table-striped table-hove"> 
+					<br>
+				<table class="table table-bordered table-striped table-hove"> 
 			<thead> 
 				<tr> 
 					<th>#</th> 

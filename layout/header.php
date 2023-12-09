@@ -185,7 +185,7 @@
 			<div class="warna-bg" style="width:100%; height:auto; padding-top:3px;padding-bottom:3px; padding-left:10px; 	margin-bottom:15px;">
 				<h4><font color="white">Keranjang Belanja <i class="fa-solid fa-bucket"></i> </h4>
 			</div>
-			<div style=" width:100%; height:auto; padding-top:3px;padding-bottom:3px; padding-left:10px; 	margin-bottom:15px; border: 1px dashed #000;">
+			<div class="warna-jumlah" style=" width:100%; height:auto; padding-top:3px;padding-bottom:3px; padding-left:10px; margin-bottom:15px; border: 1px dashed #fff;">
 			
 			<?php
                             if(isset($_SESSION['cart'])){
@@ -198,7 +198,7 @@
                                     $product = mysqli_fetch_array(mysqli_query($konek, "select * from produk WHERE id='$id'"));
                                     if(isset($product)){
                                        $t = $qty * $product['harga'];
-                                       $total += $t;
+                                      $total += $t;
                                     }
                                 }
                                 echo '<h4 style="color:#f00;">Rp '. number_format($total, 0, ',', '.') .'</h4>';
