@@ -61,7 +61,7 @@
 				<h2>
                    Keranjang anda 
                 </h2>
-				<table class="table table-bordered table-striped" style="width:100%">
+				<table class="table table-success table-bordered " style="width:100%">
 				<thead>
 				<tr style="background:#c3ebf8;font-weight:bold;">
 					<td style="width:15%"> Produk </td>
@@ -87,7 +87,7 @@ foreach($cart as $id => $qty){
 				<tr class="barang-shop">
 					<td class="CartProductThumb"><div> <a href="<?php echo $url; ?>menu.php?id=<?php echo $product['id'] ?>"><img src="<?php echo $url.'uploads/'.$product['gambar']; ?>" alt="img" width="120px"></a> </div></td>
 					<td><div class="CartDescription">
-					<h4> <a href="<?php echo $url; ?>menu.php?id=<?php echo $product['id'] ?>"><?= $product['nama'] ?></a> </h4>
+					<h3> <a href="<?php echo $url; ?>menu.php?id=<?php echo $product['id'] ?>"><?= $product['nama'] ?></a> </h3>
 					<div class="price"><?php echo  "Rp ".number_format($product['harga'], 0, ',', '.') ?></div>
 					</div></td>
                                         
