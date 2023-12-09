@@ -1,7 +1,7 @@
 	<div class="container" style="margin-top:20px;">
 		<footer class="text-center">
 		<hr>
-			<div class="col-md-12">Asai's Kitchen | AS Katering Online
+			<div class="col-md-12">&#169; Asai's Kitchen <span id="year"></span> | AS Katering Online
 			<br>
 			<br>
 			</div>
@@ -20,6 +20,8 @@
 				format: 'YYYY-MM-DD',
 			});
 		});
+
+		document.getElementById("year").innerHTML = new Date().getFullYear();
 	</script>
   </body>
 </html>
