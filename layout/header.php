@@ -214,7 +214,7 @@
 					
 			</div>
 			<div class="row col-sm-12">
-				<hr>
+				
 				<img class="img-center" src="<?php echo $url.'uploads/logo2.png'; ?>" width="200" height="200"><br><br>
 			</div>
 		</div>

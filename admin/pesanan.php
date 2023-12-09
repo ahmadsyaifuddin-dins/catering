@@ -76,7 +76,7 @@
 			}
 		?>
 		
-		<table class="table table-striped table-hove"> 
+		<table class="table table-bordered table-striped table-hove"> 
 			<thead> 
 				<tr> 
 					<th>#</th> 

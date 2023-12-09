@@ -15,7 +15,7 @@
 	</div>
 
 	<div class="row">
-		<table class="table table-striped" border="1">
+		<table class="table table-bordered table-striped" border="1">
 			<tr>
 				<th>#</th>
 				<th>Nama</th>

@@ -20,7 +20,7 @@
 			<div class="alert alert-danger">Terjadi kesalahan dalam pengisian form. Data belum terkirim.</div>
 				<?php } } ?>
 			<h3><font color="black">Kontak Kami</h3>
-				<hr>
+				<br>
 				<div class="col-md-8 content-menu" style="margin-top:-20px;">
 				 
 				 <form action="" method="post" enctype="multipart/form-data">

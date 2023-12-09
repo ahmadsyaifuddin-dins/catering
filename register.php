@@ -28,8 +28,8 @@
 				<div class="alert alert-danger">Terjadi kesalahan dalam pengisian form. Silahkan Coba Lagi</div>
 				<?php } } ?>
 			<h3><font color="black">Register User</h3>
-				<hr>
-				<div class="col-md-7	 content-menu" style="margin-top:-20px;">
+				<br>
+				<div class="col-md-7 content-menu" style="margin-top:-20px;">
 				 
 				 <form action="" method="post" enctype="multipart/form-data">
 						<label>Nama</label><br>
@@ -47,7 +47,7 @@
 					</form>
 				 
 				</div>   
-				<div class="col-md-12 content-menu">
+				<div class="col-md-7 content-menu">
 				 Sudah Punya Akun ? <a href="login.php">Login Sekarang !</a>
 				</div>   
 				 
