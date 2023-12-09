@@ -201,7 +201,7 @@
                                 }
                                 echo '<h4 style="color:#f00;">Rp '. number_format($total, 0, ',', '.') .'</h4>';
                             }else{
-                                echo '<h4 style="color:#f00;">Rp 0,00</h4>';
+                                echo '<h4 style="color:#f00;">Rp 0</h4>';
                             }
                                 
                         ?>
