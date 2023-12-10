@@ -94,7 +94,7 @@
 				<tr> 
 					<th scope="row"><?php echo $no++; ?></th> 
 					<td><?php echo $data->nama ?></td> 
-					<td><?php echo number_format($data->ongkir, 2, ',', '.') ?></td> 
+					<td><?php echo number_format($data->ongkir, 0, ',', '.') ?></td> 
 					<td>
 						<a class="btn btn-sm btn-success" href="kota.php?act=edit&&id=<?php echo $data->id ?>">Edit <i class="fa-solid fa-pen-to-square"></i> </a>
 						<a class="btn btn-sm btn-danger" href="kota.php?act=delete&&id=<?php echo $data->id ?>">Delete <i class="fa-solid fa-trash"></i> </a>

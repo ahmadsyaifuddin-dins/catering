@@ -136,7 +136,7 @@
 					<th scope="row"><?php echo $no++; ?></th> 
 					<td><img src="<?php echo $url.'uploads/'.$data->gambar ?>" width="100%"></td> 
 					<td><?php echo $data->nama ?></td> 
-					<td><?php echo number_format($data->harga, 2, ',', '.') ?></td> 
+					<td><?php echo number_format($data->harga, 0, ',', '.') ?></td> 
 					<td>
 						<a class="btn btn-sm btn-success" href="produk.php?act=edit&&id=<?php echo $data->id ?>">Edit <i class="fa-solid fa-pen-to-square"></i> </a>
 						<a class="btn btn-sm btn-danger" href="produk.php?act=delete&&id=<?php echo $data->id ?>">Delete <i class="fa-solid fa-trash"></i> </a>
