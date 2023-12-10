@@ -72,7 +72,7 @@
 			<?php 
 				$user = mysqli_fetch_object(mysqli_query($konek, "SELECT*FROM user where id='$_SESSION[iam_user]'"));
 			?>
-      <li><a href="<?php echo $url ?>pembayaran.php"> <i class="fa-solid fa-money-bill-1-wave"></i> Pembayaran</a></li>      
+      <li><a href="<?php echo $url ?>pembayaran.php"> <i class="fa-regular fa-money-bill-1"></i> Pembayaran</a></li>      
 			<li class="dropdown">
 
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <i class="fa-solid fa-user"></i> Hi <?php echo $user->nama; ?> <span class="caret"></span></a>
@@ -179,7 +179,7 @@
 				<?php } ?>
 			</ul>
 			<div class="warna-bg" style="width:100%; height:auto; padding-top:3px;padding-bottom:3px; padding-left:10px; 	margin-bottom:15px;">
-				<h4><font color="white">Keranjang Belanja <i class="fa-solid fa-bucket"></i> </h4>
+				<h4><font color="white">Keranjang Belanja <i class="fa-solid fa-basket-shopping"></i> </h4>
 			</div>
 			<div class="warna-jumlah" style=" width:100%; height:auto; padding-top:3px;padding-bottom:3px; padding-left:10px; margin-bottom:15px; border: 1px dashed #fff;">
 			
@@ -204,7 +204,7 @@
                                 
                         ?>
 				
-				<a href="<?php echo $url; ?>keranjang.php">Lihat Keranjang Belanja <i class="fa-solid fa-bucket"></i> </a>
+				<a href="<?php echo $url; ?>keranjang.php">Lihat Keranjang Belanja <i class="fa-solid fa-basket-shopping"></i> </a>
 			</div>
 			<div class="row col-md-12">
 					
