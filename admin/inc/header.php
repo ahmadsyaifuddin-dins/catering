@@ -60,12 +60,12 @@
           <ul class="nav navbar-nav navbar-right">
             <li><a href="<?php echo $url ?>admin/index.php"> <i class="fa-solid fa-house"></i> Home</a></li>  
 			<li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <i class="fa-solid fa-database"></i> Master Data <span class="caret"></span></a>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <i class="fa-solid fa-database"></i> Pangkalan Data <span class="caret"></span></a>
               <ul class="dropdown-menu">
-                <li><a href="user.php">Data User</a></li>
-                <li><a href="produk.php">Data Produk</a></li>
-                <li><a href="kategori_produk.php">Data Kategori Produk</a></li> 
-                <li><a href="kota.php">Kota & Ongkir</a></li> 
+                <li><a href="user.php"> Data User <i class="fa-solid fa-address-book"></i> </a></li>
+                <li><a href="produk.php"> Data Produk <i class="fa-solid fa-clipboard-list"></i> </a></li>
+                <li><a href="kategori_produk.php"> Data Kategori Produk <i class="fa-solid fa-list-check"></i> </a></li> 
+                <li><a href="kota.php"> Kota & Ongkir <i class="fa-solid fa-building-flag"></i> </a></li> 
               </ul>
             </li>
             <li>
