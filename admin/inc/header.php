@@ -69,7 +69,7 @@
               </ul>
             </li>
             <li>
-              <a href="laporan.php"> <i class="fa-solid fa-file"></i> Laporan</a>
+              <a href="laporan.php"> <i class="fa-solid fa-file-export"></i> Laporan</a>
             </li>
             <li><a href="pesanan.php"> <i class="fa-solid fa-cart-shopping"></i> Pesanan
               <?php if ($totalUnRead > 0) { ?> <span class="badge"><?php echo $totalUnRead; ?></span> <?php } ?>
