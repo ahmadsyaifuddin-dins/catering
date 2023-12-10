@@ -39,10 +39,6 @@
 		body{
 			font-family: 'Helvetica', arial, sans-serif;
       font-size: 15px;
-      /* background-image: url(../assets/img/bg.png);
-      background-repeat: no-repeat;
-			background-size:cover;
-			background-attachment: fixed; */
 		}
 
 

@@ -37,7 +37,6 @@
 			</div>
 			<div class="row">
 			<div class="col-md-13">
-			<hr>
 			<h3>Menu Terbaru</h3>
 				<?php 
 					$k = mysqli_query($konek, "SELECT * FROM produk ORDER BY id DESC limit 3"); 
