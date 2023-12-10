@@ -18,7 +18,7 @@
 <div class="container">
 			<div class="row">
 			<div class="col-sm-12">
-			<h2> <i class="fa-solid fa-gear"></i> Admin Konfigurasi</h2>
+			<h2> <i class="fa-solid fa-gear"></i> Administrator Database (Mysql)</h2>
 			</div>
 			</div>
 </div>
