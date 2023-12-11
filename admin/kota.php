@@ -40,7 +40,7 @@
 			$j = mysqli_num_rows($q);
 		?>
 		<h4>Daftar Produk (<?php echo ($j>0)?$j:0; ?>)</h4>
-		<a class="btn btn-sm btn-primary" href="kota.php?act=create">Tambah Kota & Ongkir <i class="fa-solid fa-plus"></i> </a>
+		<a class="btn btn-sm btn-primary" href="kota.php?act=create">Tambah <i class="fa-solid fa-plus"></i> Kota & Ongkir </a>
 		<hr>
 		<?php
 			if(!empty($_GET)){
@@ -48,7 +48,7 @@
 				?>
 					<div class="row col-md-6">
 					<form action="" method="post">
-						<label>Nama</label><br>
+						<label>Nama Kota</label><br>
 						<input type="text" class="form-control" name="nama" required><br>
 						<label>Ongkir</label><br>
 						<input type="number" class="form-control" name="ongkir" required><br>
@@ -63,7 +63,7 @@
 				?>
 					<div class="row col-md-6">
 					<form action="kota.php?act=edit&id=<?php echo $_GET['id'] ?>" method="post" enctype="multipart/form-data">
-						<label>Nama</label><br>
+						<label>Nama Kota</label><br>
 						<input type="text" class="form-control" name="nama" value="<?php echo $data->nama; ?>"><br>
 						<label>Ongkir</label><br>
 						<input type="number" class="form-control" name="ongkir" required value="<?php echo $data->ongkir; ?>"><br>
