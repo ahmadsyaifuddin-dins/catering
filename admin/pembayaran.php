@@ -152,7 +152,7 @@
 					<td><?php echo 'Rp. ' . number_format($data->total, 0,',','.') ?></td> 
 					<td><?php echo $data->status ?></td> 
 					<td>
-						<a class="btn btn-sm btn-info" href="pembayaran.php?act=detail&id=<?php echo $data->id ?>">Detail <i class="fa-solid fa-circle-info"></i> </a>
+						<a class="btn btn-sm btn-info" href="pembayaran.php?act=detail&id=<?php echo $data->id ?>">Cek <i class="fa-solid fa-circle-info"></i> </a>
 						<a class="btn btn-sm btn-success" href="detail_pesanan.php?id=<?php echo $data->id_pesanan ?>">Pesanan <i class="fa-solid fa-comment-dots"></i> </a>
 						<a class="btn btn-sm btn-danger" href="pembayaran.php?act=delete&&id=<?php echo $data->id ?>">Delete <i class="fa-solid fa-trash"></i> </a>
 					</td> 
