@@ -80,7 +80,7 @@
 					<th>#</th> 
 					<th>Kategori</th> 
 					<th>Deskripsi</th> 
-					<th>*</th> 
+					<th>Aksi</th> 
 				</tr> 
 			</thead> 
 			<tbody> 

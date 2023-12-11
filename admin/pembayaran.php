@@ -134,7 +134,7 @@
 					<th>Nama</th> 
 					<th>Total</th> 
 					<th>Status</th> 
-					<th>*</th>
+					<th>Aksi</th>
 				</tr>
 			</thead>
 			<tbody> 

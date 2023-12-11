@@ -90,7 +90,7 @@
 					<th>Email</th> 
 					<th>Subjek</th> 
 					<th>Pesan</th> 
-					<th>*</th> 
+					<th>Aksi</th> 
 				</tr> 
 			</thead> 
 			<tbody> 

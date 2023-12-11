@@ -85,7 +85,7 @@
 					<th>Tanggal Digunakan</th> 
 					<th>Telephone</th> 
 					<th>Status</th> 
-					<th>*</th> 
+					<th>Aksi</th> 
 				</tr> 
 			</thead> 
 			<tbody> 

@@ -82,7 +82,7 @@
 					<th>#</th> 
 					<th>Nama</th> 
 					<th>Ongkir</th> 
-					<th>*</th> 
+					<th>Aksi</th> 
 				</tr> 
 			</thead> 
 			<tbody> 

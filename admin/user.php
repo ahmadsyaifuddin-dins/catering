@@ -102,13 +102,13 @@
 		<table class="table table-bordered table-striped table-hove"> 
 			<thead> 
 				<tr> 
-					<th>#</th> 
-					<th>Nama</th> 
-					<th>Email</th> 
-					<th>Telephone</th> 
-					<th>Alamat</th> 
+					<th>No</th> 
+					<th>Nama User</th> 
+					<th>Email User</th> 
+					<th>Telephone User</th> 
+					<th>Alamat User</th> 
 					<th>Status</th> 
-					<th>*</th> 
+					<th>Aksi</th> 
 				</tr> 
 			</thead> 
 			<tbody> 

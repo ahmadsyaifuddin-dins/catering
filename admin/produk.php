@@ -119,11 +119,11 @@
 		<table class="table table-bordered table-striped table-hove"> 
 			<thead> 
 				<tr> 
-					<th>#</th> 
+					<th>No</th> 
 					<th width="70px">Gambar</th> 
-					<th>Nama</th> 
-					<th>harga</th> 
-					<th>*</th> 
+					<th>Nama Produk</th> 
+					<th>Harga Produk</th> 
+					<th>Aksi</th> 
 				</tr> 
 			</thead> 
 			<tbody> 
