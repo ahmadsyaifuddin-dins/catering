@@ -29,6 +29,7 @@
 				<?php
 					$totalSemua = 0;
 					$totalOngkir = 0;
+					$totalHabis = 0;
 					$no = 0;
 					$q = mysqli_query($konek, "Select pesanan.* from pesanan order by id desc") or die (mysqli_error());
 					while ($data = mysqli_fetch_object($q)) {
@@ -40,6 +41,8 @@
 						}
 						$totalSemua += $totalHarga;
 						$totalOngkir += $data->ongkir;
+						$totalHabis += $totalHarga + $data->ongkir;
+
 						?>
 						<tr>
 							<td><?php echo $no; ?></td>
@@ -56,7 +59,7 @@
 				<tr>
 					<td colspan="4" align="right">
 						<font size="3">
-							<b>TOTAL</b>
+							<b>SUB TOTAL</b>
 						</font>
 					</td>
 					<td>
@@ -67,7 +70,17 @@
 							<?php echo "Rp. ". number_format($totalOngkir, 0, ",", "."); ?>
 						</font>
 					</td>
-					<td></td>
+					<!-- <td></td> -->
+				</tr>
+				<tr>
+					<td colspan="4" align="center">
+						<font size ="4">
+							<b>TOTAL SEMUA</b>
+						</font>
+					</td>
+					<td colspan="2" align="center">
+						<font size="3"> <b><?php echo "Rp. ". number_format($totalHabis, 0, ",", "."); ?> </b></font>
+					</td>
 				</tr>
 			</tbody>
 		</table>
