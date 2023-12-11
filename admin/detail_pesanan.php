@@ -26,7 +26,7 @@
 			$totalBayar += $ongkir;
 		?>
 		<h4 class="pull-left">Pesanan Detail</h4> 
-		<a class="btn btn-sm btn-primary pull-right" href="pesanan.php">&laquo; Kembali</a>
+		<a class="btn btn-sm btn-primary pull-right" href="pesanan.php"> <i class="fa-solid fa-arrow-left-long"></i> Kembali</a>
 		<br>
 		<hr> 
 		<div class="row col-md-12">
