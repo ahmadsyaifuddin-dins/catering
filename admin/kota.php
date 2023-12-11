@@ -40,7 +40,7 @@
 			$j = mysqli_num_rows($q);
 		?>
 		<h4>Daftar Kota (<?php echo ($j>0)?$j:0; ?>)</h4>
-		<a class="btn btn-sm btn-primary" href="kota.php?act=create">Tambah Kota & Ongkir </a>
+		<a class="btn btn-sm btn-primary" href="kota.php?act=create"> <i class="fa-solid fa-plus"></i> Tambah Kota & Ongkir </a>
 		<hr>
 		<?php
 			if(!empty($_GET)){
