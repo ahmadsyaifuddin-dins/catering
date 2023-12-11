@@ -100,7 +100,10 @@
 					<td><?php echo substr($data->tanggal_pesan,0,10) ?></td> 
 					<td><?php echo $data->tanggal_digunakan ?></td> 
 					<td><?php echo $data->telephone ?></td> 
-					<td><?php echo $data->status ?></td> 
+					<td <?php if($data->status == "belum lunas") {echo 'style="background:#DF826C !important;"';} 
+							elseif ($data->status == "lunas" ) { echo 'style="background:#9ADE7B !important;"';}
+					?> > 
+					<?php echo $data->status ?></td> 
 					<td>
 						<a class="btn btn-sm btn-info" href="detail_pesanan.php?id=<?php echo $data->id ?>">Detail <i class="fa-solid fa-circle-info"></i> </a>
 						<a class="btn btn-sm btn-success" href="pesanan.php?act=edit&&id=<?php echo $data->id ?>">Edit <i class="fa-solid fa-pen-to-square"></i> </a>
