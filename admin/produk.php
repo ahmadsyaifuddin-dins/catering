@@ -41,6 +41,7 @@
 	include"inc/header.php";
 	
 ?> 
+	<link rel="stylesheet" href="../assets/css/border.css">
 	
 	<div class="container">
 		<?php
@@ -116,9 +117,9 @@
 			}
 		?>
 		
-		<table class="table table-bordered table-striped table-hove"> 
-			<thead> 
-				<tr> 
+		<table class="table"> 
+			<thead style="background:#00b4d8"> 
+				<tr>  
 					<th>No</th> 
 					<th width="100px">Gambar</th> 
 					<th>Nama Produk</th> 

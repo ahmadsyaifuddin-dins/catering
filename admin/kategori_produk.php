@@ -31,6 +31,8 @@
 	include"inc/header.php";
 	
 ?> 
+
+	<link rel="stylesheet" href="../assets/css/border.css">
 	
 	<div class="container">
 		<?php
@@ -74,8 +76,8 @@
 			}
 		?>
 		
-		<table class="table table-bordered table-striped table-hove"> 
-			<thead> 
+		<table class="table"> 
+			<thead style="background:#00b4d8"> 
 				<tr> 
 					<th>No</th> 
 					<th>Kategori</th> 

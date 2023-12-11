@@ -33,8 +33,9 @@
 	include"inc/header.php";
 	
 ?> 
-	
 	<div class="container">
+	<link rel="stylesheet" href="../assets/css/border.css">
+
 		<?php
 			$q = mysqli_query($konek, "select*from kota");
 			$j = mysqli_num_rows($q);
@@ -76,8 +77,8 @@
 			}
 		?>
 		
-		<table class="table table-bordered table-striped table-hover">
-			<thead> 
+		<table class="table">
+			<thead style="background:#00b4d8"> 
 				<tr> 
 					<th>No</th> 
 					<th>Nama Kota</th> 
