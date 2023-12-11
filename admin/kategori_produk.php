@@ -77,7 +77,7 @@
 		<table class="table table-bordered table-striped table-hove"> 
 			<thead> 
 				<tr> 
-					<th>#</th> 
+					<th>No</th> 
 					<th>Kategori</th> 
 					<th>Deskripsi</th> 
 					<th>Aksi</th> 
