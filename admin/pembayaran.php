@@ -108,7 +108,7 @@
 										<?php
 											if ($dataPembayaran->status == "pending") {
 												?>
-												<a href="pembayaran.php?act=verified&id=<?php echo $dataPembayaran->id; ?>&id_pesanan=<?php echo $dataPembayaran->id_pesanan; ?>" class="btn btn-sm btn-success">Verified ✅</a>
+												<a href="pembayaran.php?act=verified&id=<?php echo $dataPembayaran->id; ?>&id_pesanan=<?php echo $dataPembayaran->id_pesanan; ?>" class="btn btn-sm btn-warning">Verified ✅</a>
 												<?php
 											}
 										?>
