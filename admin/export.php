@@ -9,7 +9,7 @@ include"../inc/config.php";
 	
 	?>
 	<div class="col-md-12">
-		<hr/>
+		<hr>
 	</div>
 
 	<div class="row">
@@ -88,5 +88,5 @@ include"../inc/config.php";
 <?php
 header("Content-type: application/vnd-ms-excel");
 header("Content-Disposition: attachment; filename=Laporan Penjualan.xls");
-// include "data.php";
+// include "laporan.php";
 ?>
