@@ -1,6 +1,6 @@
 	<div class="container" style="margin-top:20px;">
 		<footer class="text-center">
-			<div class="col-md-12"><b> &#169; Asai's Kitchen <span id="year"></span> | AS Katering Online</b>
+			<div class="col-md-12"><b> &#169; Ahmad Syaifuddin <span id="year"></span> | AS Katering Online</b>
 			<br>
 			<br>
 			</div>
