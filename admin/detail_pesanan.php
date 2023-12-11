@@ -80,7 +80,7 @@
 		<table class="table table-striped table-hove"> 
 		<thead> 
 				<tr> 
-					<th>#</th> 
+					<th>No</th> 
 					<th>Nama Produk</th> 
 					<th>Harga Satuan</th> 
 					<th>QTY</th> 
