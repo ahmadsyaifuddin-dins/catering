@@ -139,7 +139,10 @@
 			</thead>
 			<tbody> 
 		<?php while($data=mysqli_fetch_object($q)){ ?> 
-				<tr <?php if($data->status == "pending" ){ echo 'style="background:#cce9f8 !important;"'; } ?> > 
+				<tr <?php
+					if ($data->status == "pending" ) { echo 'style="background:#DF826C !important;"';}
+					elseif ($data->status == "verified" ) { echo 'style="background:#9ADE7B !important;"';}
+				?> > 
 					<th scope="row"><?php echo $no++; ?></th> 
 					<?php
 						$katpro = mysqli_query($konek, "select*from user where id='$data->id_user'");
