@@ -77,7 +77,7 @@
 		?>
 		
 		<table class="table table-bordered table-striped table-hove"> 
-			<thead> 
+			<thead style="background:#00b4d8"> 
 				<tr> 
 					<th>No</th> 
 					<th>Nama Pemesan</th> 

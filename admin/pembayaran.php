@@ -128,7 +128,7 @@
 		<a href="pembayaran.php?act=info" class="btn btn-info"> <i class="fa-solid fa-circle-info"></i> Info </a>
 		<hr>
 		<table class="table table-bordered table-striped table-hover"> 
-			<thead> 
+			<thead style="background:#00b4d8"> 
 				<tr> 
 					<th>No</th> 
 					<th>Nama Pelanggan</th> 

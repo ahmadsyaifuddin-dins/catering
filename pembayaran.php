@@ -86,11 +86,11 @@
 	<table class="table table-bordered table-striped table-hove"> 
 		<thead> 
 			<tr> 
-				<th>#</th> 
+				<th>No</th> 
 				<th>Nama Pemesan</th> 
 				<th>Tanggal Pesan</th> 
 				<th>Tanggal Digunakan</th> 
-				<th>*</th>
+				<th>Aksi</th>
 			</tr> 
 		</thead> 
 		<tbody> 
