@@ -14,6 +14,7 @@ include"../inc/config.php";
 
 	<div class="row">
 		<table class="table table-bordered table-striped" border="1">
+			<thead>
 			<tr>
 				<th>No</th>
 				<th>Nama Pelanggan</th>
@@ -23,6 +24,8 @@ include"../inc/config.php";
 				<th>Ongkir</th>
 				<th>Status</th>
 			</tr>
+			</thead>
+			
 			<tbody>
 				<?php
 					$totalSemua = 0;

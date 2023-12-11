@@ -8,6 +8,7 @@
 <div class="container">
 	<!-- icons link cdn -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+	<link rel="stylesheet" href="../assets/css/border.css">
 	<h4>Laporan Penjualan</h4>
 				<a href="export.php" class="btn btn-success"> <i class="fa-solid fa-file-excel"></i> Export ke Excel</a>
 	<div class="col-md-12">
@@ -15,7 +16,8 @@
 	</div>
 
 	<div class="row">
-		<table class="table table-bordered table-striped" border="1">
+		<table class="table" border="1">
+			<thead style="background:#00b4d8"> 
 			<tr>
 				<th>No</th>
 				<th>Nama Pelanggan</th>
@@ -25,6 +27,8 @@
 				<th>Ongkir</th>
 				<th>Status</th>
 			</tr>
+			</thead>
+			
 			<tbody>
 				<?php
 					$totalSemua = 0;
