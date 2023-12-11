@@ -130,8 +130,8 @@
 		<table class="table table-bordered table-striped table-hover"> 
 			<thead> 
 				<tr> 
-					<th>#</th> 
-					<th>Nama</th> 
+					<th>No</th> 
+					<th>Nama Pelanggan</th> 
 					<th>Total</th> 
 					<th>Status</th> 
 					<th>Aksi</th>

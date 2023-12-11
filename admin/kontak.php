@@ -85,8 +85,8 @@
 		<table class="table table-bordered table-striped table-hove"> 
 			<thead> 
 				<tr> 
-					<th>#</th> 
-					<th>Nama</th> 
+					<th>No</th> 
+					<th>Nama User</th> 
 					<th>Email</th> 
 					<th>Subjek</th> 
 					<th>Pesan</th> 

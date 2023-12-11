@@ -79,8 +79,8 @@
 		<table class="table table-bordered table-striped table-hover">
 			<thead> 
 				<tr> 
-					<th>#</th> 
-					<th>Nama</th> 
+					<th>No</th> 
+					<th>Nama Kota</th> 
 					<th>Ongkir</th> 
 					<th>Aksi</th> 
 				</tr> 

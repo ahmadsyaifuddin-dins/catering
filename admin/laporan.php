@@ -17,8 +17,8 @@
 	<div class="row">
 		<table class="table table-bordered table-striped" border="1">
 			<tr>
-				<th>#</th>
-				<th>Nama</th>
+				<th>No</th>
+				<th>Nama Pelanggan</th>
 				<th>Tanggal Tempo</th>
 				<th>Tanggal Pesan</th>
 				<th>Total</th>
