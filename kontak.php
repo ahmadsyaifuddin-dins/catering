@@ -2,7 +2,10 @@
 	include"inc/config.php";
 	include"layout/header.php";	
 ?> 
-		<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+		<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.0/dist/sweetalert2.all.min.js"></script>
+		<link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.0/dist/sweetalert2.min.css" rel="stylesheet">
+
+		
 
 		<div class="col-md-9">
 			<div class="row">
@@ -17,8 +20,22 @@
 			?>
 			<font color="black">
 			<!-- <div class="alert alert-success">Terimakasih atas masukannya</div> -->
+				<script type='text/javascript'>
+					setTimeout(function () {
+						Swal.fire({
+							title: "Terkirim!",
+							text: "Terima kasih Atas Masukannya",
+							icon: "success",
+							timer: "3200",
+							showConfirmButton: true
+						});
+					},10);
+					window.setTimeout(function(){
+						window.location.replace('kontak.php');
+					}, 3000);
+				</script>				
 				<?php }else{ ?>
-			<!-- <div class="alert alert-danger">Terjadi kesalahan dalam pengisian form. Data belum terkirim.</div> -->
+			<div class="alert alert-danger">Terjadi kesalahan dalam pengisian form. Data belum terkirim.</div>
 				<?php } } ?>
 			<h3><font color="black">Kontak Kami</h3>
 				<br>
@@ -34,7 +51,7 @@
 						<input type="text" class="form-control" name="subjek" required><br>
 						<label>Pesan</label><br>
 						<textarea class="form-control" name="pesan" required></textarea><br>
-						<input type="submit" name="form-input" onclick="send()" value="Simpan" class="btn btn-success">
+						<input type="submit" name="form-input" id="sweetAlert" value="Simpan" class="btn btn-success">
 					</form>
 				
 				</div>   
@@ -48,14 +65,24 @@
 
 
 <script>
+// 	$(document).ready(function () {
+// 		$("#sweetAlert").click(function (e) {
+// 			e.preventDefault();
+// 			Swal.fire({
+// 			title: "Terkirim!",
+// 			text: "Terima kasih Atas Masukannya",
+// 			icon: "success"
+// });
+// 		})
+// 	})
 
-function send() {
+// $(document).on('click','#sweetAlert', function() {
+// 	Swal.fire(
+// 		'Sukses',
+// 		'Terima Kasih Telah beri masukan',
+// 		'success'
+// 	)
+// })
 
-Swal.fire({
-	title: "Terkirim!",
-	text: "Terima kasih Atas Masukannya",
-	icon: "success"
-});
 
-}
 </script>
