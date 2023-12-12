@@ -29,7 +29,7 @@
 							timer: "3000",
 							showConfirmButton: true
 						});
-					},10);
+					}, 1);
 					window.setTimeout(function(){
 						window.location.replace('kontak.php');
 					}, 3000);
