@@ -23,7 +23,7 @@
 				<script type='text/javascript'>
 					setTimeout(function () {
 						Swal.fire({
-							title: "Terkirim!",
+							title: "Pesan Terkirim!",
 							text: "Terima kasih Atas Masukannya",
 							icon: "success",
 							timer: "3000",
