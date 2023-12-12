@@ -2,7 +2,8 @@
 	include"inc/config.php";
 	include"layout/header.php";	
 ?> 
-		 
+		<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 		<div class="col-md-9">
 			<div class="row">
 			<div class="col-md-12">
@@ -15,16 +16,16 @@
 				if($q){  
 			?>
 			<font color="black">
-			<div class="alert alert-success">Terimakasih atas masukannya</div>
+			<!-- <div class="alert alert-success">Terimakasih atas masukannya</div> -->
 				<?php }else{ ?>
-			<div class="alert alert-danger">Terjadi kesalahan dalam pengisian form. Data belum terkirim.</div>
+			<!-- <div class="alert alert-danger">Terjadi kesalahan dalam pengisian form. Data belum terkirim.</div> -->
 				<?php } } ?>
 			<h3><font color="black">Kontak Kami</h3>
 				<br>
 				<div class="col-md-8 content-menu" style="margin-top:-20px;">
-				 
-				 <form action="" method="post" enctype="multipart/form-data">
-				 <font color="black">
+				
+				<form action="" method="post" enctype="multipart/form-data">
+				<font color="black">
 						<label>Nama</label><br>
 						<input type="text" class="form-control" name="nama" required><br>
 						<label>Email</label><br>
@@ -33,14 +34,28 @@
 						<input type="text" class="form-control" name="subjek" required><br>
 						<label>Pesan</label><br>
 						<textarea class="form-control" name="pesan" required></textarea><br>
-						<input type="submit" name="form-input" value="Simpan" class="btn btn-success">
+						<input type="submit" name="form-input" onclick="send()" value="Simpan" class="btn btn-success">
 					</form>
-				 
+				
 				</div>   
-				 
-					
+				
+				
 				
 			</div>
 			</div> 
 		</div> 	
 <?php include"layout/footer.php"; ?>
+
+
+<script>
+
+function send() {
+
+Swal.fire({
+	title: "Terkirim!",
+	text: "Terima kasih Atas Masukannya",
+	icon: "success"
+});
+
+}
+</script>
