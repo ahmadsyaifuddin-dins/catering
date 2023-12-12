@@ -26,7 +26,7 @@
 							title: "Terkirim!",
 							text: "Terima kasih Atas Masukannya",
 							icon: "success",
-							timer: "3200",
+							timer: "3000",
 							showConfirmButton: true
 						});
 					},10);
