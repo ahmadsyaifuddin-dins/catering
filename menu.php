@@ -7,7 +7,7 @@
 <?php	if(!empty($_GET['id'])){ ?>
 		<?php
 			extract($_GET); 
-			$k = mysqli_query($konek, "SELECT * FROM produk where id='$id'"); 
+			$k = mysqli_query($konek, "SELECT * FROM produk WHERE id='$id'"); 
 			$data = mysqli_fetch_array($k);
 		?>
 		<div class="col-md-9">
@@ -18,7 +18,7 @@
 				<br/>
 				<div class="col-md-12 content-menu" style="margin-top:-20px;">
 				
-				<?php $kat = mysqli_fetch_array(mysqli_query($konek, "SELECT * FROM kategori_produk where id='$data[kategori_produk_id]'"));  ?>
+				<?php $kat = mysqli_fetch_array(mysqli_query($konek, "SELECT * FROM kategori_produk WHERE id='$data[kategori_produk_id]'"));  ?>
 					<small>Kategori :<a href="<?php echo $url; ?>menu.php?kategori=<?php echo $kat['id'] ?>"><?php echo $kat['nama'] ?></a></small>
 					<a href="<?php echo $url; ?>menu.php?id=<?php echo $data['id'] ?>">
 						
@@ -31,7 +31,7 @@
 						<a href="<?php echo $url; ?>keranjang.php?act=beli&&produk_id=<?php echo $data['id'] ?>" class="btn btn-warning" href="#" role="button">Pesan</a>
 					</p>
 				</div>   
-				 
+				
 					
 				
 			</div>
@@ -42,7 +42,7 @@
 
 		<?php
 			extract($_GET); 
-			$kat = mysqli_fetch_array(mysqli_query($konek, "SELECT * FROM kategori_produk where id='$kategori'")); 
+			$kat = mysqli_fetch_array(mysqli_query($konek, "SELECT * FROM kategori_produk WHERE id='$kategori'")); 
 		?>
 		<div class="col-md-9">
 			<div class="row">
@@ -51,7 +51,7 @@
 			<font color="black">
 			<h3>Kategori : <?php echo $kat['nama'] ?></h3>
 				<?php 
-					$k = mysqli_query($konek, "SELECT * FROM produk where kategori_produk_id='$kategori'");
+					$k = mysqli_query($konek, "SELECT * FROM produk WHERE kategori_produk_id='$kategori'");
 					while($data = mysqli_fetch_array($k)){
 				?>
 				<div class="col-md-4">
