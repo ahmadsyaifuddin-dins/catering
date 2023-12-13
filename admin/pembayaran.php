@@ -88,11 +88,13 @@
 					<div class="col-md-6">
 						<h3> Detail Pembayaran</h3>
 						<table class="table table-striped">
-							<tbody>
-								<tr>
+							<thead>
+							<tr>
 									<td>Nama</td>
 									<td><?php echo $dataPesanan->nama; ?></td>
-								</tr>
+							</tr>
+							</thead>
+							<tbody>
 								<tr>
 									<td>Total Pembayaran</td>
 									<td><?php echo "Rp. " . number_format($dataPembayaran->total); ?></td>
