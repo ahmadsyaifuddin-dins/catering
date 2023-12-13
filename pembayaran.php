@@ -4,7 +4,7 @@
 	if(!empty($_GET)){
 		if($_GET['act'] == 'delete'){
 			
-			$q = mysqli_query($konek, "delete from pesanan WHERE id='$_GET[id]'");
+			$q = mysqli_query($konek, "DELETE FROM pesanan WHERE id='$_GET[id]'");
 			if($q){ alert("Success"); redir("pembayaran.php"); }
 		}  
 	}
@@ -12,11 +12,11 @@
 	if(empty($_SESSION['iam_user'])){
 		redir("index.php");
 	}
-	$user = mysqli_fetch_object(mysqli_query($konek, "SELECT*FROM user where id='$_SESSION[iam_user]'"));
+	$user = mysqli_fetch_object(mysqli_query($konek, "SELECT*FROM user WHERE id='$_SESSION[iam_user]'"));
 	
 	include"layout/header.php";
 	
-	$q = mysqli_query($konek, "select*from pesanan where user_id='$_SESSION[iam_user]' And status='belum lunas'");
+	$q = mysqli_query($konek, "SELECT*FROM pesanan WHERE user_id='$_SESSION[iam_user]' AND status='belum lunas'");
 	$j = mysqli_num_rows($q);
 ?> 
 <font color="black">
@@ -24,14 +24,14 @@
 <div class="col-md-12">
 <?php
 	if(!empty($_GET)){
-			$q1 = mysqli_query($konek, "select*from detail_pesanan where pesanan_id='$_GET[id]'");
+			$q1 = mysqli_query($konek, "SELECT*FROM detail_pesanan WHERE pesanan_id='$_GET[id]'");
 			$total = 0;
-			$dataPesanan = mysqli_fetch_object(mysqli_query($konek, "Select * from pesanan where id='$_GET[id]'"));
+			$dataPesanan = mysqli_fetch_object(mysqli_query($konek, "SELECT * FROM pesanan WHERE id='$_GET[id]'"));
 			$kota = $dataPesanan->kota;
 			$ongkir = $dataPesanan->ongkir;
 		 while($data=mysqli_fetch_object($q1)){ ?> 
 					<?php
-						$katpro = mysqli_query($konek, "select*from produk where id='$data->produk_id'");
+						$katpro = mysqli_query($konek, "SELECT*FROM produk WHERE id='$data->produk_id'");
 								$p = mysqli_fetch_object($katpro);
 					?>
 					<?php $t = $data->qty*$p->harga; 
@@ -43,7 +43,7 @@
 			if(!empty($_POST)){
 				$gambar = md5('Y-m-d H:i:s').$_FILES['gambar']['name'];
 				extract($_POST);
-				$q = mysqli_query($konek, "insert into pembayaran Values(NULL,'$_GET[id]','$_SESSION[iam_user]','$gambar','$bayar','pending','$keterangan',NOW())");
+				$q = mysqli_query($konek, "INSERT INTO pembayaran VALUES(NULL,'$_GET[id]','$_SESSION[iam_user]','$gambar','$bayar','pending','$keterangan',NOW())");
 				if($q){
 					$upload = move_uploaded_file($_FILES['gambar']['tmp_name'], 'uploads/'.$gambar);
 					if($upload){ alert("Success"); redir("pembayaran.php"); }
@@ -51,8 +51,8 @@
 			}
 
 			extract($_GET);
-			$pesanan = mysqli_fetch_object(mysqli_query($konek, "Select*from pesanan where id='$id'"));
-			$qPembayaran = mysqli_query($konek, "Select * from pembayaran where id_pesanan='$id' and status='verified'") or die (mysqli_error());
+			$pesanan = mysqli_fetch_object(mysqli_query($konek, "SELECT*FROM pesanan WHERE id='$id'"));
+			$qPembayaran = mysqli_query($konek, "SELECT * FROM pembayaran WHERE id_pesanan='$id' AND status='verified'") or die (mysqli_error());
 			$totalPembayaran = 0;
 			while ($d = mysqli_fetch_object($qPembayaran)) {
 				$totalPembayaran += $d->total;
@@ -98,7 +98,7 @@
 			<tr <?php if($data->read == 0 ){ echo 'style="background:#cce9f8 !important;"'; } ?> > 
 				<th scope="row"><?php echo $no++; ?></th> 
 				<?php
-					$katpro = mysqli_query($konek, "select*from user where id='$data->user_id'");
+					$katpro = mysqli_query($konek, "SELECT*FROM user WHERE id='$data->user_id'");
 							$user = mysqli_fetch_array($katpro);
 				?>
 				<td><?php echo $data->nama ?></td>
