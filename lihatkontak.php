@@ -9,7 +9,7 @@
 			<?php 
 				if(!empty($_POST)){
 				extract($_POST); 
-				$qs = mysqli_query($konek, "insert into kontak Values(NULL,'$nama','$email','$subjek','$pesan')");
+				$qs = mysqli_query($konek, "INSERT INTO kontak VALUES(NULL,'$nama','$email','$subjek','$pesan')");
 					if($qs){  
 			?>
 			<font color="black">
