@@ -7,7 +7,7 @@
 	
 	include"layout/header.php";
 ?> 
-		 
+		
 		<div class="col-md-9">
 			<div class="row">
 			<div class="col-md-12">
@@ -30,8 +30,8 @@
 			<h3><font color="black">Register User</h3>
 				<br>
 				<div class="col-md-7 content-menu" style="margin-top:-20px;">
-				 
-				 <form action="" method="post" enctype="multipart/form-data">
+				
+				<form action="" method="post" enctype="multipart/form-data">
 						<label>Nama</label><br>
 						<input type="text" class="form-control" name="nama" required><br>
 						<label>Email</label><br>
