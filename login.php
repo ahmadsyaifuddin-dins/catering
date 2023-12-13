@@ -29,7 +29,7 @@
 				if(!empty($_POST)){
 			extract($_POST); 
 		
-			$q = mysqli_query($konek, "insert into kontak Values(NULL,'$nama','$email','$subjek','$pesan')");
+			$q = mysqli_query($konek, "INSERT INTO kontak VALUES(NULL,'$nama','$email','$subjek','$pesan')");
 				if($q){  
 			?>
 
