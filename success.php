@@ -9,15 +9,36 @@
 	$user = mysqli_fetch_object(mysqli_query($konek, "SELECT*FROM user WHERE id='$_SESSION[iam_user]'"));
 	
 ?> 	 
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.0/dist/sweetalert2.all.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.0/dist/sweetalert2.min.css" rel="stylesheet">
+
 <font color="black">
 		<div class="col-md-9">
 		
-			<div class="alert alert-success">Transaksi Berhasil. Silahkan tunggu. Admin akan segera menghubungi anda.</div>
+			<!-- <div class="alert alert-success">Transaksi Berhasil. Silahkan tunggu. Admin akan segera menghubungi anda.</div> -->
+			<script type='text/javascript'>
+					const Toast = Swal.mixin({
+					toast: true,
+					position: "top-end",
+					showConfirmButton: false,
+					timer: 3000,
+					timerProgressBar: true,
+					didOpen: (toast) => {
+					toast.onmouseenter = Swal.stopTimer;
+					toast.onmouseleave = Swal.resumeTimer;
+					}
+				});
+					Toast.fire({
+					icon: "success",
+					title: "Signed in successfully"
+				});
+			</script>
 			<div class="row">
 			<div class="col-md-12">
 				<hr>
 				<h4>
-                	Detail Pesanan yang anda beli:
+                Detail Pesanan yang anda beli:
                 </h4>				
 				<table class="table table-striped table-hove"> 
 		<thead> 
