@@ -4,7 +4,7 @@
 	if(empty($_SESSION['iam_user'])){
 		redir("index.php");
 	}
-	$user = mysqli_fetch_object(mysqli_query($konek, "SELECT*FROM user where id='$_SESSION[iam_user]'"));
+	$user = mysqli_fetch_object(mysqli_query($konek, "SELECT*FROM user WHERE id='$_SESSION[iam_user]'"));
 	
 	include"layout/header.php";
 	
