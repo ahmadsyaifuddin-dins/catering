@@ -11,7 +11,7 @@
 	 }
 	 
 
-	 $user = mysqli_fetch_object(mysqli_query($konek, "SELECT*FROM user where id='$_SESSION[iam_user]'"));
+	 $user = mysqli_fetch_object(mysqli_query($konek, "SELECT*FROM user WHERE id='$_SESSION[iam_user]'"));
 	
 ?> 	 
 <font color="black">	
@@ -27,7 +27,7 @@
 				$val_digunakan = new DateTime($val_digunakan);
 				$difference = $val_digunakan->diff($val_pesan);
 				//echo $difference->days;
-				$kt = mysqli_fetch_object(mysqli_query($konek, "SELECT *FROM kota where id='$kota'"));
+				$kt = mysqli_fetch_object(mysqli_query($konek, "SELECT *FROM kota WHERE id='$kota'"));
 				if($difference->days >= 3){
 					
 					$q = mysqli_query($konek, "insert into pesanan Values(NULL,'$tanggal_pesan','$tanggal_digunakan','$_SESSION[iam_user]','$nama','$alamat','$kt->nama','$kt->ongkir','$telephone','0','belum lunas')");
