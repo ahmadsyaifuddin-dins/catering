@@ -4,8 +4,8 @@
 		redir("index.php");
 	}
 	include"layout/header.php";
-	 
-	 
+	
+	
 	
 	if(!empty($_POST)){
 		extract($_POST);
