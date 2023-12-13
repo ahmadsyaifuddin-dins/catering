@@ -13,6 +13,12 @@
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.0/dist/sweetalert2.all.min.js"></script>
 <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.0/dist/sweetalert2.min.css" rel="stylesheet">
 
+<style>
+	div:where(.swal2-container) div:where(.swal2-popup) {
+    font-size: 1.3rem;
+}
+</style>
+
 <font color="black">
 		<div class="col-md-9">
 		
@@ -22,7 +28,7 @@
 					toast: true,
 					position: "top-end",
 					showConfirmButton: false,
-					timer: 3000,
+					timer: 5000,
 					timerProgressBar: true,
 					didOpen: (toast) => {
 					toast.onmouseenter = Swal.stopTimer;
@@ -31,7 +37,7 @@
 				});
 					Toast.fire({
 					icon: "success",
-					title: "Signed in successfully"
+					title: "Transaksi Berhasil. Silahkan tunggu. Admin akan segera menghubungi anda."
 				});
 			</script>
 			<div class="row">
