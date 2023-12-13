@@ -6,7 +6,7 @@
 		redir("login.php");
 	}
 	
-	$user = mysqli_fetch_object(mysqli_query($konek, "SELECT*FROM user where id='$_SESSION[iam_user]'"));
+	$user = mysqli_fetch_object(mysqli_query($konek, "SELECT*FROM user WHERE id='$_SESSION[iam_user]'"));
 	
 ?> 	 
 <font color="black">
@@ -31,7 +31,7 @@
 			</thead> 
 			<tbody> 
 		 <?php
-			$pes = mysqli_fetch_array(mysqli_query($konek, "SELECT*FROM pesanan where user_id='$_SESSION[iam_user]' order by id DESC limit 1"));
+			$pes = mysqli_fetch_array(mysqli_query($konek, "SELECT*FROM pesanan WHERE user_id='$_SESSION[iam_user]' order by id DESC limit 1"));
 			$q = mysqli_query($konek, "select*from detail_pesanan where pesanan_id='$pes[id]'");
 			$ongkir = $pes['ongkir'];
 			$total = 0;
