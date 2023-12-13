@@ -13,7 +13,6 @@
 	include"inc/header.php";
 	
 ?> 
-	
 	<div class="container">
 		<?php
 			$q = mysqli_query($konek, "select*from pembayaran order by status asc");
@@ -108,7 +107,7 @@
 										<?php
 											if ($dataPembayaran->status == "pending") {
 												?>
-												<a href="pembayaran.php?act=verified&id=<?php echo $dataPembayaran->id; ?>&id_pesanan=<?php echo $dataPembayaran->id_pesanan; ?>" class="btn btn-sm btn-warning">Verified ✅</a>
+												<a href="pembayaran.php?act=verified&id=<?php echo $dataPembayaran->id; ?>&id_pesanan=<?php echo $dataPembayaran->id_pesanan; ?>" class="btn btn-sm btn-success">Verified <i class="fa-regular fa-circle-check fa-bounce fa-lg"></i> </a>
 												<?php
 											}
 										?>
