@@ -17,7 +17,7 @@
 			<div class="col-md-12">
 				<hr>
 				<h4>
-                   Detail Pesanan yang anda beli:
+                	Detail Pesanan yang anda beli:
                 </h4>				
 				<table class="table table-striped table-hove"> 
 		<thead> 
@@ -30,12 +30,12 @@
 				</tr> 
 			</thead> 
 			<tbody> 
-		 <?php
+			<?php
 			$pes = mysqli_fetch_array(mysqli_query($konek, "SELECT*FROM pesanan WHERE user_id='$_SESSION[iam_user]' order by id DESC limit 1"));
 			$q = mysqli_query($konek, "select*from detail_pesanan where pesanan_id='$pes[id]'");
 			$ongkir = $pes['ongkir'];
 			$total = 0;
-		 while($data=mysqli_fetch_object($q)){ ?> 
+		while($data=mysqli_fetch_object($q)){ ?> 
 				<tr> 
 					<th scope="row"><?php echo $no++; ?></th> 
 					<?php
