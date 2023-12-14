@@ -106,13 +106,14 @@ nav a:hover {
 /* Bg Head di Kategori Menu */
 .warna-head-bg {
   background-color: #FF0900;
-  border-top-right-radius: 20px;
+  border-top-right-radius: 30px;
 }
 
 /* Background Head Kategori Menu */
 .kategori-menu {
   border: 1px solid #FF0900;
   background-color: #efefef;
+  border-bottom-left-radius: 30px;
 }
 
 .kategori-menu li {
@@ -122,6 +123,7 @@ nav a:hover {
 /* Warna bg Div Keranjang Belanja */
 .warna-jumlah {
   background-color: #fff;
+  border-bottom-left-radius: 30px;
 }
 
 /* Warna List text pada Kategori */
@@ -141,10 +143,10 @@ nav a:hover {
 
 /* Warna List text pada Keranjang */
 .keranjang a {
-  color: #FF3E00;
-  background-color: #1F1717;
+  color: #FF0900;
+  background-color: #FFCC99;
   padding: 5px;
-  border-bottom-right-radius: 15px;
+  border-bottom-left-radius: 18px;
 }
 
 /* header page END */
