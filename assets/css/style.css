@@ -125,6 +125,7 @@ nav a:hover {
   background-color: #fff;
 }
 
+/* Carossel text "AS" header.php */
 .item h2 {
   color: var(--var-nav-bg);
   font-weight: 700;
