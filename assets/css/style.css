@@ -73,7 +73,17 @@ nav a:hover {
 
 /* Warna List text pada Kategori */
 .kategori a {
-  color: #FF3E00 !important;
+  color: #FF3E00;
+}
+
+.kategori a:hover {
+  color: #000;
+  text-decoration: none;
+  background-color: #FF3E00;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  padding: 3px;
+
 }
 
 /* Warna List text pada Keranjang */
