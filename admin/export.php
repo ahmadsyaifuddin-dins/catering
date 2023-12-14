@@ -4,7 +4,7 @@ include"../inc/config.php";
 ?>
 
 <div class="container">
-	<center><h4>Laporan Penjualan</h4></center>
+	<center><h3>Laporan Penjualan</h3></center>
 	<?php
 	
 	?>
