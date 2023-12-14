@@ -91,6 +91,10 @@ body {
   background-color: var(--var-nav-bg);
 }
 
+.warna-head-bg {
+  background-color: #FF0900;
+}
+
 /* Warna bg Div Keranjang Belanja */
 .warna-jumlah {
   background-color: #fff;

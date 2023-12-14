@@ -3,11 +3,15 @@
 	include"layout/header.php";
 	
 ?>
+
+<!-- Animate.css -->
+<link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
 <font color="black">
 		<div class="col-md-9">
 			<div class="row">
 			<div class="col-md-13">
-			<h3>Favorite Menu</h3>
+			<h2 align="center"> <b>Favorite Menu</b> </h2>
 				
 				<?php 
 					$k = mysqli_query($konek, "SELECT * FROM produk ORDER BY id ASC limit 3"); 
@@ -37,7 +41,7 @@
 			</div>
 			<div class="row">
 			<div class="col-md-13">
-			<h3>Menu Terbaru</h3>
+			<h2 align="center"> <b>Menu Terbaru</b> </h2>
 				<?php 
 					$k = mysqli_query($konek, "SELECT * FROM produk ORDER BY id DESC limit 3"); 
 					while($data = mysqli_fetch_array($k)){

@@ -21,9 +21,6 @@
     <!-- Font Awesome Link cdn -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-    <!-- Animate.css -->
-    <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-
     <!-- Custom styles for this template -->
     <link href="<?php echo $url ?>assets/css/navbar-fixed-top.css" rel="stylesheet">
     <link href="<?php echo $url ?>assets/css/full-slider.css" rel="stylesheet">
@@ -167,7 +164,7 @@
 	<div class="container" style="margin-top:20px;">
 	<div class="row">
 		<div class="col-md-3">
-			<div class="warna-bg" style="width:100%; height:auto; padding-top:3px;padding-bottom:3px; padding-left:10px;">
+			<div class="warna-head-bg" style="width:100%; height:auto; padding-top:3px;padding-bottom:3px; padding-left:10px;">
 			<h4><font color="white">Kategori Menu <i class="fa-solid fa-utensils"></i> </h4>
 			</div>
 			<ul class="kategori">
@@ -182,7 +179,7 @@
 					)</a></li>
 				<?php } ?>
 			</ul>
-			<div class="warna-bg" style="width:100%; height:auto; padding-top:3px;padding-bottom:3px; padding-left:10px; 	margin-bottom:15px;">
+			<div class="warna-head-bg" style="width:100%; height:auto; padding-top:3px;padding-bottom:3px; padding-left:10px; 	margin-bottom:15px;">
 				<h4><font color="white">Keranjang Belanja <i class="fa-solid fa-basket-shopping"></i> </h4>
 			</div>
 			<div class="warna-jumlah" style=" width:100%; height:auto; padding-top:3px;padding-bottom:3px; padding-left:10px; margin-bottom:15px; border: 1px dashed #fff;">
