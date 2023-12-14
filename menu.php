@@ -19,7 +19,7 @@
 				<div class="col-md-12 content-menu" style="margin-top:-20px;">
 				
 				<?php $kat = mysqli_fetch_array(mysqli_query($konek, "SELECT * FROM kategori_produk WHERE id='$data[kategori_produk_id]'"));  ?>
-					<small>Kategori :<a href="<?php echo $url; ?>menu.php?kategori=<?php echo $kat['id'] ?>"><?php echo $kat['nama'] ?></a></small>
+					<middle>Kategori :<a href="<?php echo $url; ?>menu.php?kategori=<?php echo $kat['id'] ?>"><?php echo $kat['nama'] ?></a></middle>
 					<a href="<?php echo $url; ?>menu.php?id=<?php echo $data['id'] ?>">
 						
 						<img src="<?php echo $url; ?>uploads/<?php echo $data['gambar'] ?>" width="100%"> 
