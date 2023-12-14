@@ -116,6 +116,7 @@ nav a:hover {
   background-color: var(--var-nav-bg);
 }
 
+/* Bg Head di Kategori Menu */
 .warna-head-bg {
   background-color: #FF0900;
 }
@@ -131,7 +132,6 @@ nav a:hover {
   font-weight: 700;
 }
 
-
 .kategori {
   border: 1px solid#089;
   background-color: #FFF;
@@ -140,6 +140,9 @@ nav a:hover {
 .kategori li {
   padding: 10px;
 }
+
+/* header page end */
+
 
 /* keranjang.php Page */
 .CartDescription h3 a {
