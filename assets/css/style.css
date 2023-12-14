@@ -65,8 +65,8 @@ body {
 
 }
 
-/* attribute a Universal */
-a:hover {
+/* attribute a Nav User Page */
+nav a:hover {
   color: #000 !important;
 
 }
