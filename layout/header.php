@@ -159,7 +159,7 @@
 
     </header>
     </div> <!-- /container -->
-   <?php } ?>
+  <?php } ?>
 	
 	<div class="container" style="margin-top:20px;">
 	<div class="row">
@@ -179,7 +179,7 @@
 					)</a></li>
 				<?php } ?>
 			</ul>
-			<div class="warna-head-bg" style="width:100%; height:auto; padding-top:3px;padding-bottom:3px; padding-left:10px; 	margin-bottom:15px;">
+			<div class="warna-head-bg" style="width:100%; height:auto; padding-top:3px;padding-bottom:3px; padding-left:10px; ">
 				<h4><font color="white">Keranjang Belanja <i class="fa-solid fa-basket-shopping"></i> </h4>
 			</div>
 			<div class="warna-jumlah" style=" width:100%; height:auto; padding-top:3px;padding-bottom:3px; padding-left:10px; margin-bottom:15px; border: 1px dashed #fff;">
