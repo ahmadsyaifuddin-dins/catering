@@ -159,6 +159,19 @@ a h4 {
 /* Index Page END */
 
 
+/* Menu Page */
+middle a {
+  color: #FF3E00;
+  font-weight: 600;
+}
+
+middle a:hover {
+  color: black;
+}
+
+/* Menu Page END */
+
+
 /* keranjang.php Page */
 .CartDescription h3 a {
   color: #000 !important;
