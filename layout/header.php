@@ -17,8 +17,12 @@
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug 
     <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">-->
-
+    
+    <!-- Font Awesome Link cdn -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Animate.css -->
+    <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 
     <!-- Custom styles for this template -->
     <link href="<?php echo $url ?>assets/css/navbar-fixed-top.css" rel="stylesheet">
@@ -171,7 +175,7 @@
 					$kategori = mysqli_query($konek, "SELECT * FROM kategori_produk"); 
 					while($data = mysqli_fetch_array($kategori)){
 				?>
-					<li><a href="<?php echo $url; ?>menu.php?kategori=<?php echo $data['id'] ?>"><?php echo $data['nama']; ?> (
+					<li><a href="<?php echo $url; ?>menu.php?kategori=<?php echo $data['id'] ?>"><?php echo $data['nama']; ?> <i class="fa-solid fa-tag fa-shake"></i> (
 					<?php 
 						$ck = mysqli_num_rows(mysqli_query($konek, "SELECT * FROM produk WHERE kategori_produk_id='$data[id]'"));
 						if($ck > 0){ echo $ck; }else{ echo 0; } ?>
