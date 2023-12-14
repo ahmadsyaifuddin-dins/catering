@@ -81,7 +81,7 @@
 			<div class="row">
 			<div class="col-md-14">
 			
-			<h3><font color="black">Daftar Semua Menu</h3>
+			<h2 align="center"><font color="black"> <b>Daftar Semua Menu</b> </h2>
 				<?php 
 					$k = mysqli_query($konek, "SELECT * FROM produk");
 					while($data = mysqli_fetch_array($k)){
