@@ -167,7 +167,7 @@
 			<div class="warna-head-bg" style="width:100%; height:auto; padding-top:3px; padding-bottom:3px; padding-left:10px;">
 			<h4><font color="white">Kategori Menu <i class="fa-solid fa-utensils"></i> </h4>
 			</div>
-			<ul class="kategori">
+			<ul class="kategori-menu">
 				<?php 
 					$kategori = mysqli_query($konek, "SELECT * FROM kategori_produk"); 
 					while($data = mysqli_fetch_array($kategori)){
