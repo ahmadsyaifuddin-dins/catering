@@ -56,11 +56,7 @@
 		<div class="col-md-9">
 			<div class="row">
 			<div class="col-md-12">
-				
-				
-				<h2>
-                   Keranjang anda 
-                </h2>
+				<h2>Keranjang anda </h2>
 				<table class="table table-success table-bordered " style="width:100%">
 				<thead>
 				<tr style="background:#c3ebf8;font-weight:bold;">
