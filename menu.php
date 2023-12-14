@@ -47,7 +47,7 @@
 		<div class="col-md-9">
 			<div class="row">
 			<div class="col-md-12">
-			<hr>
+			<!-- <hr> -->
 			<font color="black">
 			<h3>Kategori : <?php echo $kat['nama'] ?></h3>
 				<?php 
