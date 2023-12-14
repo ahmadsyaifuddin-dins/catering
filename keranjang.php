@@ -68,7 +68,7 @@
 				</tr>
 				</thead>
 				<tbody>
-                                <?php 
+<?php 
 $total = 0;
 $cart = unserialize($_SESSION['cart']);
 if($cart == ''){
