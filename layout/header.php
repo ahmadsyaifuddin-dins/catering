@@ -172,7 +172,7 @@
 					$kategori = mysqli_query($konek, "SELECT * FROM kategori_produk"); 
 					while($data = mysqli_fetch_array($kategori)){
 				?>
-					<li><a href="<?php echo $url; ?>menu.php?kategori=<?php echo $data['id'] ?>"><?php echo $data['nama']; ?> <i class="fa-solid fa-tag fa-shake"></i> (
+					<li><a href="<?php echo $url; ?>menu.php?kategori=<?php echo $data['id'] ?>"><?php echo $data['nama']; ?> <i class="fa-solid fa-tag fa-shake fa-lg"></i> (
 					<?php 
 						$ck = mysqli_num_rows(mysqli_query($konek, "SELECT * FROM produk WHERE kategori_produk_id='$data[id]'"));
 						if($ck > 0){ echo $ck; }else{ echo 0; } ?>
@@ -205,8 +205,9 @@
                             }
                                 
                         ?>
-				
+				<div class="keranjang">
 				<a href="<?php echo $url; ?>keranjang.php">Lihat Keranjang Belanja <i class="fa-solid fa-basket-shopping"></i> </a>
+        </div>
 			</div>
 			<div class="row col-md-12">
 					

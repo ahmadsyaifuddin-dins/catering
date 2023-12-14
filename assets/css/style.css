@@ -65,6 +65,15 @@ body {
 
 }
 
+/* Warna List text pada Kategori */
+.kategori a {
+  color: #FF3E00 !important;
+}
+
+/* Warna List text pada Keranjang */
+.keranjang a {
+  color: #FF3E00 !important;
+}
 
 /* Navbar Layout */
 .navbar-orange {
