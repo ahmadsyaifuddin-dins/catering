@@ -65,6 +65,12 @@ body {
 
 }
 
+/* attribute a Universal */
+a:hover {
+  color: #000 !important;
+
+}
+
 /* Warna List text pada Kategori */
 .kategori a {
   color: #FF3E00 !important;
