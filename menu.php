@@ -49,7 +49,7 @@
 			<div class="col-md-12">
 			<!-- <hr> -->
 			<font color="black">
-			<h3>Kategori : <?php echo $kat['nama'] ?></h3>
+			<h3 align="center">Kategori : <strong> <?php echo $kat['nama'] ?> </strong> </h3>
 				<?php 
 					$k = mysqli_query($konek, "SELECT * FROM produk WHERE kategori_produk_id='$kategori'");
 					while($data = mysqli_fetch_array($k)){
@@ -61,7 +61,7 @@
 								<img src="<?php echo $url; ?>uploads/<?php echo $data['gambar'] ?>" width="100%">
 								<h4><?php echo $data['nama'] ?></h4>
 							</a>
-							<p style="font-size:18px">Harga : Rp <?php echo number_format($data['harga'], 0, ',', '.') ?></p>
+							<p style="font-size:18px">Harga : <strong> Rp <?php echo number_format($data['harga'], 0, ',', '.') ?> </strong> </p>
 							<p>
 								<a href="<?php echo $url; ?>menu.php?id=<?php echo $data['id'] ?>" class="btn btn-success btn-sm" href="#" role="button">Lihat Detail</a>
 								<a href="<?php echo $url; ?>keranjang.php?act=beli&&produk_id=<?php echo $data['id'] ?>" class="btn btn-warning btn-sm" href="#" role="button">Pesan</a>
