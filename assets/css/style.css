@@ -138,12 +138,12 @@ nav a:hover {
 
 /* Background Head Kategori Menu */
 .kategori {
-  border: 1px solid#089;
-  background-color: #FFF;
+  border: 1px solid #FF0900;
+  background-color: #efefef;
 }
 
 .kategori li {
-  padding: 10px;
+  padding: 8px;
 }
 
 /* header page END */
