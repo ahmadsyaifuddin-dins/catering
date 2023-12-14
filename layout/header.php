@@ -179,7 +179,7 @@
 					)</a></li>
 				<?php } ?>
 			</ul>
-      
+
 			<div class="warna-head-bg" style="width:100%; height:auto; padding-top:3px; padding-bottom:3px; padding-left:10px; ">
 				<h4><font color="white">Keranjang Belanja <i class="fa-solid fa-basket-shopping"></i> </h4>
 			</div>
@@ -199,9 +199,9 @@
                                       $total += $t;
                                     }
                                 }
-                                echo '<h4 style="color:#f00;">Rp '. number_format($total, 0, ',', '.') .'</h4>';
+                                echo '<h4 style="color:#f00;">Rp. '. number_format($total, 0, ',', '.') .'</h4>';
                             }else{
-                                echo '<h4 style="color:#f00;">Rp 0</h4>';
+                                echo '<h4 style="color:#f00;">Rp. 0</h4>';
                             }
                                 
                         ?>
