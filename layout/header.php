@@ -147,6 +147,13 @@
                     <h2>AS</h2>
                 </div>
             </div> 
+			<div class="item">
+                <!-- Set the second background image using inline CSS below. -->
+                <div class="fill" style="background-image:url('<?php $url ?>assets/img/ayam-chicken.jpg');"></div>
+                <div class="carousel-caption">
+                    <h2>AS</h2>
+                </div>
+            </div> 
         </div>
 
         <!-- Controls -->
