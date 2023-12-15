@@ -20,7 +20,7 @@
 <div class="container">
 			<div class="row">
 			<div class="col-sm-12">
-			<h2 class="title-head animate__hinge "> <i class="fa-solid fa-gear"></i> Administrator Database (Mysql)</h2>
+			<h2 class="title-head animate__hinge animate__delay-2s"> <i class="fa-solid fa-gear"></i> Administrator Database (Mysql)</h2>
 			</div>
 			</div>
 </div>
