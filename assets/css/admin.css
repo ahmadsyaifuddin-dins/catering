@@ -1,0 +1,9 @@
+body {
+    background-image: url(../img/admin/wp2508278-admin-wallpapers.png);
+    background-size: cover;
+}
+
+/* Admin Home.php */
+.title-head {
+    color: #fff;
+}
