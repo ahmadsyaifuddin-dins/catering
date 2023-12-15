@@ -15,7 +15,7 @@
 <div class="container" style="margin-top:20px;">
 		<footer class="text-center">
 			<font color="white">
-			<div class="col-md-12 animate__animated animate__lightSpeedInRight animate__slower"><b> &#169; Ahmad Syaifuddin <span id="year"></span> | AS Katering Online</b>
+			<div class="col-md-12 animate__animated animate__lightSpeedInLeft animate__slower"><b> &#169; Ahmad Syaifuddin <span id="year"></span> | AS Katering Online</b>
 			<!-- <br> -->
 			</div>
 			</font>
