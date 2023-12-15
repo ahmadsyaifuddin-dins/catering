@@ -11,7 +11,7 @@
 		<div class="col-md-9">
 			<div class="row">
 			<div class="col-md-13">
-			<h2 align="center"> <b>Favorite Menu</b> </h2>
+			<h2 class="animate__animated animate__lightSpeedInLeft animate__slower" align="center"> <b>Favorite Menu</b> </h2>
 				
 				<?php 
 					$k = mysqli_query($konek, "SELECT * FROM produk ORDER BY id ASC limit 3"); 
@@ -41,7 +41,7 @@
 			</div>
 			<div class="row">
 			<div class="col-md-13">
-			<h2 align="center"> <b>Menu Terbaru</b> </h2>
+			<h2 class="animate__animated animate__lightSpeedInLeft animate__slower" align="center"> <b>Menu Terbaru</b> </h2>
 				<?php 
 					$k = mysqli_query($konek, "SELECT * FROM produk ORDER BY id DESC limit 3"); 
 					while($data = mysqli_fetch_array($k)){
