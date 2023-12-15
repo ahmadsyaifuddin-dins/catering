@@ -26,7 +26,7 @@
 					</a>
 					<br><br>
 					<p><?php echo $data['deskripsi'] ?></p>
-					<p style="font-size:18px">Harga : Rp <?php echo number_format($data['harga'], 0, ',', '.') ?></p>
+					<p style="font-size:18px">Harga : <strong>Rp <?php echo number_format($data['harga'], 0, ',', '.') ?></strong> </p>
 					<p>
 						<a href="<?php echo $url; ?>keranjang.php?act=beli&&produk_id=<?php echo $data['id'] ?>" class="btn btn-warning" href="#" role="button">Pesan</a>
 					</p>
