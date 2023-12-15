@@ -14,8 +14,7 @@
 		<footer class="text-center">
 			<font color="white">
 			<div class="col-md-12"><b> &#169; Ahmad Syaifuddin <span id="year"></span> | AS Katering Online</b>
-			<br>
-			<br>
+			<!-- <br> -->
 			</div>
 			</font>
 		</footer>
