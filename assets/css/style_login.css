@@ -1,18 +1,22 @@
 body {
-  background-image: url(../img/admin/wp2508287-admin-wallpapers.jpg);
+  background-image: url(../img/admin/wp2508415-admin-wallpapers.jpg);
 }
 
 .wrapper {
-  margin-top: 100px;
-  margin-bottom: 80px;
+  margin-top: 14rem;
 }
 
 .form-signin {
   max-width: 380px;
   padding: 15px 35px 45px;
   margin: 0 auto;
-  background-color: #fff;
+  backdrop-filter: blur(7px);
+  background-color: transparent;
   border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.form-signin-heading {
+  color: #fff;
 }
 
 .form-signin .form-signin-heading,
