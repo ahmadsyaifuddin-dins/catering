@@ -41,16 +41,16 @@ if (!empty($_POST)) {
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Login Form</title>
+    <title>Login Admin</title>
     <link rel='stylesheet' href='<?php echo $url; ?>assets/bootstrap/css/bootstrap_old.min.css'>
     <link rel="stylesheet" href="<?php echo $url; ?>assets/css/style_login.css">
 </head>
 <body>
     <div class="wrapper">
         <form class="form-signin" action="" method="POST">       
-            <h2 class="form-signin-heading">Silahkan login</h2>
-            <input type="email" class="form-control" name="email" placeholder="Email" required="" autofocus="" />
-            <input type="password" class="form-control" name="password" placeholder="Password" required=""/>      
+            <h2 class="form-signin-heading">Admin silahkan Login</h2>
+            <input type="email" class="form-control" name="email" placeholder="📧Email" required="" autofocus="" /><br>
+            <input type="password" class="form-control" name="password" placeholder="🔐Password" required=""/>      
             <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>   
         </form>
     </div>
