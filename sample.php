@@ -8,7 +8,7 @@ ob_end_clean();
 
 include("assets/MPDF57/mpdf.php");
 
-$mpdf=new mPDF(); 
+$mpdf = new mPDF();
 
 $mpdf->WriteHTML(utf8_encode($html));
 $mpdf->Output();
