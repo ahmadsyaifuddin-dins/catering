@@ -6,17 +6,17 @@
 			redir("login.php");
 		}
 		
-	 if(empty($_POST['okay'])){
+	if(empty($_POST['okay'])){
 		 //redir("keranjang.php");
-	 }
-	 
+	}
 
-	 $user = mysqli_fetch_object(mysqli_query($konek, "SELECT*FROM user WHERE id='$_SESSION[iam_user]'"));
+
+	$user = mysqli_fetch_object(mysqli_query($konek, "SELECT*FROM user WHERE id='$_SESSION[iam_user]'"));
 	
-?> 	 
-<font color="black">	
-	<div class="col-md-9">
-		<?php 
+?>
+<font color="black">
+    <div class="col-md-9">
+        <?php 
 			if(!empty($_POST['form-order'])){
 				extract($_POST); 
 				$tanggal_pesan = date('Y-m-d H:i:s');
@@ -57,69 +57,68 @@
 					
 				}else{
 					?>
-					<div class="alert alert-danger">Tanggal Penggunakan terlalu mepet. Pemesanan paling sedikit 3 Hari sebelum hari H.</div>
-					<?php
+        <div class="alert alert-danger">Tanggal Penggunakan terlalu mepet. Pemesanan paling sedikit 3 Hari sebelum hari
+            H.</div>
+        <?php
 				}
 			}
 		?>
-			<div class="row">
-			<div class="col-md-7">
-				<h4>
-                   Pengisian Data Pembeli :
+        <div class="row">
+            <div class="col-md-7">
+                <h4>
+                    Pengisian Data Pembeli :
                 </h4>
-				<hr>
-				 <form action="" method="post" enctype="multipart/form-data">
-						
-						<label>Waktu Pengiriman</label><br>
-						<div class="form-group">
-							<div class='input-group date' id='datetimepicker'>
-								<input type='text' class="form-control" name="tanggal_digunakan" 
-								value="<?php echo (!empty($_POST['tanggal_digunakan'])) ? $_POST['tanggal_digunakan'] : ''; ?>"
-								required />
-								<span class="input-group-addon">
-									<span class="glyphicon glyphicon-calendar"></span>
-								</span>
-							</div>
-						</div>
-						<label>Nama</label><br>
-						<input type="text" class="form-control" name="nama" required
-						value="<?php echo (!empty($_POST['nama'])) ? $_POST['nama'] : $user->nama; ?>"
-						><br> 
-						<label>Telephone (HP)</label><br>
-						<input type="text" class="form-control" name="telephone" required
-						value="<?php echo (!empty($_POST['telephone'])) ? $_POST['telephone'] : $user->telephone; ?>"
-						><br>
-						<label>Alamat Pengiriman</label><br>
-						<input type="text" class="form-control" name="alamat" required
-						value="<?php echo (!empty($_POST['alamat'])) ? $_POST['alamat'] : $user->alamat; ?>"
-						><br> 
-						<select name="kota" required class="form-control"> 
-							<?php
+                <hr>
+                <form action="" method="post" enctype="multipart/form-data">
+
+                    <label>Waktu Pengiriman</label><br>
+                    <div class="form-group">
+                        <div class='input-group date' id='datetimepicker'>
+                            <input type='text' class="form-control" name="tanggal_digunakan"
+                                value="<?php echo (!empty($_POST['tanggal_digunakan'])) ? $_POST['tanggal_digunakan'] : ''; ?>"
+                                required />
+                            <span class="input-group-addon">
+                                <span class="glyphicon glyphicon-calendar"></span>
+                            </span>
+                        </div>
+                    </div>
+                    <label>Nama</label><br>
+                    <input type="text" class="form-control" name="nama" required
+                        value="<?php echo (!empty($_POST['nama'])) ? $_POST['nama'] : $user->nama; ?>"><br>
+                    <label>Telephone (HP)</label><br>
+                    <input type="text" class="form-control" name="telephone" required
+                        value="<?php echo (!empty($_POST['telephone'])) ? $_POST['telephone'] : $user->telephone; ?>"><br>
+                    <label>Alamat Pengiriman</label><br>
+                    <input type="text" class="form-control" name="alamat" required
+                        value="<?php echo (!empty($_POST['alamat'])) ? $_POST['alamat'] : $user->alamat; ?>"><br>
+                    <select name="kota" required class="form-control">
+                        <?php
 								$kota = mysqli_query($konek, "select*from kota");
 								while($kp = mysqli_fetch_array($kota)){
 							?>
-							<option value="<?php echo $kp['id']; ?>"><?php echo $kp['nama'] ?> - <?php echo "Rp ".number_format($kp['ongkir'], 0, ',', '.'); ?></option>
-								<?php } ?>
-						</select><br>						
-						<input type="submit" name="form-order" value="Proses" class="btn btn-success">
-					</form>
-			</div>
-			<div class="col-md-12">
-				<hr>
-				<h4>
-                   Detail Pesanan :
+                        <option value="<?php echo $kp['id']; ?>"><?php echo $kp['nama'] ?> -
+                            <?php echo "Rp ".number_format($kp['ongkir'], 0, ',', '.'); ?></option>
+                        <?php } ?>
+                    </select><br>
+                    <input type="submit" name="form-order" value="Proses" class="btn btn-success">
+                </form>
+            </div>
+            <div class="col-md-12">
+                <hr>
+                <h4>
+                    Detail Pesanan :
                 </h4>
-				<table class="table table-striped" style="width:100%">
-				<thead>
-				<tr style="background:#c3ebf8;font-weight:bold;">
-					<td style="width:15%"> Produk </td>
-					<td style="width:40%">Details</td>
-					<td style="width:10%">QTY</td>
-					<td style="width:15%">Total</td> 
-				</tr>
-				</thead>
-				<tbody>
-<?php 
+                <table class="table table-striped" style="width:100%">
+                    <thead>
+                        <tr style="background:#c3ebf8;font-weight:bold;">
+                            <td style="width:15%"> Produk </td>
+                            <td style="width:40%">Details</td>
+                            <td style="width:10%">QTY</td>
+                            <td style="width:15%">Total</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php 
 $total = 0;
 $cart = unserialize($_SESSION['cart']);
 if($cart == ''){
@@ -131,34 +130,45 @@ foreach($cart as $id => $qty){
 		$t = $qty * $product['harga'];
 		$total += $t;
 		?>
-				<tr class="barang-shop">
-					<td class="CartProductThumb"><div> <a href="<?php echo $url; ?>menu.php?id=<?php echo $product['id'] ?>"><img src="<?php echo $url.'uploads/'.$product['gambar']; ?>" alt="img" width="120px"></a> </div></td>
-					<td><div class="CartDescription">
-					<h4> <a href="<?php echo $url; ?>menu.php?id=<?php echo $product['id'] ?>"><?= $product['nama'] ?></a> </h4>
-					<div class="price"><?php echo  "Rp ".number_format($product['harga'], 0, ',', '.') ?></div>
-					</div></td>          
-					<td> 
-						<?php echo $qty ?> pcs
-					</td>
-					<td class="price"><?php echo number_format($t, 2, ',', '.') ?></td>
-					 
-				</tr>
-<?php } } ?>
-				<tr style="background:#c3ebf8;font-weight:bold;">
-					<td colspan="3">TOTAL</td>
-                                        <td><?php echo number_format($total, 2, ',', '.') ?></td> 
-				</tr>
-				</tbody>
-				</table>
-				
-									
-				
-			
-			</div> 
-			
-			</div> 
-		</div> 	
-		<script type="text/javascript">
-    $(".form_datetime").datetimepicker({format: 'yyyy-mm-dd hh:ii'});
-</script>            
-<?php include"layout/footer.php"; ?>
+                        <tr class="barang-shop">
+                            <td class="CartProductThumb">
+                                <div> <a href="<?php echo $url; ?>menu.php?id=<?php echo $product['id'] ?>"><img
+                                            src="<?php echo $url.'uploads/'.$product['gambar']; ?>" alt="img"
+                                            width="120px"></a> </div>
+                            </td>
+                            <td>
+                                <div class="CartDescription">
+                                    <h4> <a
+                                            href="<?php echo $url; ?>menu.php?id=<?php echo $product['id'] ?>"><?= $product['nama'] ?></a>
+                                    </h4>
+                                    <div class="price">
+                                        <?php echo  "Rp ".number_format($product['harga'], 0, ',', '.') ?></div>
+                                </div>
+                            </td>
+                            <td>
+                                <?php echo $qty ?> pcs
+                            </td>
+                            <td class="price"><?php echo number_format($t, 2, ',', '.') ?></td>
+
+                        </tr>
+                        <?php } } ?>
+                        <tr style="background:#c3ebf8;font-weight:bold;">
+                            <td colspan="3">TOTAL</td>
+                            <td><?php echo number_format($total, 2, ',', '.') ?></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+
+
+
+            </div>
+
+        </div>
+    </div>
+    <script type="text/javascript">
+    $(".form_datetime").datetimepicker({
+        format: 'yyyy-mm-dd hh:ii'
+    });
+    </script>
+    <?php include"layout/footer.php"; ?>
