@@ -196,6 +196,13 @@ a .glyphicon .glyphicon-trash:hover{
 /*Keranjang page END  */
 
 
+/* Order.php Page */
+.CartDescription h4 a{
+  color: #000;
+}
+/* Order.php page END */
+
+
 /* Footer Layout */
 .footer {
   background-color: var(--var-nav-bg);

@@ -20,6 +20,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/css/style.css">
 </head>
 
 <body>
@@ -77,8 +78,7 @@
                 <div class="col-md-7">
                     <h4>
                         Pengisian Data Pembeli :
-                    </h4>
-                    <hr>
+                    </h4><br>
                     <form action="" method="post" enctype="multipart/form-data">
 
                         <label>Waktu Pengiriman</label><br>
@@ -113,8 +113,7 @@
                         <input type="submit" name="form-order" value="Proses" class="btn btn-success">
                     </form>
                 </div>
-                <div class="col-md-12">
-                    <hr>
+                <div class="col-md-12"><br>
                     <h4>
                         Detail Pesanan :
                     </h4>
@@ -158,13 +157,13 @@ foreach($cart as $id => $qty){
                                 <td>
                                     <?php echo $qty ?> pcs
                                 </td>
-                                <td class="price"><?php echo number_format($t, 2, ',', '.') ?></td>
+                                <td class="price"><?php echo number_format($t, 0, ',', '.') ?></td>
 
                             </tr>
                             <?php } } ?>
                             <tr style="background:#c3ebf8;font-weight:bold;">
                                 <td colspan="3">TOTAL</td>
-                                <td><?php echo number_format($total, 2, ',', '.') ?></td>
+                                <td><?php echo number_format($total, 0, ',', '.') ?></td>
                             </tr>
                         </tbody>
                     </table>
