@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,7 +18,7 @@
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug 
     <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">-->
-    
+
     <!-- Font Awesome Link cdn -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
@@ -35,164 +36,183 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-	
-	<style>
-		body{
-			font-family: 'Helvetica', arial, sans-serif;
-      font-size: 15px;
-		}
+
+    <style>
+    body {
+        font-family: 'Helvetica', arial, sans-serif;
+        font-size: 15px;
+    }
+    </style>
 
 
-	</style>
-	
-	
-  </head>
+</head>
 
-  <body>
+<body>
 
-  
+
     <!-- Fixed navbar -->
     <nav class="navbar navbar-default navbar-fixed-top navbar-orange">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="index.php">Asai's Kitchen</a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse"> 
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="<?php echo $url ?>"> <i class="fa-solid fa-house"></i> Home</a></li>
-            <li><a href="<?php echo $url ?>menu.php"> <i class="fa-solid fa-cart-plus"></i> Menu Katering</a></li>
-            <li><a href="<?php echo $url ?>kontak.php"> <i class="fa-solid fa-message"></i> Kontak Kami</a></li> 
-            <li><a href="<?php echo $url ?>info.php"> <i class="fa-solid fa-circle-info"></i> Info Pembayaran</a></li> 
-            <?php if(!empty($_SESSION['iam_user'])){ ?>
-			<?php 
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.php">Asai's Kitchen</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="<?php echo $url ?>"> <i class="fa-solid fa-house"></i> Home</a></li>
+                    <li><a href="<?php echo $url ?>menu.php"> <i class="fa-solid fa-cart-plus"></i> Menu Katering</a>
+                    </li>
+                    <li><a href="<?php echo $url ?>kontak.php"> <i class="fa-solid fa-message"></i> Kontak Kami</a></li>
+                    <li><a href="<?php echo $url ?>info.php"> <i class="fa-solid fa-circle-info"></i> Info
+                            Pembayaran</a></li>
+                    <?php if(!empty($_SESSION['iam_user'])){ ?>
+                    <?php 
 				$user = mysqli_fetch_object(mysqli_query($konek, "SELECT*FROM user where id='$_SESSION[iam_user]'"));
 			?>
-      <li><a href="<?php echo $url ?>pembayaran.php"> <i class="fa-regular fa-money-bill-1"></i> Pembayaran</a></li>      
-			<li class="dropdown">
+                    <li><a href="<?php echo $url ?>pembayaran.php"> <i class="fa-regular fa-money-bill-1"></i>
+                            Pembayaran</a></li>
+                    <li class="dropdown">
 
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <i class="fa-solid fa-user"></i> Hi <?php echo $user->nama; ?> <span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li><a href="<?php echo $url ?>profile.php"> <i class="fa-solid fa-address-card"></i> Profile</a></li> 
-                <li><a href="<?php echo $url ?>logout.php"> <i class="fa-solid fa-right-from-bracket"></i> Logout</a></li>  
-              </ul>
-            </li>
-			<?php }else{ ?>
-			<li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <i class="fa-solid fa-user"></i> Login/Register <span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li><a href="<?php echo $url ?>login.php"> <i class="fa-solid fa-right-to-bracket"></i> Login</a></li>
-              
-                <li><a href="<?php echo $url ?>register.php"> <i class="fa-solid fa-user-plus"></i> Register</a></li>  
-              </ul>
-            </li>
-			<?php } ?>
-			
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                            aria-expanded="false"> <i class="fa-solid fa-user"></i> Hi <?php echo $user->nama; ?> <span
+                                class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="<?php echo $url ?>profile.php"> <i class="fa-solid fa-address-card"></i>
+                                    Profile</a></li>
+                            <li><a href="<?php echo $url ?>logout.php"> <i class="fa-solid fa-right-from-bracket"></i>
+                                    Logout</a></li>
+                        </ul>
+                    </li>
+                    <?php }else{ ?>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                            aria-expanded="false"> <i class="fa-solid fa-user"></i> Login/Register <span
+                                class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="<?php echo $url ?>login.php"> <i class="fa-solid fa-right-to-bracket"></i>
+                                    Login</a></li>
 
-          </ul>
-        </div><!--/.nav-collapse -->
-      </div>
+                            <li><a href="<?php echo $url ?>register.php"> <i class="fa-solid fa-user-plus"></i>
+                                    Register</a></li>
+                        </ul>
+                    </li>
+                    <?php } ?>
+
+
+                </ul>
+            </div>
+            <!--/.nav-collapse -->
+        </div>
     </nav>
 
-   <?php if('http://'.$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'] == $url.'index.php'){ ?>
+    <?php if('http://'.$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'] == $url.'index.php'){ ?>
     <div class="container">
 
-     <!-- Full Page Image Background Carousel Header -->
-    <header id="myCarousel" class="carousel slide">
-        <!-- Indicators -->
-        <ol class="carousel-indicators">
-            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-            <li data-target="#myCarousel" data-slide-to="1"></li> 
-        </ol>
+        <!-- Full Page Image Background Carousel Header -->
+        <header id="myCarousel" class="carousel slide">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+            </ol>
 
-        <!-- Wrapper for Slides -->
-          <div class="carousel-inner">
-            <div class="item active">
-                <!-- Set the first background image using inline CSS below. -->
-                <div class="fill" style="background-image:url('<?php $url ?>assets/img/gb1.jpg');"></div>
-                <div class="carousel-caption">
-                    <h2>AS</h2>
+            <!-- Wrapper for Slides -->
+            <div class="carousel-inner">
+                <div class="item active">
+                    <!-- Set the first background image using inline CSS below. -->
+                    <div class="fill" style="background-image:url('<?php $url ?>assets/img/gb1.jpg');"></div>
+                    <div class="carousel-caption">
+                        <h2>AS</h2>
+                    </div>
+                </div>
+                <div class="item">
+                    <!-- Set the second background image using inline CSS below. -->
+                    <div class="fill" style="background-image:url('<?php $url ?>assets/img/cat1.jpg');"></div>
+                    <div class="carousel-caption">
+                        <h2>AS</h2>
+                    </div>
+                </div>
+                <div class="item">
+                    <!-- Set the second background image using inline CSS below. -->
+                    <div class="fill" style="background-image:url('<?php $url ?>assets/img/Ikan Bakar.png');"></div>
+                    <div class="carousel-caption">
+                        <h2>AS</h2>
+                    </div>
+                </div>
+                <div class="item">
+                    <!-- Set the second background image using inline CSS below. -->
+                    <div class="fill" style="background-image:url('<?php $url ?>assets/img/ayam bakar.png');"></div>
+                    <div class="carousel-caption">
+                        <h2>AS</h2>
+                    </div>
+                </div>
+                <div class="item">
+                    <!-- Set the second background image using inline CSS below. -->
+                    <div class="fill" style="background-image:url('<?php $url ?>assets/img/cat7.jpg');"></div>
+                    <div class="carousel-caption">
+                        <h2>AS</h2>
+                    </div>
+                </div>
+                <div class="item">
+                    <!-- Set the second background image using inline CSS below. -->
+                    <div class="fill" style="background-image:url('<?php $url ?>assets/img/ayam-chicken.jpg');"></div>
+                    <div class="carousel-caption">
+                        <h2>AS</h2>
+                    </div>
                 </div>
             </div>
-            <div class="item">
-                <!-- Set the second background image using inline CSS below. -->
-                <div class="fill" style="background-image:url('<?php $url ?>assets/img/cat1.jpg');"></div>
-                <div class="carousel-caption">
-                    <h2>AS</h2>
-                </div>
-            </div>
-			<div class="item">
-                <!-- Set the second background image using inline CSS below. -->
-                <div class="fill" style="background-image:url('<?php $url ?>assets/img/Ikan Bakar.png');"></div>
-                <div class="carousel-caption">
-                    <h2>AS</h2>
-                </div>
-            </div>
-			<div class="item">
-                <!-- Set the second background image using inline CSS below. -->
-                <div class="fill" style="background-image:url('<?php $url ?>assets/img/ayam bakar.png');"></div>
-                <div class="carousel-caption">
-                    <h2>AS</h2>
-                </div>
-            </div>
-			<div class="item">
-                <!-- Set the second background image using inline CSS below. -->
-                <div class="fill" style="background-image:url('<?php $url ?>assets/img/cat7.jpg');"></div>
-                <div class="carousel-caption">
-                    <h2>AS</h2>
-                </div>
-            </div> 
-			<div class="item">
-                <!-- Set the second background image using inline CSS below. -->
-                <div class="fill" style="background-image:url('<?php $url ?>assets/img/ayam-chicken.jpg');"></div>
-                <div class="carousel-caption">
-                    <h2>AS</h2>
-                </div>
-            </div> 
-        </div>
 
-        <!-- Controls -->
-        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-            <span class="icon-prev"></span>
-        </a>
-        <a class="right carousel-control" href="#myCarousel" data-slide="next">
-            <span class="icon-next"></span>
-        </a>
+            <!-- Controls -->
+            <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                <span class="icon-prev"></span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                <span class="icon-next"></span>
+            </a>
 
-    </header>
+        </header>
     </div> <!-- /container -->
-  <?php } ?>
-	
-	<div class="container" style="margin-top:20px;">
-	<div class="row">
-		<div class="col-md-3">
-			<div class="warna-head-bg" style="width:100%; height:auto; padding-top:3px; padding-bottom:3px; padding-left:10px;">
-			<h4><font color="white">Kategori Menu <i class="fa-solid fa-utensils"></i> </h4>
-			</div>
-			<ul class="kategori-menu">
-				<?php 
+    <?php } ?>
+
+    <div class="container" style="margin-top:20px;">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="warna-head-bg"
+                    style="width:100%; height:auto; padding-top:3px; padding-bottom:3px; padding-left:10px;">
+                    <h4>
+                        <font color="white">Kategori Menu <i class="fa-solid fa-utensils"></i>
+                    </h4>
+                </div>
+                <ul class="kategori-menu">
+                    <?php 
 					$kategori = mysqli_query($konek, "SELECT * FROM kategori_produk"); 
 					while($data = mysqli_fetch_array($kategori)){
 				?>
-					<li><a href="<?php echo $url; ?>menu.php?kategori=<?php echo $data['id'] ?>"><?php echo $data['nama']; ?> <i class="fa-solid fa-tag fa-shake fa-lg"></i> (
-					<?php 
+                    <li><a href="<?php echo $url; ?>menu.php?kategori=<?php echo $data['id'] ?>"><?php echo $data['nama']; ?>
+                            <i class="fa-solid fa-tag fa-shake fa-lg"></i> (
+                            <?php 
 						$ck = mysqli_num_rows(mysqli_query($konek, "SELECT * FROM produk WHERE kategori_produk_id='$data[id]'"));
 						if($ck > 0){ echo $ck; }else{ echo 0; } ?>
-					)</a></li>
-				<?php } ?>
-			</ul>
+                            )</a></li>
+                    <?php } ?>
+                </ul>
 
-			<div class="warna-head-bg" style="width:100%; height:auto; padding-top:3px; padding-bottom:3px; padding-left:10px; ">
-				<h4><font color="white">Keranjang Belanja <i class="fa-solid fa-basket-shopping"></i> </h4>
-			</div>
-			<div class="warna-jumlah" style=" width:100%; height:auto; padding-top:3px;padding-bottom:3px; padding-left:10px; margin-bottom:15px; border: 1px dashed #fff;">
-			
-			<?php
+                <div class="warna-head-bg"
+                    style="width:100%; height:auto; padding-top:3px; padding-bottom:3px; padding-left:10px; ">
+                    <h4>
+                        <font color="white">Keranjang Belanja <i class="fa-solid fa-basket-shopping"></i>
+                    </h4>
+                </div>
+                <div class="warna-jumlah"
+                    style=" width:100%; height:auto; padding-top:3px;padding-bottom:3px; padding-left:10px; margin-bottom:15px; border: 1px dashed #fff;">
+
+                    <?php
                             if(isset($_SESSION['cart'])){
                                 $total = 0;
                                 $cart = unserialize($_SESSION['cart']);
@@ -212,15 +232,17 @@
                             }
                                 
                         ?>
-				<div class="keranjang">
-				<a href="<?php echo $url; ?>keranjang.php">Lihat Keranjang Belanja <i class="fa-solid fa-basket-shopping"></i> </a>
-        </div>
-			</div>
-			<div class="row col-md-12">
-					
-			</div>
-			<div class="row col-sm-12">
-				
-				<img class="img-center" src="<?php echo $url.'uploads/logo2.png'; ?>" width="200" height="200"><br><br>
-			</div>
-		</div>
+                    <div class="keranjang">
+                        <a href="<?php echo $url; ?>keranjang.php">Lihat Keranjang Belanja <i
+                                class="fa-solid fa-basket-shopping"></i> </a>
+                    </div>
+                </div>
+                <div class="row col-md-12">
+
+                </div>
+                <div class="row col-sm-12">
+
+                    <img class="img-center" src="<?php echo $url.'uploads/logo2.png'; ?>" width="200"
+                        height="200"><br><br>
+                </div>
+            </div>
