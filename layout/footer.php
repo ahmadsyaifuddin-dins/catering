@@ -22,30 +22,30 @@
     <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>-->
 
 <script>
-$('.carousel').carousel({
-    interval: 5000 //changes the speed
-})
+    $('.carousel').carousel({
+        interval: 5000 //changes the speed
+    })
 </script>
 
 <script src="<?php echo $url ?>assets/bootstrap/js/moment.js"></script>
 <script src="<?php echo $url ?>assets/bootstrap/js/bootstrap-datetimepicker.min.js"></script>
 <script type="text/javascript">
-$(function() {
-    $('#datetimepicker').datetimepicker({
-        format: 'YYYY-MM-DD HH:mm',
+    $(function() {
+        $('#datetimepicker').datetimepicker({
+            format: 'YYYY-MM-DD HH:mm',
+        });
+
+        // $('#datepicker').datetimepicker({
+        // format: 'DD MMMM YYYY',
+        // });
+
+        // $('#timepicker').datetimepicker({
+        // format: 'HH:mm'
+        // });
     });
 
-    // $('#datepicker').datetimepicker({
-    // format: 'DD MMMM YYYY',
-    // });
-
-    // $('#timepicker').datetimepicker({
-    // format: 'HH:mm'
-    // });
-});
-
-// Get Year Dynamic
-document.getElementById("year").innerHTML = new Date().getFullYear();
+    // Get Year Dynamic
+    document.getElementById("year").innerHTML = new Date().getFullYear();
 </script>
 </body>
 
