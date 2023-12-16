@@ -1,5 +1,6 @@
 <?php 
 	include"inc/config.php";
+    include"layout/header.php";
 	
 	if(!empty($_GET)){
 		if($_GET['act'] == 'delete'){
@@ -13,9 +14,7 @@
 		redir("index.php");
 	}
 	$user = mysqli_fetch_object(mysqli_query($konek, "SELECT*FROM user WHERE id='$_SESSION[iam_user]'"));
-	
-	include"layout/header.php";
-	
+		
 	$q = mysqli_query($konek, "SELECT*FROM pesanan WHERE user_id='$_SESSION[iam_user]' AND status='belum lunas'");
 	$j = mysqli_num_rows($q);
 ?>
