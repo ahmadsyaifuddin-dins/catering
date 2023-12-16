@@ -1,54 +1,55 @@
-<?php 
-include"inc/config.php";
-include"layout/header.php";
-	
-	if(empty($_SESSION['cart'])){
-        $_SESSION['cart'] = '';
+<?php
+include "inc/config.php";
+include "layout/header.php";
+
+if (empty($_SESSION['cart'])) {
+    $_SESSION['cart'] = '';
+}
+if (!empty($_GET['produk_id']) && $_GET['act'] == 'beli') {
+    $cart = unserialize($_SESSION['cart']);
+    if ($cart == '') {
+        $cart = [];
     }
-    if(!empty($_GET['produk_id']) && $_GET['act']== 'beli'){
-        $cart = unserialize($_SESSION['cart']);
-        if($cart == ''){
-            $cart = [];
-        }
-        $pid = $_GET['produk_id'];
-        $qty = 1;
-        
-        if(isset($_GET['update_cart'])){
-            if(isset($cart[$pid]))
-            	if ($_GET['qty'] >= 1)
-	                $cart[$pid] = $_GET['qty'];
-	           	else
-	           		alert('Minimal Quantity 1'); redir('keranjang.php');
-        }elseif(isset($_GET['delete_cart'])){
-			if(isset($cart[$pid])){
-				unset($cart[$pid]);
-			}	
-				//$arr = unserialize($str);
+    $pid = $_GET['produk_id'];
+    $qty = 1;
 
-
-			//}else{
-				
-				//redir($url.'keranjang.php');
-			//}
-				// foreach($cart as $key => $value){
-				  // if ($cart[$key] == $_GET['delete_cart']) 
-					  // unset($cart[$key]);
-				// }
-				// $cart = serialize($cart);
-		}else{
-        
-            if(isset($cart[$pid]))
-                $cart[$pid] += $qty;
+    if (isset($_GET['update_cart'])) {
+        if (isset($cart[$pid]))
+            if ($_GET['qty'] >= 1)
+                $cart[$pid] = $_GET['qty'];
             else
-                $cart[$pid] = $qty;
+                alert('Minimal Quantity 1');
+        redir('keranjang.php');
+    } elseif (isset($_GET['delete_cart'])) {
+        if (isset($cart[$pid])) {
+            unset($cart[$pid]);
         }
-        $_SESSION['cart'] = serialize($cart);
-		redir($url.'keranjang.php');
+        //$arr = unserialize($str);
+
+
+        //}else{
+
+        //redir($url.'keranjang.php');
+        //}
+        // foreach($cart as $key => $value){
+        // if ($cart[$key] == $_GET['delete_cart']) 
+        // unset($cart[$key]);
+        // }
+        // $cart = serialize($cart);
+    } else {
+
+        if (isset($cart[$pid]))
+            $cart[$pid] += $qty;
+        else
+            $cart[$pid] = $qty;
     }
-	//unset($_SESSION['cart']);
-	//print_r($_SESSION['cart']);
-	
-	
+    $_SESSION['cart'] = serialize($cart);
+    redir($url . 'keranjang.php');
+}
+//unset($_SESSION['cart']);
+//print_r($_SESSION['cart']);
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -75,53 +76,49 @@ include"layout/header.php";
                             </tr>
                         </thead>
                         <tbody>
-                            <?php 
-$total = 0;
-$cart = unserialize($_SESSION['cart']);
-if($cart == ''){
-    $cart = [];
-}
-foreach($cart as $id => $qty){
-     $product = mysqli_fetch_array(mysqli_query($konek, "select * from produk WHERE id='$id'"));
-	if(!empty($product)){
-		$t = $qty * $product['harga'];
-		$total += $t;
-		?>
-                            <tr class="barang-shop">
-                                <td class="CartProductThumb">
-                                    <div> <a href="<?php echo $url; ?>menu.php?id=<?php echo $product['id'] ?>"><img
-                                                src="<?php echo $url.'uploads/'.$product['gambar']; ?>" alt="img"
-                                                width="120px"></a> </div>
-                                </td>
-                                <td>
-                                    <div class="CartDescription">
-                                        <h3 style="font-weight:bold;"> <a style="font-size: 2rem;"
-                                                href="<?php echo $url; ?>menu.php?id=<?php echo $product['id'] ?>"><?= $product['nama'] ?></a>
-                                        </h3>
-                                        <!-- 1.Harga Satuan -->
-                                        <div class="price" style="font-size: 1.6rem;">
-                                            <?php echo "<b> Rp  ".number_format($product['harga'], 0, ',', '.') ?> </b>
-                                        </div>
-                                    </div>
-                                </td>
+                            <?php
+                            $total = 0;
+                            $cart = unserialize($_SESSION['cart']);
+                            if ($cart == '') {
+                                $cart = [];
+                            }
+                            foreach ($cart as $id => $qty) {
+                                $product = mysqli_fetch_array(mysqli_query($konek, "select * from produk WHERE id='$id'"));
+                                if (!empty($product)) {
+                                    $t = $qty * $product['harga'];
+                                    $total += $t;
+                            ?>
+                                    <tr class="barang-shop">
+                                        <td class="CartProductThumb">
+                                            <div> <a href="<?php echo $url; ?>menu.php?id=<?php echo $product['id'] ?>"><img src="<?php echo $url . 'uploads/' . $product['gambar']; ?>" alt="img" width="120px"></a> </div>
+                                        </td>
+                                        <td>
+                                            <div class="CartDescription">
+                                                <h3 style="font-weight:bold;"> <a style="font-size: 2rem;" href="<?php echo $url; ?>menu.php?id=<?php echo $product['id'] ?>"><?= $product['nama'] ?></a>
+                                                </h3>
+                                                <!-- 1.Harga Satuan -->
+                                                <div class="price" style="font-size: 1.6rem;">
+                                                    <?php echo "<b> Rp  " . number_format($product['harga'], 0, ',', '.') ?> </b>
+                                                </div>
+                                            </div>
+                                        </td>
 
-                                <td>
-                                    <form action="<?php echo $url; ?>keranjang.php" method="GET">
-                                        <input type="hidden" name="update_cart" value="update">
-                                        <input type="hidden" name="act" value="beli">
-                                        <input type="hidden" name="produk_id" value="<?= $id ?>">
-                                        <input class="form-control" type="number" name="qty" value="<?php echo $qty; ?>"
-                                            onchange="this.form.submit()">
-                                    </form>
-                                </td>
-                                <!-- 2.Harga (Satuan * Jumlah) -->
-                                <td style="font-weight:bold; font-size: 1.6rem;" class="price">
-                                    <?php echo number_format($t, 0, ',', '.') ?>
-                                </td>
-                                <td><a href="<?php echo $url; ?>keranjang.php?delete_cart=yes&&act=beli&&produk_id=<?php echo $id; ?>"
-                                        title="Delete"> <i class="glyphicon glyphicon-trash fa-2x"></i></a></td>
-                            </tr>
-                            <?php } } ?>
+                                        <td>
+                                            <form action="<?php echo $url; ?>keranjang.php" method="GET">
+                                                <input type="hidden" name="update_cart" value="update">
+                                                <input type="hidden" name="act" value="beli">
+                                                <input type="hidden" name="produk_id" value="<?= $id ?>">
+                                                <input class="form-control" type="number" name="qty" value="<?php echo $qty; ?>" onchange="this.form.submit()">
+                                            </form>
+                                        </td>
+                                        <!-- 2.Harga (Satuan * Jumlah) -->
+                                        <td style="font-weight:bold; font-size: 1.6rem;" class="price">
+                                            <?php echo number_format($t, 0, ',', '.') ?>
+                                        </td>
+                                        <td><a href="<?php echo $url; ?>keranjang.php?delete_cart=yes&&act=beli&&produk_id=<?php echo $id; ?>" title="Delete"> <i class="glyphicon glyphicon-trash fa-2x"></i></a></td>
+                                    </tr>
+                            <?php }
+                            } ?>
                             <tr style="background:#c3ebf8;font-weight:bold;">
                                 <td colspan="3">SUB TOTAL</td>
                                 <!-- 3.Harga SUB TOTAL -->
@@ -140,14 +137,13 @@ foreach($cart as $id => $qty){
                         <tr>
                             <td style="background:#fafafa;"><b>TOTAL</b></td>
                             <!-- 4.HARGA ALL TOTAL -->
-                            <td style="font-size: 2rem"> <?php echo "<b> Rp ".number_format($total, 0, ',', '.') ?>
+                            <td style="font-size: 2rem"> <?php echo "<b> Rp " . number_format($total, 0, ',', '.') ?>
                                 </b> </td>
                         </tr>
                     </table>
-                    <form action="<?php echo  $url.'order.php' ?>" method="POST">
+                    <form action="<?php echo  $url . 'order.php' ?>" method="POST">
                         <input type="hidden" name="okay" value="cart">
-                        <button <?php echo ($total == 0)? 'disabled' : '' ?> type="submit"
-                            class="btn btn-primary">Selesai
+                        <button <?php echo ($total == 0) ? 'disabled' : '' ?> type="submit" class="btn btn-primary">Selesai
                             Belanja ✓</button>
                     </form>
                 </div>
@@ -158,4 +154,4 @@ foreach($cart as $id => $qty){
 
 </html>
 
-<?php include"layout/footer.php"; ?>
+<?php include "layout/footer.php"; ?>
