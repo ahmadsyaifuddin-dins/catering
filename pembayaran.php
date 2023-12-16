@@ -1,4 +1,4 @@
- <?php 
+<?php 
 	include"inc/config.php";
 	
 	if(!empty($_GET)){
@@ -19,26 +19,27 @@
 	$q = mysqli_query($konek, "SELECT*FROM pesanan WHERE user_id='$_SESSION[iam_user]' AND status='belum lunas'");
 	$j = mysqli_num_rows($q);
 ?>
- <font color="black">
-     <div class="col-md-9 content-menu">
-         <div class="col-md-12">
-             <?php
+
+<font color="black">
+    <div class="col-md-9 content-menu">
+        <div class="col-md-12">
+            <?php
 	if(!empty($_GET)){
 			$q1 = mysqli_query($konek, "SELECT*FROM detail_pesanan WHERE pesanan_id='$_GET[id]'");
 			$total = 0;
 			$dataPesanan = mysqli_fetch_object(mysqli_query($konek, "SELECT * FROM pesanan WHERE id='$_GET[id]'"));
 			$kota = $dataPesanan->kota;
 			$ongkir = $dataPesanan->ongkir;
-		 while($data=mysqli_fetch_object($q1)){ ?>
-             <?php
+				while($data=mysqli_fetch_object($q1)){ ?>
+            <?php
 						$katpro = mysqli_query($konek, "SELECT*FROM produk WHERE id='$data->produk_id'");
 								$p = mysqli_fetch_object($katpro);
 					?>
-             <?php $t = $data->qty*$p->harga; 
+            <?php $t = $data->qty*$p->harga; 
 						$total += $t;
 					?>
-             <?php } ?>
-             <?php
+            <?php } ?>
+            <?php
 		if($_GET['act'] == 'bayar' && $_GET['id']){
 			if(!empty($_POST)){
 				$gambar = md5('Y-m-d H:i:s').$_FILES['gambar']['name'];
@@ -58,70 +59,70 @@
 				$totalPembayaran += $d->total;
 			}
 		?>
-             <div class="row col-md-6">
-                 <form action="" method="post" enctype="multipart/form-data">
-                     <label>Total</label><br>
-                     <input type="text" class="form-control" name="total"
-                         value="<?php echo 'Rp. ' . number_format($total+$pesanan->ongkir, 0,',','.'); ?>" disabled
-                         required><br>
-                     <label>Dibayar</label><br>
-                     <input type="text" class="form-control" name="dibayar"
-                         value="<?php echo "Rp. ". number_format($totalPembayaran, 0, ",", "."); ?>" disabled
-                         required><br>
-                     <label>Kekurangan</label><br>
-                     <input type="text" class="form-control" name="kekurangan"
-                         value="<?php echo "Rp. ". number_format($total+$pesanan->ongkir-$totalPembayaran, 0, ",", "."); ?>"
-                         disabled required><br>
-                     <label>Bayar</label><br>
-                     <input type="number" class="form-control" name="bayar" required><br>
-                     <label>Bukti Pembayaran</label><br>
-                     <input type="file" class="form-control" name="gambar" required><br>
-                     <label>Bukti Pembayaran</label><br>
-                     <textarea class="form-control" name="keterangan"></textarea><br />
-                     <input type="submit" name="form-input" value="Kirim" class="btn btn-success">
-                 </form>
-             </div>
-             <div class="row col-md-12">
-                 <hr>
-             </div>
-             <?php	
+            <div class="row col-md-6">
+                <form action="" method="post" enctype="multipart/form-data">
+                    <label>Total</label><br>
+                    <input type="text" class="form-control" name="total"
+                        value="<?php echo 'Rp. ' . number_format($total+$pesanan->ongkir, 0,',','.'); ?>" disabled
+                        required><br>
+                    <label>Dibayar</label><br>
+                    <input type="text" class="form-control" name="dibayar"
+                        value="<?php echo "Rp. ". number_format($totalPembayaran, 0, ",", "."); ?>" disabled
+                        required><br>
+                    <label>Kekurangan</label><br>
+                    <input type="text" class="form-control" name="kekurangan"
+                        value="<?php echo "Rp. ". number_format($total+$pesanan->ongkir-$totalPembayaran, 0, ",", "."); ?>"
+                        disabled required><br>
+                    <label>Bayar</label><br>
+                    <input type="number" class="form-control" name="bayar" required><br>
+                    <label>Bukti Pembayaran</label><br>
+                    <input type="file" class="form-control" name="gambar" required><br>
+                    <label>Bukti Pembayaran</label><br>
+                    <textarea class="form-control" name="keterangan"></textarea><br />
+                    <input type="submit" name="form-input" value="Kirim" class="btn btn-success">
+                </form>
+            </div>
+            <div class="row col-md-12">
+                <hr>
+            </div>
+            <?php	
 		} 
 	}
 ?>
-         </div>
-         <h3>Perlu Pembayaran Pemesanan </h3>
-         <hr>
-         <table class="table table-bordered table-striped table-hove">
-             <thead>
-                 <tr>
-                     <th>No</th>
-                     <th>Nama Pemesan</th>
-                     <th>Tanggal Pesan</th>
-                     <th>Tanggal Digunakan</th>
-                     <th>Aksi</th>
-                 </tr>
-             </thead>
-             <tbody>
-                 <?php while($data=mysqli_fetch_object($q)){ ?>
-                 <tr <?php if($data->read == 0 ){ echo 'style="background:#cce9f8 !important;"'; } ?>>
-                     <th scope="row"><?php echo $no++; ?></th>
-                     <?php
+        </div>
+        <h3>Perlu Pembayaran Pemesanan </h3>
+        <hr>
+        <table class="table table-bordered table-striped table-hove">
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Nama Pemesan</th>
+                    <th>Tanggal Pesan</th>
+                    <th>Tanggal Digunakan</th>
+                    <th>Aksi</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php while($data=mysqli_fetch_object($q)){ ?>
+                <tr <?php if($data->read == 0 ){ echo 'style="background:#cce9f8 !important;"'; } ?>>
+                    <th scope="row"><?php echo $no++; ?></th>
+                    <?php
 					$katpro = mysqli_query($konek, "SELECT*FROM user WHERE id='$data->user_id'");
 							$user = mysqli_fetch_array($katpro);
 				?>
-                     <td><?php echo $data->nama ?></td>
-                     <td><?php echo substr($data->tanggal_pesan,0,10) ?></td>
-                     <td><?php echo $data->tanggal_digunakan ?></td>
-                     <td>
-                         <a class="btn btn-sm btn-primary" href="pembayaran.php?act=bayar&id=<?php echo 
+                    <td><?php echo $data->nama ?></td>
+                    <td><?php echo substr($data->tanggal_pesan,0,10) ?></td>
+                    <td><?php echo $data->tanggal_digunakan ?></td>
+                    <td>
+                        <a class="btn btn-sm btn-primary" href="pembayaran.php?act=bayar&id=<?php echo 
 					$data->id; ?>">Bayar</a>
-                         <a class="btn btn-sm btn-danger" href="pembayaran.php?act=delete&&id=<?php echo 
+                        <a class="btn btn-sm btn-danger" href="pembayaran.php?act=delete&&id=<?php echo 
 					$data->id ?>">Delete</a>
-                     </td>
-                 </tr>
-                 <?php } ?>
-             </tbody>
-         </table>
+                    </td>
+                </tr>
+                <?php } ?>
+            </tbody>
+        </table>
 
-     </div>
-     <?php include"layout/footer.php"; ?>
+    </div>
+    <?php include"layout/footer.php"; ?>
