@@ -1,6 +1,6 @@
 <?php
-	include"inc/config.php"; 
-	include"layout/header.php";	
+include "inc/config.php";
+include "layout/header.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -14,9 +14,9 @@
     <div class="col-md-9">
         <div class="row">
             <?php
-			$q = mysqli_query($konek, "Select * from info_pembayaran limit 1") or die (mysqli_error());
-			$data = mysqli_fetch_object($q);
-		?>
+            $q = mysqli_query($konek, "Select * from info_pembayaran limit 1") or die(mysqli_error());
+            $data = mysqli_fetch_object($q);
+            ?>
             <pre><?php echo $data->info; ?></pre>
         </div>
     </div>
@@ -25,5 +25,5 @@
 </html>
 
 <?php
-	include "layout/footer.php";
+include "layout/footer.php";
 ?>
