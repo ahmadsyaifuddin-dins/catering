@@ -16,18 +16,19 @@ include "layout/header.php";
 </head>
 
 <body>
-    <font color="black">
-        <div class="col-md-9">
-            <div class="row">
-                <div class="col-md-13">
+    <div class="col-md-9">
+        <div class="row">
+            <div class="col-md-13">
+                <font color="white">
                     <h2 class="animate__animated animate__lightSpeedInLeft animate__slower" align="center"> <b>Favorite
                             Menu</b> </h2>
-
-                    <?php
-                    $k = mysqli_query($konek, "SELECT * FROM produk ORDER BY id ASC limit 3");
-                    while ($data = mysqli_fetch_array($k)) {
-                    ?>
-                        <div class="col-md-4">
+                </font>
+                <?php
+                $k = mysqli_query($konek, "SELECT * FROM produk ORDER BY id ASC limit 3");
+                while ($data = mysqli_fetch_array($k)) {
+                ?>
+                    <div class="col-md-4">
+                        <font color="black">
                             <div class="panel panel-default">
                                 <div class="panel-body">
                                     <a href="<?php echo $url; ?>menu.php?id=<?php echo $data['id'] ?>">
@@ -43,21 +44,25 @@ include "layout/header.php";
                                     </p>
                                 </div>
                             </div>
-                        </div>
-                    <?php } ?>
+                        </font>
+                    </div>
+                <?php } ?>
 
-                </div>
             </div>
-            <div class="row">
-                <div class="col-md-13">
+        </div>
+        <div class="row">
+            <div class="col-md-13">
+                <font color="white">
                     <h2 class="animate__animated animate__lightSpeedInLeft animate__slower" align="center"> <b>Menu
                             Terbaru</b> </h2>
-                    <?php
-                    $k = mysqli_query($konek, "SELECT * FROM produk ORDER BY id DESC limit 3");
-                    while ($data = mysqli_fetch_array($k)) {
-                    ?>
-                        <div class="col-md-4">
-                            <div class="panel panel-default">
+                </font>
+                <?php
+                $k = mysqli_query($konek, "SELECT * FROM produk ORDER BY id DESC limit 3");
+                while ($data = mysqli_fetch_array($k)) {
+                ?>
+                    <div class="col-md-4">
+                        <div class="panel panel-default">
+                            <font color="black">
                                 <div class="panel-body">
                                     <a href="<?php echo $url; ?>menu.php?id=<?php echo $data['id'] ?>">
                                         <img src="<?php echo $url; ?>uploads/<?php echo $data['gambar'] ?>" width="100%">
@@ -70,13 +75,14 @@ include "layout/header.php";
                                         <a href="<?php echo $url; ?>keranjang.php?act=beli&&produk_id=<?php echo $data['id'] ?>" class="btn btn-warning btn-sm" href="#" role="button">Pesan</a>
                                     </p>
                                 </div>
-                            </div>
+                            </font>
                         </div>
-                    <?php } ?>
+                    </div>
+                <?php } ?>
 
-                </div>
             </div>
         </div>
+    </div>
 </body>
 
 </html>
