@@ -189,7 +189,7 @@ middle a:hover {
 a .glyphicon{
   color: #000 ;
 }
-a .glyphicon:hover{
+a .glyphicon .glyphicon-trash:hover{
   color: #fff;
 }
 
