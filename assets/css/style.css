@@ -185,9 +185,9 @@ middle a:hover {
   color: #000 !important;
 }
 
-/* TODO: WARNA ICON BAK SAMPAH (DELETE) */
+/* TODO = WARNA ICON BAK SAMPAH (DELETE) */
 a .glyphicon{
-  color: #000 ;
+  color: #000;
 }
 a .glyphicon .glyphicon-trash:hover{
   color: #fff;
