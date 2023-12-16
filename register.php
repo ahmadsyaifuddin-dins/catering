@@ -1,11 +1,11 @@
-<?php 
-	include"inc/config.php";
-	
-	if(!empty($_SESSION['iam_user'])){
-		redir("index.php");
-	}
-	
-	include"layout/header.php";
+<?php
+include "inc/config.php";
+
+if (!empty($_SESSION['iam_user'])) {
+    redir("index.php");
+}
+
+include "layout/header.php";
 ?>
 
 <!DOCTYPE html>
@@ -24,34 +24,35 @@
         <div class="row">
             <div class="col-md-12">
 
-                <?php 
-				if(!empty($_POST)){
-			extract($_POST); 
-		
-			$password = md5($password);
-			$q = mysqli_query($konek, "INSERT INTO user VALUES(NULL,'$nama','$email','$telephone','$alamat','$password','user')");
-				if($q){  
-			?>
-                <font color="black">
-                    <!-- <div class="alert alert-success">Register Berhasil.<br></div>-->
-                    <script type='text/javascript'>
-                    setTimeout(function() {
-                        Swal.fire({
-                            title: "Registrasi Berhasil !",
-                            text: "Selamat Berbelanja",
-                            icon: "success",
-                            footer: '<a href="login.php">Silahkan Login !</a>',
-                            timer: "100000",
-                            showConfirmButton: false
-                        });
-                    }, 1);
-                    window.setTimeout(function() {
-                        window.location.replace('register.php');
-                    }, 100000);
-                    </script>
-                    <?php }else{ ?>
-                    <div class="alert alert-danger">Terjadi kesalahan dalam pengisian form. Silahkan Coba Lagi</div>
-                    <?php } } ?>
+                <?php
+                if (!empty($_POST)) {
+                    extract($_POST);
+
+                    $password = md5($password);
+                    $q = mysqli_query($konek, "INSERT INTO user VALUES(NULL,'$nama','$email','$telephone','$alamat','$password','user')");
+                    if ($q) {
+                ?>
+                        <font color="black">
+                            <!-- <div class="alert alert-success">Register Berhasil.<br></div>-->
+                            <script type='text/javascript'>
+                                setTimeout(function() {
+                                    Swal.fire({
+                                        title: "Registrasi Berhasil !",
+                                        text: "Selamat Berbelanja",
+                                        icon: "success",
+                                        footer: '<a href="login.php">Silahkan Login !</a>',
+                                        timer: "100000",
+                                        showConfirmButton: false
+                                    });
+                                }, 1);
+                                window.setTimeout(function() {
+                                    window.location.replace('register.php');
+                                }, 100000);
+                            </script>
+                        <?php } else { ?>
+                            <div class="alert alert-danger">Terjadi kesalahan dalam pengisian form. Silahkan Coba Lagi</div>
+                    <?php }
+                } ?>
                     <h3>
                         <font color="black">Register User
                     </h3>
@@ -70,8 +71,7 @@
                             <label>Password</label><br>
                             <input type="password" class="form-control" name="password" required><br>
 
-                            <input type="submit" name="form-input" id="sweetAlert" value="Register"
-                                class="btn btn-success">
+                            <input type="submit" name="form-input" id="sweetAlert" value="Register" class="btn btn-success">
                         </form>
 
                     </div>
@@ -92,4 +92,4 @@
 
 
 
-<?php include"layout/footer.php"; ?>
+<?php include "layout/footer.php"; ?>
