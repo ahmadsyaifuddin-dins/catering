@@ -185,6 +185,14 @@ middle a:hover {
   color: #000 !important;
 }
 
+/* WARNA ICON BAK SAMPAH (DELETE) */
+a .glyphicon{
+  color: #000 ;
+}
+a .glyphicon:hover{
+  color: #fff;
+}
+
 /*Keranjang page END  */
 
 

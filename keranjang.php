@@ -71,7 +71,7 @@ include"layout/header.php";
                                 <td style="width:40%">Details</td>
                                 <td style="width:10%">QTY</td>
                                 <td style="width:15%">Total</td>
-                                <td style="width:5%" class="delete">&nbsp;</td>
+                                <td style="width:5%" class="delete">Hapus</td>
                             </tr>
                         </thead>
                         <tbody>
