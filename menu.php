@@ -96,29 +96,30 @@ include "layout/header.php";
                 <div class="col-md-14">
 
                     <h2 align="center">
-                        <font color="black"> <b>Daftar Semua Menu</b>
+                        <font color="white"> <b>Daftar Semua Menu</b></font>
                     </h2>
                     <?php
                     $k = mysqli_query($konek, "SELECT * FROM produk");
                     while ($data = mysqli_fetch_array($k)) {
                     ?>
                         <div class="col-sm-4">
-                            <div class="panel panel-default">
-                                <div class="panel-body">
-                                    <a href="<?php echo $url; ?>menu.php?id=<?php echo $data['id'] ?>">
-                                        <img src="<?php echo $url; ?>uploads/<?php echo $data['gambar'] ?>" width="100%">
-                                        <h4><?php echo $data['nama'] ?></h4>
-                                    </a>
-                                    <p style="font-size:18px">Harga : <strong>Rp
-                                            <?php echo number_format($data['harga'], 0, ',', '.') ?></strong> </p>
-                                    <p>
-                                        <a href="<?php echo $url; ?>menu.php?id=<?php echo $data['id'] ?>" class="btn btn-success btn-sm" href="#" role="button">Lihat Detail</a>
-                                        <a href="<?php echo $url; ?>keranjang.php?act=beli&&produk_id=<?php echo $data['id'] ?>" class="btn btn-warning btn-sm" href="#" role="button">Pesan</a>
-                                    </p>
+                            <font color="black">
+                                <div class="panel panel-default">
+                                    <div class="panel-body">
+                                        <a href="<?php echo $url; ?>menu.php?id=<?php echo $data['id'] ?>">
+                                            <img src="<?php echo $url; ?>uploads/<?php echo $data['gambar'] ?>" width="100%">
+                                            <h4><?php echo $data['nama'] ?></h4>
+                                        </a>
+                                        <p style="font-size:18px">Harga : <strong>Rp
+                                                <?php echo number_format($data['harga'], 0, ',', '.') ?></strong> </p>
+                                        <p>
+                                            <a href="<?php echo $url; ?>menu.php?id=<?php echo $data['id'] ?>" class="btn btn-success btn-sm" href="#" role="button">Lihat Detail</a>
+                                            <a href="<?php echo $url; ?>keranjang.php?act=beli&&produk_id=<?php echo $data['id'] ?>" class="btn btn-warning btn-sm" href="#" role="button">Pesan</a>
+                                        </p>
+                                    </div>
                                 </div>
-                            </div>
                         </div>
-
+                        </font>
                     <?php } ?>
                 </div>
             </div>
