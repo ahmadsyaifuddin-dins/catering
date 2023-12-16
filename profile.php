@@ -1,15 +1,15 @@
-<?php 
-	include"inc/config.php";
-	
-	if(empty($_SESSION['iam_user'])){
-		redir("index.php");
-	}
-	$user = mysqli_fetch_object(mysqli_query($konek, "SELECT*FROM user WHERE id='$_SESSION[iam_user]'"));
-	
-	include"layout/header.php";
-	
-	$q = mysqli_query($konek, "select*from pesanan where user_id='$_SESSION[iam_user]'");
-			$j = mysqli_num_rows($q);
+<?php
+include "inc/config.php";
+
+if (empty($_SESSION['iam_user'])) {
+    redir("index.php");
+}
+$user = mysqli_fetch_object(mysqli_query($konek, "SELECT*FROM user WHERE id='$_SESSION[iam_user]'"));
+
+include "layout/header.php";
+
+$q = mysqli_query($konek, "select*from pesanan where user_id='$_SESSION[iam_user]'");
+$j = mysqli_num_rows($q);
 ?>
 
 <!DOCTYPE html>
@@ -76,22 +76,24 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php while($data=mysqli_fetch_object($q)){ ?>
-                                <tr <?php if($data->read == 0 ){ echo 'style="background:#cce9f8 !important;"'; } ?>>
-                                    <th scope="row"><?php echo $no++; ?></th>
-                                    <?php
-						$katpro = mysqli_query($konek, "select*from user where id='$data->user_id'");
-								$user = mysqli_fetch_array($katpro);
-					?>
-                                    <td><?php echo $data->nama ?></td>
-                                    <td><?php echo substr($data->tanggal_pesan,0,10) ?></td>
-                                    <td><?php echo $data->tanggal_digunakan ?></td>
-                                    <td><?php echo $data->telephone ?></td>
-                                    <td><?php echo $data->alamat ?></td>
-                                    <!--td>  
+                                <?php while ($data = mysqli_fetch_object($q)) { ?>
+                                    <tr <?php if ($data->read == 0) {
+                                            echo 'style="background:#cce9f8 !important;"';
+                                        } ?>>
+                                        <th scope="row"><?php echo $no++; ?></th>
+                                        <?php
+                                        $katpro = mysqli_query($konek, "select*from user where id='$data->user_id'");
+                                        $user = mysqli_fetch_array($katpro);
+                                        ?>
+                                        <td><?php echo $data->nama ?></td>
+                                        <td><?php echo substr($data->tanggal_pesan, 0, 10) ?></td>
+                                        <td><?php echo $data->tanggal_digunakan ?></td>
+                                        <td><?php echo $data->telephone ?></td>
+                                        <td><?php echo $data->alamat ?></td>
+                                        <!--td>  
 						<a class="btn btn-sm btn-danger" href="pesanan.php?act=delete&&id=<?php echo $data->id ?>">Batalkan</a>
 					</td-->
-                                </tr>
+                                    </tr>
                                 <?php } ?>
                             </tbody>
                         </table>
@@ -108,4 +110,4 @@
 
 </html>
 
-<?php include"layout/footer.php"; ?>
+<?php include "layout/footer.php"; ?>
