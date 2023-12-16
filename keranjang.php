@@ -64,7 +64,7 @@ include"layout/header.php";
             <div class="row">
                 <div class="col-md-12">
                     <h2>Keranjang anda </h2>
-                    <table class="table table-success table-bordered " style="width:100%">
+                    <table class="table table-bordered" style="width:100%">
                         <thead>
                             <tr style="background:#c3ebf8;font-weight:bold;">
                                 <td style="width:15%"> Produk </td>
@@ -95,11 +95,13 @@ foreach($cart as $id => $qty){
                                 </td>
                                 <td>
                                     <div class="CartDescription">
-                                        <h3> <a
+                                        <h3 style="font-weight:bold;"> <a style="font-size: 2rem;"
                                                 href="<?php echo $url; ?>menu.php?id=<?php echo $product['id'] ?>"><?= $product['nama'] ?></a>
                                         </h3>
-                                        <div class="price">
-                                            <?php echo  "Rp ".number_format($product['harga'], 0, ',', '.') ?></div>
+                                        <!-- 1.Harga Satuan -->
+                                        <div class="price" style="font-size: 1.6rem;">
+                                            <?php echo "<b> Rp  ".number_format($product['harga'], 0, ',', '.') ?> </b>
+                                        </div>
                                     </div>
                                 </td>
 
@@ -112,14 +114,18 @@ foreach($cart as $id => $qty){
                                             onchange="this.form.submit()">
                                     </form>
                                 </td>
-                                <td class="price"><?php echo number_format($t, 0, ',', '.') ?></td>
+                                <!-- 2.Harga (Satuan * Jumlah) -->
+                                <td style="font-weight:bold; font-size: 1.6rem;" class="price">
+                                    <?php echo number_format($t, 0, ',', '.') ?>
+                                </td>
                                 <td><a href="<?php echo $url; ?>keranjang.php?delete_cart=yes&&act=beli&&produk_id=<?php echo $id; ?>"
                                         title="Delete"> <i class="glyphicon glyphicon-trash fa-2x"></i></a></td>
                             </tr>
                             <?php } } ?>
                             <tr style="background:#c3ebf8;font-weight:bold;">
                                 <td colspan="3">SUB TOTAL</td>
-                                <td><?php echo number_format($total, 0, ',', '.') ?></td>
+                                <!-- 3.Harga SUB TOTAL -->
+                                <td style="font-size: 1.7rem;"><?php echo number_format($total, 0, ',', '.') ?></td>
                                 <td>&nbsp;</td>
                             </tr>
                         </tbody>
@@ -132,8 +138,10 @@ foreach($cart as $id => $qty){
                     <table class="table table-bordered">
 
                         <tr>
-                            <td style="background:#fafafa;"><b>Total</b></td>
-                            <td><b><?php echo "Rp ".number_format($total, 0, ',', '.') ?></a></td>
+                            <td style="background:#fafafa;"><b>TOTAL</b></td>
+                            <!-- 4.HARGA ALL TOTAL -->
+                            <td style="font-size: 2rem"> <?php echo "<b> Rp ".number_format($total, 0, ',', '.') ?>
+                                </b> </td>
                         </tr>
                     </table>
                     <form action="<?php echo  $url.'order.php' ?>" method="POST">

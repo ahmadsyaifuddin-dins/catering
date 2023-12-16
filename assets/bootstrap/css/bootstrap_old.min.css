@@ -2972,7 +2972,8 @@ pre code {
 }
 
 table {
-    background-color: transparent
+    background-color: transparent;
+    backdrop-filter: blur(12px);
 }
 
 caption {
