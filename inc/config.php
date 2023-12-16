@@ -1,7 +1,19 @@
 <?php
 	session_start();
-	$konek = mysqli_connect("127.0.0.1", "root", "", "catering");
-
+	$servername = "localhost";
+	$username = "root";
+	$password = "";
+	$database = "catering";
+	
+	// Create connection
+	$konek = mysqli_connect($servername, $username, $password, $database);
+	
+	
+	// Check connection
+	if ($konek->connect_error) {
+	die("Connection failed: " . $konek->connect_error);
+	}
+	
 	// settings
 	$url = "http://localhost/catering/";
 	$title = "Asai's Kitchen";
