@@ -46,7 +46,7 @@ include "layout/header.php";
                     <?php }
                 } ?>
                     <h3>
-                        <font color="black">Kontak Kami
+                        <font class="text-color-heading">Kontak Kami </font>
                     </h3>
                     <br>
                     <div class="col-md-8 content-menu" style="margin-top:-20px;">

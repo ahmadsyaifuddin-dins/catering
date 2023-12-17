@@ -64,7 +64,7 @@ if (!empty($_GET['produk_id']) && $_GET['act'] == 'beli') {
         <div class="col-md-9">
             <div class="row">
                 <div class="col-md-12">
-                    <h2>Keranjang anda </h2>
+                    <h2 class="text-color-heading">Keranjang anda </h2>
                     <table class="table table-bordered" style="width:100%">
                         <thead>
                             <tr style="background:#c3ebf8;font-weight:bold;">
@@ -98,7 +98,8 @@ if (!empty($_GET['produk_id']) && $_GET['act'] == 'beli') {
                                                 </h3>
                                                 <!-- 1.Harga Satuan -->
                                                 <div class="price" style="font-size: 1.6rem;">
-                                                    <?php echo "<b> Rp  " . number_format($product['harga'], 0, ',', '.') ?> </b>
+                                                    <?php echo "<b> Rp  " . number_format($product['harga'], 0, ',', '.') ?>
+                                                    </b>
                                                 </div>
                                             </div>
                                         </td>

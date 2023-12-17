@@ -74,7 +74,7 @@ $user = mysqli_fetch_object(mysqli_query($konek, "SELECT*FROM user WHERE id='$_S
             ?>
             <div class="row">
                 <div class="col-md-7">
-                    <h4>
+                    <h4 class="text-color-heading">
                         Pengisian Data Pembeli :
                     </h4><br>
                     <form action="" method="post" enctype="multipart/form-data">
@@ -107,7 +107,7 @@ $user = mysqli_fetch_object(mysqli_query($konek, "SELECT*FROM user WHERE id='$_S
                     </form>
                 </div>
                 <div class="col-md-12"><br>
-                    <h4>
+                    <h4 class="text-color-heading">
                         Detail Pesanan :
                     </h4>
                     <table class="table table-striped" style="width:100%">

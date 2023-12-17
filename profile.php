@@ -28,7 +28,7 @@ $j = mysqli_num_rows($q);
             <div class="row">
                 <div class="col-md-12">
 
-                    <h3>Profile : <?php echo $user->nama; ?></h3>
+                    <h3 class="text-color-heading">Profile : <?php echo $user->nama; ?></h3>
                     <br>
                     <div class="col-md-6 content-menu" style="margin-top:-20px;">
                         <table class="table table-bordered table-striped">

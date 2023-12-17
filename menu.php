@@ -25,7 +25,7 @@ include "layout/header.php";
             <font color="black">
                 <div class="row">
                     <div class="col-md-12">
-                        <h3>Detail : <?php echo $data['nama'] ?></h3>
+                        <h3 class="text-color-heading">Detail : <?php echo $data['nama'] ?></h3>
                         <br />
                         <div class="col-md-12 content-menu" style="margin-top:-20px;">
 
@@ -62,7 +62,8 @@ include "layout/header.php";
                 <div class="col-md-12">
                     <!-- <hr> -->
                     <font color="black">
-                        <h3 align="center">Kategori : <strong> <?php echo $kat['nama'] ?> </strong> </h3>
+                        <h3 class="text-color-heading" align="center">Kategori : <strong> <?php echo $kat['nama'] ?>
+                            </strong> </h3>
                         <?php
                         $k = mysqli_query($konek, "SELECT * FROM produk WHERE kategori_produk_id='$kategori'");
                         while ($data = mysqli_fetch_array($k)) {
@@ -96,7 +97,7 @@ include "layout/header.php";
                 <div class="col-md-14">
 
                     <h2 align="center">
-                        <font color="white"> <b>Daftar Semua Menu</b></font>
+                        <font class="text-color-heading"> <b>Daftar Semua Menu</b></font>
                     </h2>
                     <?php
                     $k = mysqli_query($konek, "SELECT * FROM produk");

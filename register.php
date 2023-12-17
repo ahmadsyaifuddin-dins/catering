@@ -32,31 +32,31 @@ include "layout/header.php";
                     $q = mysqli_query($konek, "INSERT INTO user VALUES(NULL,'$nama','$email','$telephone','$alamat','$password','user')");
                     if ($q) {
                 ?>
-                        <font color="black">
-                            <!-- <div class="alert alert-success">Register Berhasil.<br></div>-->
-                            <script type='text/javascript'>
-                                setTimeout(function() {
-                                    Swal.fire({
-                                        title: "Registrasi Berhasil !",
-                                        text: "Selamat Berbelanja",
-                                        icon: "success",
-                                        footer: '<a href="login.php">Silahkan Login !</a>',
-                                        timer: "100000",
-                                        showConfirmButton: false
-                                    });
-                                }, 1);
-                                window.setTimeout(function() {
-                                    window.location.replace('register.php');
-                                }, 100000);
-                            </script>
-                        <?php } else { ?>
-                            <div class="alert alert-danger">Terjadi kesalahan dalam pengisian form. Silahkan Coba Lagi</div>
-                    <?php }
+                        <!-- <div class="alert alert-success">Register Berhasil.<br></div>-->
+                        <script type='text/javascript'>
+                            setTimeout(function() {
+                                Swal.fire({
+                                    title: "Registrasi Berhasil !",
+                                    text: "Selamat Berbelanja",
+                                    icon: "success",
+                                    footer: '<a href="login.php">Silahkan Login !</a>',
+                                    timer: "100000",
+                                    showConfirmButton: false
+                                });
+                            }, 1);
+                            window.setTimeout(function() {
+                                window.location.replace('register.php');
+                            }, 100000);
+                        </script>
+                    <?php } else { ?>
+                        <div class="alert alert-danger">Terjadi kesalahan dalam pengisian form. Silahkan Coba Lagi</div>
+                <?php }
                 } ?>
-                    <h3>
-                        <font color="black">Register User
-                    </h3>
-                    <br>
+                <h3>
+                    <font class="text-color-heading">Register User </font>
+                </h3>
+                <br>
+                <font color="black">
                     <div class="col-md-7 content-menu" style="margin-top:-20px;">
 
                         <form action="" method="post" enctype="multipart/form-data">
