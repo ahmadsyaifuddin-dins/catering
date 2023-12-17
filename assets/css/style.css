@@ -3,7 +3,7 @@
   --var-text-Heading1: #fff;
 }
 
-.text-color-heading{
+.text-color-heading {
   color: var(--var-text-Heading1);
 }
 
@@ -191,10 +191,11 @@ middle a:hover {
 }
 
 /* TODO = WARNA ICON BAK SAMPAH (DELETE) */
-a .glyphicon{
+a .glyphicon {
   color: #000;
 }
-a .glyphicon .glyphicon-trash:hover{
+
+a .glyphicon .glyphicon-trash:hover {
   color: #fff;
 }
 
@@ -202,9 +203,10 @@ a .glyphicon .glyphicon-trash:hover{
 
 
 /* Order.php Page */
-.CartDescription h4 a{
+.CartDescription h4 a {
   color: #000;
 }
+
 /* Order.php page END */
 
 
