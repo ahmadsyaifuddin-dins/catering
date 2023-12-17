@@ -26,12 +26,11 @@ $j = mysqli_num_rows($q);
     <font color="black">
         <div class="col-md-9">
             <div class="row">
-                <div class="col-md-12">
-
-                    <h3 class="text-color-heading">Profile : <?php echo $user->nama; ?></h3>
+                <div class="col-md-12 content-menu">
+                    <h3>Profile : <?php echo $user->nama; ?></h3>
                     <br>
-                    <div class="col-md-6 content-menu" style="margin-top:-20px;">
-                        <table class="table table-bordered table-striped">
+                    <div class="col-md-6" style="margin-top:-20px;">
+                        <table class="table table-bordered">
                             <tr>
                                 <td>Nama</td>
                                 <td>:</td>
