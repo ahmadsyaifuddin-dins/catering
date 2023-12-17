@@ -1,5 +1,10 @@
 :root {
   --var-nav-bg: #ffa500;
+  --var-text-Heading1: green;
+}
+
+.text-color-heading{
+  color: var(--var-text-Heading1);
 }
 
 @media (min-width: 768px) {

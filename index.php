@@ -19,7 +19,7 @@ include "layout/header.php";
     <div class="col-md-9">
         <div class="row">
             <div class="col-md-13">
-                <font color="white">
+                <font class="text-color-heading">
                     <h2 class="animate__animated animate__lightSpeedInLeft animate__slower" align="center"> <b>Favorite
                             Menu</b> </h2>
                 </font>
@@ -52,7 +52,7 @@ include "layout/header.php";
         </div>
         <div class="row">
             <div class="col-md-13">
-                <font color="white">
+                <font class="text-color-heading">
                     <h2 class="animate__animated animate__lightSpeedInLeft animate__slower" align="center"> <b>Menu
                             Terbaru</b> </h2>
                 </font>
