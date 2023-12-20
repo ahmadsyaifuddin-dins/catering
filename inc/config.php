@@ -3,11 +3,10 @@ session_start();
 $servername = "localhost";
 $username = "root";
 $password = "";
-$database = "catering";
+$database = "catering"; //nama database yg di tuju
 
 // Create connection
 $konek = mysqli_connect($servername, $username, $password, $database);
-
 
 // Check connection
 if ($konek->connect_error) {
