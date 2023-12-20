@@ -123,6 +123,7 @@
                 <li data-target="#myCarousel" data-slide-to="3"></li>
                 <li data-target="#myCarousel" data-slide-to="4"></li>
                 <li data-target="#myCarousel" data-slide-to="5"></li>
+                <li data-target="#myCarousel" data-slide-to="6"></li>
             </ol>
 
             <!-- Wrapper for Slides -->
@@ -165,6 +166,13 @@
                 <div class="item">
                     <!-- Set the second background image using inline CSS below. -->
                     <div class="fill" style="background-image:url('<?php $url ?>assets/img/ayam-chicken.jpg');"></div>
+                    <div class="carousel-caption">
+                        <!-- <h2>AS</h2> -->
+                    </div>
+                </div>
+                <div class="item">
+                    <!-- Set the second background image using inline CSS below. -->
+                    <div class="fill" style="background-image:url('<?php $url ?>assets/img/Jus Buah.jpg');"></div>
                     <div class="carousel-caption">
                         <!-- <h2>AS</h2> -->
                     </div>
