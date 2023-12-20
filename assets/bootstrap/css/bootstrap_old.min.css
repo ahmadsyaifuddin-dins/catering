@@ -246,11 +246,11 @@ th {
     }
 
     a[href]:after {
-        content: " ("attr(href) ")"
+        content: " (" attr(href) ")"
     }
 
     abbr[title]:after {
-        content: " ("attr(title) ")"
+        content: " (" attr(title) ")"
     }
 
     a[href^="javascript:"]:after,
@@ -7875,22 +7875,22 @@ button.close {
 
 .carousel-indicators li {
     display: inline-block;
-    width: 10px;
-    height: 10px;
+    width: 30px;
+    height: 6px;
     margin: 1px;
     text-indent: -999px;
     cursor: pointer;
-    background-color: #000\9;
+    background-color: #000/9;
     background-color: rgba(0, 0, 0, 0);
-    border: 1px solid #fff;
-    border-radius: 10px
+    border: 2px outset brown;
+    border-radius: 20px
 }
 
 .carousel-indicators .active {
-    width: 12px;
-    height: 12px;
-    margin: 0;
-    background-color: #fff
+    width: 30px;
+    height: 6px;
+    margin: 1px;
+    background-color: #FF3E00;
 }
 
 .carousel-caption {
