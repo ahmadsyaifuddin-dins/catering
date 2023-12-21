@@ -7,6 +7,22 @@
   color: var(--var-text-Heading1);
 }
 
+@media (max-width: 480px) {
+  .img-center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .img-center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
 @media (min-width: 768px) {
   .container {
     width: 750px;
@@ -22,6 +38,12 @@
 @media (min-width: 992px) {
   .container {
     width: 970px;
+  }
+
+  .img-center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
