@@ -194,6 +194,8 @@
     <div class="container" style="margin-top:20px;">
         <div class="row">
             <div class="col-md-3">
+                <img class="img-center" src="<?php echo $url . 'uploads/logo2.png'; ?>" width="200" height="200">
+                <br>
                 <div class="warna-head-bg"
                     style="width:100%; height:auto; padding-top:3px; padding-bottom:3px; padding-left:10px;">
                     <h4>
@@ -252,14 +254,7 @@
                                 class="fa-solid fa-basket-shopping"></i> </a>
                     </div>
                 </div>
-                <div class="row col-md-12">
 
-                </div>
-                <div class="row col-sm-12">
-
-                    <img class="img-center" src="<?php echo $url . 'uploads/logo2.png'; ?>" width="200"
-                        height="200"><br><br>
-                </div>
             </div>
 
 </body>
