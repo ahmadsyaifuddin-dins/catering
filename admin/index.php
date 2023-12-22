@@ -1,5 +1,5 @@
 <?php
-include "../inc/config.php"; 
+include "../inc/config.php";
 if (!empty($_SESSION['iam_admin'])) {
     redir("home.php");
 }
@@ -11,12 +11,12 @@ if (!empty($_POST)) {
     // Use prepared statements to prevent SQL injection
     $query = "SELECT * FROM user WHERE email=? AND password=? AND status='admin'";
     $stmt = mysqli_prepare($konek, $query);
-    
+
     // Check if the prepared statement was successful
     if ($stmt) {
         mysqli_stmt_bind_param($stmt, "ss", $email, $password);
         mysqli_stmt_execute($stmt);
-        
+
         // Get the result
         $result = mysqli_stmt_get_result($stmt);
 
@@ -25,7 +25,7 @@ if (!empty($_POST)) {
             $_SESSION['iam_admin'] = $row->id;
             redir("home.php");
         } else {
-            alert("Maaf email dan password anda salah");
+            // alert("Maaf email dan password anda salah");
         }
 
         // Close the statement
@@ -45,6 +45,8 @@ if (!empty($_POST)) {
     <title>Login Admin 🔐</title>
     <link rel='stylesheet' href='<?php echo $url; ?>assets/bootstrap/css/bootstrap_old.min.css'>
     <link rel="stylesheet" href="<?php echo $url; ?>assets/css/style_login.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.1/dist/sweetalert2.min.css">
+
 </head>
 
 <body>
@@ -56,6 +58,9 @@ if (!empty($_POST)) {
             <button class="btn btn-lg btn-primary btn-block" type="submit">Login 🔑</button>
         </form>
     </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.1/dist/sweetalert2.all.min.js"></script>
 </body>
 
 </html>
