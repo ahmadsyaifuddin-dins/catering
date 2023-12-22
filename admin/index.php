@@ -25,7 +25,7 @@ if (!empty($_POST)) {
             $_SESSION['iam_admin'] = $row->id;
             redir("home.php");
         } else {
-            // alert("Maaf email dan password anda salah");
+            alert("Maaf email dan password anda salah");
         }
 
         // Close the statement
@@ -45,8 +45,6 @@ if (!empty($_POST)) {
     <title>Login Admin 🔐</title>
     <link rel='stylesheet' href='<?php echo $url; ?>assets/bootstrap/css/bootstrap_old.min.css'>
     <link rel="stylesheet" href="<?php echo $url; ?>assets/css/style_login.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.1/dist/sweetalert2.min.css">
-
 </head>
 
 <body>
@@ -58,9 +56,6 @@ if (!empty($_POST)) {
             <button class="btn btn-lg btn-primary btn-block" type="submit">Login 🔑</button>
         </form>
     </div>
-
-
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.1/dist/sweetalert2.all.min.js"></script>
 </body>
 
 </html>
