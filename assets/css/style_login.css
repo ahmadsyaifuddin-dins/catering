@@ -10,7 +10,7 @@ body {
   max-width: 380px;
   padding: 15px 35px 45px;
   margin: 0 auto;
-  backdrop-filter: blur(7px);
+  backdrop-filter: blur(12px);
   background-color: transparent;
   border: 1px solid rgba(0, 0, 0, 0.1);
 }
