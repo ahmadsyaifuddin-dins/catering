@@ -27,7 +27,7 @@ include "layout/header.php";
                     <div class="col-md-12">
                         <h3 class="text-color-heading">Detail : <?php echo $data['nama'] ?></h3>
                         <br />
-                        <div class="col-md-12 content-menu" style="margin-top:-20px;">
+                        <div class="col-md-10 content-menu" style="margin-top:-20px;">
 
                             <?php $kat = mysqli_fetch_array(mysqli_query($konek, "SELECT * FROM kategori_produk WHERE id='$data[kategori_produk_id]'"));  ?>
                             <middle>Kategori :<a href="<?php echo $url; ?>menu.php?kategori=<?php echo $kat['id'] ?>"><?php echo $kat['nama'] ?></a>
