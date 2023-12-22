@@ -15,7 +15,7 @@ if ($konek->connect_error) {
 
 // settings
 $url = "http://localhost/catering/";
-$title = "Asai's Kitchen";
+$title = "Asai's Kitchen 🍴🍉";
 $no = 1;
 
 function alert($command)
