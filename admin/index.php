@@ -25,7 +25,8 @@ if (!empty($_POST)) {
             $_SESSION['iam_admin'] = $row->id;
             redir("home.php");
         } else {
-            alert("Maaf email dan password anda salah");
+            // alert("Maaf email dan password anda salah");
+            // Swal.fire code ...
         }
 
         // Close the statement

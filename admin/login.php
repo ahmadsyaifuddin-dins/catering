@@ -28,9 +28,9 @@ if (!empty($_POST['email']) && !empty($_POST['password'])) {
         } else {
             // alert("Maaf email dan password anda salah");
             // Swal.fire({
-            //     title: "Good job!",
-            //     text: "You clicked the button!",
-            //     icon: "success"
+            //     title: "Gagal Login!",
+            //     text: "Password atau Akun Salah!",
+            //     icon: "erorr"
             //   });
         }
 
