@@ -147,11 +147,12 @@ include "inc/header.php";
 
             <?php while ($data = mysqli_fetch_object($q)) { ?>
             <tr>
-                <th scope="row"><?php echo $no++; ?></th>
-                <td><img src="<?php echo $url . 'uploads/' . $data->gambar ?>" width="100%"></td>
-                <td><?php echo $data->nama ?></td>
-                <td><?php echo number_format($data->harga, 0, ',', '.') ?></td>
-                <td>
+                <th style="vertical-align: middle" scope="row"><?php echo $no++; ?></th>
+                <td style="vertical-align: middle"><img src="<?php echo $url . 'uploads/' . $data->gambar ?>"
+                        width="100%"></td>
+                <td style="vertical-align: middle"><?php echo $data->nama ?></td>
+                <td style="vertical-align: middle"><?php echo number_format($data->harga, 0, ',', '.') ?></td>
+                <td style="vertical-align: middle">
                     <a class="btn btn-sm btn-success" href="produk.php?act=edit&&id=<?php echo $data->id ?>">Edit <i
                             class="fa-solid fa-pen-to-square"></i> </a>
                     <a class="btn btn-sm btn-danger" href="produk.php?act=delete&&id=<?php echo $data->id ?>">Delete <i
