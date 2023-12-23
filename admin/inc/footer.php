@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,27 +10,29 @@
 
 	<title>Document</title>
 </head>
-<body>
-	
 
-<div class="container" style="margin-top:20px;">
+<body>
+
+
+	<div class="container" style="margin-top:33%;">
 		<footer class="text-center">
 			<font color="white">
-			<div class="col-md-12 animate__animated animate__lightSpeedInLeft animate__slower"><b> &#169; Ahmad Syaifuddin <span id="year"></span> | AS Katering Online</b>
-			<!-- <br> -->
-			</div>
+				<div class="col-md-12 animate__animated animate__lightSpeedInLeft animate__slower"><b> &#169; Ahmad
+						Syaifuddin <span id="year"></span> | AS Katering Online</b>
+					<!-- <br> -->
+				</div>
 			</font>
 		</footer>
-	</div> 
-    <script src="<?php echo $url ?>assets/js/jquery.js"></script> 
-    <script src="<?php echo $url ?>assets/bootstrap/js/bootstrap.min.js"></script> 
+	</div>
+	<script src="<?php echo $url ?>assets/js/jquery.js"></script>
+	<script src="<?php echo $url ?>assets/bootstrap/js/bootstrap.min.js"></script>
 	<script src="<?php echo $url ?>assets/bootstrap/js/moment.js"></script>
 	<script src="<?php echo $url ?>assets/bootstrap/js/bootstrap-datetimepicker.min.js"></script>
 	<script type="text/javascript">
-		$(function () {
+		$(function() {
 			$('#datetimepicker').datetimepicker({
 				format: 'YYYY-MM-DD',
-            });
+			});
 			$('#datetimepicker2').datetimepicker({
 				format: 'YYYY-MM-DD',
 			});
@@ -38,6 +41,5 @@
 		document.getElementById("year").innerHTML = new Date().getFullYear();
 	</script>
 </body>
+
 </html>
-
-
