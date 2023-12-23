@@ -189,7 +189,7 @@
     <div class="container" style="margin-top:20px;">
         <div class="row">
             <div class="col-md-3">
-                <img class="img-center" src="<?php echo $url . 'uploads/logo2.jpg'; ?>" width="200" height="200">
+                <img class="img-center" src="<?php echo $url . 'uploads/logo2.png'; ?>" width="200" height="200">
                 <br>
                 <div class="warna-head-bg" style="width:100%; height:auto; padding-top:3px; padding-bottom:3px; padding-left:10px;">
                     <h4>
