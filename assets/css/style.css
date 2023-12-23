@@ -1,5 +1,5 @@
 :root {
-  --var-nav-bg: #ffa500;
+  --var-nav-bg: #cc0c0c;
   --var-text-Heading1: #fff;
 }
 
@@ -104,7 +104,7 @@ body {
 
 /* attribute a Nav User Page */
 nav a:hover {
-  color: #000 !important;
+  color: rgb(0, 0, 0) !important;
 
 }
 
