@@ -4,45 +4,6 @@ if (!empty($_SESSION['iam_admin'])) {
     redir("home.php");
 }
 
-if (!empty($_POST)) {
-    extract($_POST);
-    $password = md5($password);
-
-    // Use prepared statements to prevent SQL injection
-    $query = "SELECT * FROM user WHERE email=? AND password=? AND status='admin'";
-    $stmt = mysqli_prepare($konek, $query);
-
-    // Check if the prepared statement was successful
-    if ($stmt) {
-        mysqli_stmt_bind_param($stmt, "ss", $email, $password);
-        mysqli_stmt_execute($stmt);
-
-        // Get the result
-        $result = mysqli_stmt_get_result($stmt);
-
-        // Check if any rows were returned
-        if ($row = mysqli_fetch_object($result)) {
-            $_SESSION['iam_admin'] = $row->id;
-            redir("home.php");
-        } else {
-            // alert("Maaf email dan password anda salah");
-            // Swal.fire code ...
-            echo '<script>
-                    Swal.fire({
-                        title: "Gagal Login!",
-                        text: "Password atau Akun Salah!",
-                        icon: "error"
-                    });
-                  </script>';
-        }
-
-        // Close the statement
-        mysqli_stmt_close($stmt);
-    } else {
-        // Handle the error if preparing the statement fails
-        die('Error in preparing the statement');
-    }
-}
 ?>
 
 <!DOCTYPE html>
@@ -53,9 +14,7 @@ if (!empty($_POST)) {
     <title>Login Admin 🔐</title>
     <link rel='stylesheet' href='<?php echo $url; ?>assets/bootstrap/css/bootstrap_old.min.css'>
     <link rel="stylesheet" href="<?php echo $url; ?>assets/css/style_login.css">
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@latest/dist/sweetalert2.all.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@latest/dist/sweetalert2.min.css">
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.1/dist/sweetalert2.min.css" integrity="sha256-ZCK10swXv9CN059AmZf9UzWpJS34XvilDMJ79K+WOgc=" crossorigin="anonymous">
 
 </head>
 
@@ -68,6 +27,54 @@ if (!empty($_POST)) {
             <button class="btn btn-lg btn-primary btn-block" type="submit">Login 🔑</button>
         </form>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.1/dist/sweetalert2.all.min.js" integrity="sha256-5+4UA0RwHxrLdxuo+/LioZkIerSs8F/VDnV4Js9ZdwQ=" crossorigin="anonymous"></script>
+
+    <?php
+    if (!empty($_SESSION['iam_admin'])) {
+        redir("index.php");
+    }
+
+    if (!empty($_POST['email']) && !empty($_POST['password'])) {
+        $email = $_POST['email'];
+        $password = md5($_POST['password']);
+
+        // Use prepared statements to prevent SQL injection
+        $query = "SELECT * FROM user WHERE email=? AND password=? AND status='admin' LIMIT 1";
+        $stmt = mysqli_prepare($konek, $query);
+
+        // Check if the prepared statement was successful
+        if ($stmt) {
+            mysqli_stmt_bind_param($stmt, "ss", $email, $password);
+            mysqli_stmt_execute($stmt);
+
+            // Get the result
+            $result = mysqli_stmt_get_result($stmt);
+
+            // Check if any rows were returned
+            if ($row = mysqli_fetch_object($result)) {
+                $_SESSION['iam_admin'] = $row->id;
+                redir("home.php");
+            } else {
+                // alert("Maaf email dan password anda salah");
+                echo "<script type = \"text/javascript\">
+            Swal.fire({
+                title: 'Gagal Login !',
+                text: 'Password atau Email Salah!',
+                icon: 'error',
+            });
+            </script>";
+            }
+
+            // Close the statement
+            mysqli_stmt_close($stmt);
+        } else {
+            // Handle the error if preparing the statement fails
+            die('Error in preparing the statement');
+        }
+    }
+    ?>
+
 </body>
 
 </html>
