@@ -27,6 +27,13 @@ if (!empty($_POST)) {
         } else {
             // alert("Maaf email dan password anda salah");
             // Swal.fire code ...
+            echo '<script>
+                    Swal.fire({
+                        title: "Gagal Login!",
+                        text: "Password atau Akun Salah!",
+                        icon: "error"
+                    });
+                  </script>';
         }
 
         // Close the statement
@@ -46,6 +53,10 @@ if (!empty($_POST)) {
     <title>Login Admin 🔐</title>
     <link rel='stylesheet' href='<?php echo $url; ?>assets/bootstrap/css/bootstrap_old.min.css'>
     <link rel="stylesheet" href="<?php echo $url; ?>assets/css/style_login.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@latest/dist/sweetalert2.all.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@latest/dist/sweetalert2.min.css">
+
+
 </head>
 
 <body>
