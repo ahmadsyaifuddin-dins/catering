@@ -12,16 +12,16 @@
 
 	include"inc/header.php";
 	
-?> 
-	<div class="container">
-		<?php
+?>
+<div class="container">
+    <?php
 			$q = mysqli_query($konek, "select*from pembayaran order by status asc");
 			$j = mysqli_num_rows($q);
 		?>
-		<!--a class="btn btn-sm btn-primary" href="pesanan.php?act=create">Add Data</a-->
-		<div class="row">
-		<div class="col-md-12">
-		<?php
+    <!--a class="btn btn-sm btn-primary" href="pesanan.php?act=create">Add Data</a-->
+    <div class="row">
+        <div class="col-md-12">
+            <?php
 			if(!empty($_GET)){
 				if ($_GET['act'] == "info") {
 					$qInfo = mysqli_query($konek, "Select * from info_pembayaran limit 1") or die (mysqli_error());
@@ -35,20 +35,20 @@
 						}
 					}
 					?>
-					<div class="col-md-6">
-						<div class="row">
-							<h3>Info Pembayaran</h3>
-							<form action="" method="POST">
-								<textarea class="form-control" name="info"><?php echo $dInfo->info; ?></textarea>
-								<div class="form-group">
-									<br>
-									<input type="submit" name="submit" value="Submit" class="btn btn-success">
-								</div>
-							</form>
-						</div>
-					</div>
-					<hr/>
-					<?php
+            <div class="col-md-6">
+                <div class="row">
+                    <h3>Info Pembayaran</h3>
+                    <form action="" method="POST">
+                        <textarea class="form-control" name="info"><?php echo $dInfo->info; ?></textarea>
+                        <div class="form-group">
+                            <br>
+                            <input type="submit" name="submit" value="Submit" class="btn btn-success">
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <hr />
+            <?php
 				}
 				if ($_GET['act'] == "verified") {
 					extract($_GET);
@@ -85,83 +85,88 @@
 					$dataPembayaran = mysqli_fetch_object(mysqli_query($konek, "Select * from pembayaran where id=$_GET[id]"));
 					$dataPesanan = mysqli_fetch_object(mysqli_query($konek, "Select*from pesanan where id='$dataPembayaran->id_pesanan'"))
 					?>
-					<div class="col-md-6">
-						<h3> Detail Pembayaran</h3>
-						<table class="table table-striped">
-							<thead>
-							<tr>
-									<td>Nama</td>
-									<td><?php echo $dataPesanan->nama; ?></td>
-							</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td>Total Pembayaran</td>
-									<td><?php echo "Rp. " . number_format($dataPembayaran->total); ?></td>
-								</tr>
-								<tr>
-									<td>Bukti Transaksi</td>
-									<td><a href="../uploads/<?php echo $dataPembayaran->file; ?>" target="_newtab">Bukti Transaksi</a></td>
-								</tr>
-								<tr>
-									<td></td>
-									<td>
-										<?php
+            <div class="col-md-6">
+                <h3> Detail Pembayaran</h3>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <td>Nama</td>
+                            <td><?php echo $dataPesanan->nama; ?></td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Total Pembayaran</td>
+                            <td><?php echo "Rp. " . number_format($dataPembayaran->total); ?></td>
+                        </tr>
+                        <tr>
+                            <td>Bukti Transaksi</td>
+                            <td><a href="../uploads/<?php echo $dataPembayaran->file; ?>" target="_newtab">Bukti
+                                    Transaksi</a></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>
+                                <?php
 											if ($dataPembayaran->status == "pending") {
 												?>
-												<a href="pembayaran.php?act=verified&id=<?php echo $dataPembayaran->id; ?>&id_pesanan=<?php echo $dataPembayaran->id_pesanan; ?>" class="btn btn-sm btn-success">Verified <i class="fa-regular fa-circle-check fa-bounce fa-lg"></i> </a>
-												<?php
+                                <a href="pembayaran.php?act=verified&id=<?php echo $dataPembayaran->id; ?>&id_pesanan=<?php echo $dataPembayaran->id_pesanan; ?>"
+                                    class="btn btn-sm btn-success">Verified <i
+                                        class="fa-regular fa-circle-check fa-bounce fa-lg"></i> </a>
+                                <?php
 											}
 										?>
-									</td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
-					<?php
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <?php
 				}
 			}
 		?>
-		</div>
-		</div>
+        </div>
+    </div>
 
-		<link rel="stylesheet" href="../assets/css/border.css">
-		<h4>Daftar pembayaran Masuk (<?php echo ($j>0)?$j:0; ?>)</h4>
-		<a href="pembayaran.php?act=info" class="btn btn-info"> <i class="fa-solid fa-circle-info"></i> Info </a>
-		<hr>
-		<table class="table"> 
-			<thead style="background:#00b4d8"> 
-				<tr> 
-					<th>No</th> 
-					<th>Nama Pelanggan</th> 
-					<th>Total</th> 
-					<th>Status</th> 
-					<th>Aksi</th>
-				</tr>
-			</thead>
-			<tbody> 
-		<?php while($data=mysqli_fetch_object($q)){ ?> 
-				<tr <?php
+    <link rel="stylesheet" href="../assets/css/border.css">
+    <h4>Daftar pembayaran Masuk (<?php echo ($j>0)?$j:0; ?>)</h4>
+    <a href="pembayaran.php?act=info" class="btn btn-info"> <i class="fa-solid fa-circle-info"></i> Info </a>
+    <hr>
+    <table class="table">
+        <thead style="background:#00b4d8">
+            <tr>
+                <th>No</th>
+                <th>Nama Pelanggan</th>
+                <th>Total</th>
+                <th>Status</th>
+                <th>Aksi</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php while($data=mysqli_fetch_object($q)){ ?>
+            <tr <?php
 					if ($data->status == "pending" ) { echo 'style="background:#DF826C !important;"';}
 					elseif ($data->status == "verified" ) { echo 'style="background:#9ADE7B !important;"';}
-				?> > 
-					<th scope="row"><?php echo $no++; ?></th> 
-					<?php
+				?>>
+                <th scope="row"><?php echo $no++; ?></th>
+                <?php
 						$katpro = mysqli_query($konek, "select*from user where id='$data->id_user'");
 								$user = mysqli_fetch_array($katpro);
 					?>
-					<td><?php echo $user['nama'] ?></td> 
-					<td><?php echo 'Rp. ' . number_format($data->total, 0,',','.') ?></td> 
-					<td><?php echo $data->status ?></td> 
-					<td>
-						<a class="btn btn-sm btn-info" href="pembayaran.php?act=detail&id=<?php echo $data->id ?>">Cek <i class="fa-solid fa-circle-info"></i> </a>
-						<a class="btn btn-sm btn-success" href="detail_pesanan.php?id=<?php echo $data->id_pesanan ?>">Pesanan <i class="fa-solid fa-comment-dots"></i> </a>
-						<a class="btn btn-sm btn-danger" href="pembayaran.php?act=delete&&id=<?php echo $data->id ?>">Delete <i class="fa-solid fa-trash"></i> </a>
-					</td> 
-				</tr>
-		<?php } ?>
-			</tbody> 
-		</table> 
-    </div> <!-- /container -->
-	
-<?php include"inc/footer.php"; ?>
+                <td><?php echo $user['nama'] ?></td>
+                <td><?php echo 'Rp. ' . number_format($data->total, 0,',','.') ?></td>
+                <td><?php echo $data->status ?></td>
+                <td>
+                    <a class="btn btn-sm btn-info" href="pembayaran.php?act=detail&id=<?php echo $data->id ?>">Cek <i
+                            class="fa-solid fa-circle-info"></i> </a>
+                    <a class="btn btn-sm btn-success"
+                        href="detail_pesanan.php?id=<?php echo $data->id_pesanan ?>">Pesanan <i
+                            class="fa-solid fa-comment-dots"></i> </a>
+                    <a class="btn btn-sm btn-danger" href="pembayaran.php?act=delete&&id=<?php echo $data->id ?>">Delete
+                        <i class="fa-solid fa-trash"></i> </a>
+                </td>
+            </tr>
+            <?php } ?>
+        </tbody>
+    </table>
+</div> <!-- /container -->
