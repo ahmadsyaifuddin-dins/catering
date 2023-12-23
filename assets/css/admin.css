@@ -3,6 +3,12 @@ body {
     background-size: cover;
 }
 
+@media screen and (max-width: 480px) {
+    body {
+        background-size: contain;
+    }
+}
+
 /* Admin Home.php */
 .title-head {
     color: #fff;
@@ -13,4 +19,14 @@ body {
     -webkit-animation-delay: calc(var(--animate-delay)*2);
     animation-delay: 2s;
     animation-delay: calc(var(--animate-delay)*2)
+}
+
+/* END Admin Home.php */
+
+
+/* Admin/footer.php */
+@media screen and (max-width: 480px) {
+    footer {
+        margin-top: 110%;
+    }
 }
