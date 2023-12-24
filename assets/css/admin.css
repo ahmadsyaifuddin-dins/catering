@@ -14,11 +14,11 @@ body {
     color: #fff;
 }
 
-.animate__delay-2s {
-    -webkit-animation-delay: 2s;
-    -webkit-animation-delay: calc(var(--animate-delay)*2);
-    animation-delay: 2s;
-    animation-delay: calc(var(--animate-delay)*2)
+.animate__delay-3s {
+    -webkit-animation-delay: 3s;
+    -webkit-animation-delay: calc(var(--animate-delay)*3);
+    animation-delay: 3s;
+    animation-delay: calc(var(--animate-delay)*3)
 }
 
 /* END Admin Home.php */
