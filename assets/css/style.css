@@ -244,6 +244,8 @@ a .glyphicon .glyphicon-trash:hover {
 .footer {
   background-color: var(--var-nav-bg);
   color: #FFF;
+  border-top-right-radius: 25px;
+  border-bottom-left-radius: 25px;
 }
 
 /* Footer page END */
