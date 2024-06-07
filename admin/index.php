@@ -12,6 +12,7 @@ if (!empty($_SESSION['iam_admin'])) {
 <head>
     <meta charset="UTF-8">
     <title>Login Admin 🔐</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel='stylesheet' href='<?php echo $url; ?>assets/bootstrap/css/bootstrap_old.min.css'>
     <link rel="stylesheet" href="<?php echo $url; ?>assets/css/style_login.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.1/dist/sweetalert2.min.css" integrity="sha256-ZCK10swXv9CN059AmZf9UzWpJS34XvilDMJ79K+WOgc=" crossorigin="anonymous">

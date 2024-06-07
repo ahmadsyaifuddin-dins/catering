@@ -51,7 +51,7 @@
 
     <!-- Fixed navbar -->
     <nav class="navbar navbar-default navbar-fixed-top navbar-orange">
-        <div class="container">
+        <div class="container-fluid">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
                     <span class="sr-only">Toggle navigation</span>
@@ -64,7 +64,7 @@
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="<?php echo $url ?>"> <i class="fa-solid fa-house"></i> Home</a></li>
-                    <li><a href="<?php echo $url ?>menu.php"> <i class="fa-solid fa-cart-plus"></i> Menu Katering</a>
+                    <li><a href="<?php echo $url ?>menu.php"> <i class="fa-solid fa-cart-plus"></i> Menu Makanan & Minuman</a>
                     </li>
                     <li><a href="<?php echo $url ?>kontak.php"> <i class="fa-solid fa-message"></i> Kontak Kami</a></li>
                     <li><a href="<?php echo $url ?>info.php"> <i class="fa-solid fa-circle-info"></i> Info
@@ -189,7 +189,7 @@
     <div class="container" style="margin-top:20px;">
         <div class="row">
             <div class="col-md-3">
-                <img class="img-center" src="<?php echo $url . 'uploads/logo2.png'; ?>" width="200" height="200">
+                <img class="img-center" src="<?php echo $url . 'assets/img/logo2.png'; ?>" width="200" height="200">
                 <br>
                 <div class="warna-head-bg" style="width:100%; height:auto; padding-top:3px; padding-bottom:3px; padding-left:10px;">
                     <h4>

@@ -32,7 +32,7 @@ include "layout/header.php";
                             <div class="panel panel-default">
                                 <div class="panel-body">
                                     <a href="<?php echo $url; ?>menu.php?id=<?php echo $data['id'] ?>">
-                                        <img src="<?php echo $url; ?>uploads/<?php echo $data['gambar'] ?>" width="100%">
+                                        <img src="<?php echo $url; ?>uploads2/<?php echo $data['gambar'] ?>" width="100%">
                                         <h4><?php echo $data['nama'] ?></h4>
                                     </a>
                                     <p><?php echo $data['deskripsi'] ?></p>
@@ -65,7 +65,7 @@ include "layout/header.php";
                             <font color="black">
                                 <div class="panel-body">
                                     <a href="<?php echo $url; ?>menu.php?id=<?php echo $data['id'] ?>">
-                                        <img src="<?php echo $url; ?>uploads/<?php echo $data['gambar'] ?>" width="100%">
+                                        <img src="<?php echo $url; ?>uploads2/<?php echo $data['gambar'] ?>" width="100%">
                                         <h4><?php echo $data['nama'] ?></h4>
                                     </a>
                                     <p style="font-size:18px">Harga : <strong>Rp

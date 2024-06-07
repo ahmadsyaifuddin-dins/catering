@@ -57,6 +57,47 @@ if (!empty($_GET['produk_id']) && $_GET['act'] == 'beli') {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+    @media (max-width: 480px) {
+            .form-control {
+                font-size: 16px;
+                padding: 10px;
+            }
+        }
+
+        .table {
+            width: 100%;
+            margin-bottom: 20px;
+            border-collapse: collapse;
+        }
+
+        .table th, .table td {
+            padding: 8px;
+            line-height: 1.42857143;
+            vertical-align: top;
+            border-top: 1px solid #ddd;
+        }
+
+        .table th {
+            font-weight: bold;
+            background: #c3ebf8;
+        }
+
+        .CartProductThumb img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .CartDescription h3 a {
+            font-size: 1.4rem;
+            color: #000;
+        }
+
+        .CartDescription .price {
+            font-size: 1.2rem;
+        }
+    </style>
 </head>
 
 <body>
@@ -69,10 +110,10 @@ if (!empty($_GET['produk_id']) && $_GET['act'] == 'beli') {
                         <thead>
                             <tr style="background:#c3ebf8;font-weight:bold;">
                                 <td style="width:15%"> Produk </td>
-                                <td style="width:40%">Details</td>
-                                <td style="width:10%">QTY</td>
-                                <td style="width:15%">Total</td>
-                                <td style="width:5%" class="delete">Hapus</td>
+                                <td style="width:15%">Details</td>
+                                <td style="width:20%">QTY</td>
+                                <td style="width:12%">Total</td>
+                                <td style="width:1%" class="delete">Hapus</td>
                             </tr>
                         </thead>
                         <tbody>
@@ -94,7 +135,7 @@ if (!empty($_GET['produk_id']) && $_GET['act'] == 'beli') {
                                         </td>
                                         <td>
                                             <div class="CartDescription">
-                                                <h3 style="font-weight:bold;"> <a style="font-size: 2rem;" href="<?php echo $url; ?>menu.php?id=<?php echo $product['id'] ?>"><?= $product['nama'] ?></a>
+                                                <h3 style="font-weight:bold;"> <a style="font-size: 1.5rem;" href="<?php echo $url; ?>menu.php?id=<?php echo $product['id'] ?>"><?= $product['nama'] ?></a>
                                                 </h3>
                                                 <!-- 1.Harga Satuan -->
                                                 <div class="price" style="font-size: 1.6rem;">
