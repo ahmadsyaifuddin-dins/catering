@@ -65,7 +65,7 @@ if (!empty($_POST)) {
                     confirmButtonText: 'OK'
                 }).then((result) => {
                     <?php if ($alertType == "success"): ?>
-                        window.location.href = 'index.php';
+                        window.location.href = 'menu.php';
                     <?php endif; ?>
                 });
             </script>
