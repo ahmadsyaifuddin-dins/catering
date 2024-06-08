@@ -32,21 +32,16 @@ include "layout/header.php";
                     $q = mysqli_query($konek, "INSERT INTO user VALUES(NULL,'$nama','$email','$telephone','$alamat','$password','user')");
                     if ($q) {
                 ?>
-                        <!-- <div class="alert alert-success">Register Berhasil.<br></div>-->
                         <script type='text/javascript'>
                             setTimeout(function() {
                                 Swal.fire({
-                                    title: "Registrasi Berhasil !",
+                                    title: "Registrasi Berhasil!",
                                     text: "Selamat Berbelanja",
                                     icon: "success",
-                                    footer: '<a href="login.php">Silahkan Login !</a>',
-                                    timer: "100000",
+                                    footer: '<a href="login.php" class="btn btn-primary">Silahkan Login!</a>',
                                     showConfirmButton: false
                                 });
                             }, 1);
-                            window.setTimeout(function() {
-                                window.location.replace('register.php');
-                            }, 100000);
                         </script>
                     <?php } else { ?>
                         <div class="alert alert-danger">Terjadi kesalahan dalam pengisian form. Silahkan Coba Lagi</div>
@@ -71,7 +66,7 @@ include "layout/header.php";
                             <label>Password</label><br>
                             <input type="password" class="form-control" name="password" required><br>
 
-                            <input type="submit" name="form-input" id="sweetAlert" value="Register" class="btn btn-success">
+                            <input type="submit" name="form-input" value="Register" class="btn btn-success">
                         </form>
 
                     </div>
@@ -79,17 +74,13 @@ include "layout/header.php";
                         Sudah Punya Akun ? <a href="login.php">Login Sekarang !</a>
                     </div>
 
-
-
+                </div>
             </div>
         </div>
-    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.0/dist/sweetalert2.all.min.js"></script>
 </body>
 
 </html>
-
-
 
 <?php include "layout/footer.php"; ?>

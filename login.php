@@ -5,18 +5,21 @@ if (!empty($_SESSION['iam_user'])) {
 }
 include "layout/header.php";
 
-
+$message = '';
+$alertType = '';
 
 if (!empty($_POST)) {
     extract($_POST);
     $password = md5($password);
     $q = mysqli_query($konek, "SELECT * FROM `user` WHERE email='$email' AND password='$password' AND status='user'") or die(mysqli_error());
-    if ($q) {
+    if ($q && mysqli_num_rows($q) > 0) {
         $r = mysqli_fetch_object($q);
         $_SESSION['iam_user'] = $r->id;
-        redir("index.php");
+        $message = "Anda berhasil login!";
+        $alertType = "success";
     } else {
-        alert("Maaf email dan password anda salah");
+        $message = "Maaf, email dan password Anda salah.";
+        $alertType = "error";
     }
 }
 ?>
@@ -26,6 +29,9 @@ if (!empty($_POST)) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login User</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
 </head>
 
 <body>
@@ -33,43 +39,37 @@ if (!empty($_POST)) {
         <div class="col-md-9">
             <div class="row">
                 <div class="col-md-12">
-
-                    <?php
-                    if (!empty($_POST)) {
-                        extract($_POST);
-
-                        $q = mysqli_query($konek, "INSERT INTO kontak VALUES(NULL,'$nama','$email','$subjek','$pesan')");
-                        if ($q) {
-                    ?>
-
-                    <div class="alert alert-success">Terimakasih atas masukannya</div>
-                    <?php } else { ?>
-                    <div class="alert alert-danger">Terjadi kesalahan dalam pengisian form. Data belum terkirim.</div>
-                    <?php }
-                    } ?>
                     <h3 class="text-color-heading">Login User</h3>
                     <br>
                     <div class="col-md-7 content-menu" style="margin-top:-20px;">
-
                         <form action="" method="post" enctype="multipart/form-data">
                             <label>Email</label><br>
-                            <input type="email" class="form-control" name="email" placeholder="Email" required=""
-                                autofocus="" /><br>
+                            <input type="email" class="form-control" name="email" placeholder="Email" required="" autofocus="" /><br>
                             <label>Password</label><br>
-                            <input type="password" class="form-control" name="password" placeholder="Password"
-                                required="" /> <br>
+                            <input type="password" class="form-control" name="password" placeholder="Password" required="" /> <br>
                             <input type="submit" name="form-input" value="Login" class="btn btn-success">
                         </form>
-
                     </div>
                     <div class="col-md-7 content-menu">
                         Belum Punya Akun ? <a href="register.php">Buat Akun Sekarang !</a>
                     </div>
-
-
                 </div>
             </div>
         </div>
+        <?php if (!empty($message)): ?>
+            <script type="text/javascript">
+                Swal.fire({
+                    title: '<?php echo $alertType == "success" ? "Berhasil" : "Gagal"; ?>',
+                    text: '<?php echo $message; ?>',
+                    icon: '<?php echo $alertType; ?>',
+                    confirmButtonText: 'OK'
+                }).then((result) => {
+                    <?php if ($alertType == "success"): ?>
+                        window.location.href = 'index.php';
+                    <?php endif; ?>
+                });
+            </script>
+        <?php endif; ?>
 </body>
 
 </html>
