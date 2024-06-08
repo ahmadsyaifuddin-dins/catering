@@ -2,13 +2,12 @@
 include "../inc/config.php";
 if (!empty($_SESSION['iam_admin'])) {
     redir("home.php");
+    exit; // Stop further execution if the admin is already logged in
 }
-
 ?>
 
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="UTF-8">
     <title>Login Admin 🔐</title>
@@ -16,9 +15,7 @@ if (!empty($_SESSION['iam_admin'])) {
     <link rel='stylesheet' href='<?php echo $url; ?>assets/bootstrap/css/bootstrap_old.min.css'>
     <link rel="stylesheet" href="<?php echo $url; ?>assets/css/style_login.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.1/dist/sweetalert2.min.css" integrity="sha256-ZCK10swXv9CN059AmZf9UzWpJS34XvilDMJ79K+WOgc=" crossorigin="anonymous">
-
 </head>
-
 <body>
     <div class="wrapper">
         <form class="form-signin" action="" method="POST">
@@ -32,10 +29,6 @@ if (!empty($_SESSION['iam_admin'])) {
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.1/dist/sweetalert2.all.min.js" integrity="sha256-5+4UA0RwHxrLdxuo+/LioZkIerSs8F/VDnV4Js9ZdwQ=" crossorigin="anonymous"></script>
 
     <?php
-    if (!empty($_SESSION['iam_admin'])) {
-        redir("index.php");
-    }
-
     if (!empty($_POST['email']) && !empty($_POST['password'])) {
         $email = $_POST['email'];
         $password = md5($_POST['password']);
@@ -55,27 +48,25 @@ if (!empty($_SESSION['iam_admin'])) {
             // Check if any rows were returned
             if ($row = mysqli_fetch_object($result)) {
                 $_SESSION['iam_admin'] = $row->id;
+                $_SESSION['just_logged_in'] = true; // Set session variable to indicate successful login
                 redir("home.php");
+                exit; // Stop further execution after redirection
             } else {
-                // alert("Maaf email dan password anda salah");
-                echo "<script type = \"text/javascript\">
-            Swal.fire({
-                title: 'Gagal Login !',
-                text: 'Password atau Email Salah!',
-                icon: 'error',
-            });
-            </script>";
+                echo "<script type='text/javascript'>
+                Swal.fire({
+                    title: 'Gagal Login !',
+                    text: 'Password atau Email Salah!',
+                    icon: 'error',
+                });
+                </script>";
             }
 
             // Close the statement
             mysqli_stmt_close($stmt);
         } else {
-            // Handle the error if preparing the statement fails
             die('Error in preparing the statement');
         }
     }
     ?>
-
 </body>
-
 </html>
