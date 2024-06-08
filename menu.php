@@ -1,6 +1,7 @@
 <?php
 include "inc/config.php";
 include "layout/header.php";
+$loop_index = 0; // Initialize loop index before the loop
 
 ?>
 <?php if (!empty($_GET['id'])) { ?>
@@ -78,7 +79,9 @@ include "layout/header.php";
                             <?php if ($loop_index % 3 == 2) { ?>
                                 <div class="clearfix"></div>
                             <?php } ?>
-                        <?php } ?>
+                        <?php 
+                        $loop_index++;
+                        } ?>
                 </div>
             </div>
         </div>
@@ -118,7 +121,9 @@ include "layout/header.php";
                         <?php if ($loop_index % 3 == 2) { ?>
                             <div class="clearfix"></div>
                         <?php } ?>
-                    <?php $loop_index++; } ?>
+                    <?php 
+                    $loop_index++;
+                    } ?>
                 </div>
             </div>
         </div>
