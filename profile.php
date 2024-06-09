@@ -49,6 +49,11 @@ $j = mysqli_num_rows($q);
                                 <td><?php echo $user->email; ?></td>
                             </tr>
                             <tr>
+                                <td>Username</td>
+                                <td>:</td>
+                                <td><?php echo $user->username; ?></td>
+                            </tr>
+                            <tr>
                                 <td>Password</td>
                                 <td>:</td>
                                 <td>--- *** --</td>

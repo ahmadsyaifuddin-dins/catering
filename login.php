@@ -9,12 +9,13 @@ include "layout/header.php";
 
 $message = '';
 $alertType = '';
+$emailOrUsername = isset($_POST['email_or_username']) ? $_POST['email_or_username'] : '';
 
 if (!empty($_POST)) {
     extract($_POST);
     $password = md5($password);
     $login_time = date('l/d/M/Y-H:i:s:a');
-    $q = mysqli_query($konek, "SELECT * FROM `user` WHERE email='$email' AND password='$password' AND status='user'") or die(mysqli_error($konek));
+    $q = mysqli_query($konek, "SELECT * FROM `user` WHERE (email='$emailOrUsername' OR username='$emailOrUsername') AND password='$password' AND status='user'") or die(mysqli_error($konek));
     if ($q && mysqli_num_rows($q) > 0) {
         $r = mysqli_fetch_object($q);
         $_SESSION['iam_user'] = $r->id;
@@ -25,7 +26,7 @@ if (!empty($_POST)) {
         $message = "Anda berhasil login!";
         $alertType = "success";
     } else {
-        $message = "Maaf, email dan password Anda salah.";
+        $message = "Maaf, email atau username dan password Anda salah.";
         $alertType = "error";
     }
 }
@@ -46,20 +47,24 @@ if (!empty($_POST)) {
         <div class="col-md-9">
             <div class="row">
                 <div class="col-md-12">
-                    <h3 class="text-color-heading">Login User</h3>
+                    <h3 class="text-color-heading"><b>Login User</b></h3>
                     <br>
                     <div class="col-md-7 content-menu" style="margin-top:-20px;">
                         <form action="" method="post" enctype="multipart/form-data">
-                            <label>Email</label><br>
-                            <input type="email" class="form-control" name="email" placeholder="Email" required="" autofocus="" /><br>
-                            <label>Password</label><br>
-                            <input type="password" class="form-control" name="password" placeholder="Password" required="" /> <br>
+                            <div class="form-group">
+                                <label for="email_or_username">Username atau Email</label>
+                                <input type="text" placeholder="Username atau Email" class="form-control" id="email_or_username" name="email_or_username" placeholder="" required="" autofocus="" />
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                <input type="password" class="form-control" id="password" name="password" placeholder="Password" required="" />
+                            </div>
                             <input type="hidden" name="login_time" value="<?php echo date('l/d/M/Y-H:i:s:a'); ?>">
                             <button type="submit" class="btn btn-success">Login</button>
                         </form>
                     </div>
                     <div class="col-md-7 content-menu">
-                        Belum Punya Akun ? <a href="register.php">Buat Akun Sekarang !</a>
+                        Belum Punya Akun? <a href="register.php">Buat Akun Sekarang!</a>
                     </div>
                 </div>
             </div>
