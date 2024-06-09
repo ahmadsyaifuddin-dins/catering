@@ -25,7 +25,7 @@ include "inc/header.php";
     <div class="container">
         <div class="row">
             <div class="col-sm-12">
-                <h2 class="title-head animate__hinge animate__delay-3s"> <i class="fa-solid fa-gear"></i> Administrator Asai Kitchen (Mysql)</h2>
+                <h2 class="title-head animate__hinge animate__delay-3s"> <i class="fa-solid fa-gear"></i> Administrator Asai </h2>
             </div>
         </div>
     </div>
