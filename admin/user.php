@@ -1,6 +1,12 @@
 <?php
 include "../inc/config.php";
 
+// Check if the admin is not logged in, redirect to login page
+if (empty($_SESSION['iam_admin'])) {
+    redir("index.php");
+    exit; // Stop further execution if the user is not logged in
+}
+
 if (!empty($_GET)) {
     if ($_GET['act'] == 'delete') {
         $q = mysqli_query($konek, "DELETE FROM user WHERE id='$_GET[id]'");

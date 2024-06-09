@@ -67,7 +67,7 @@ include "layout/header.php";
                         <form action="" method="post" enctype="multipart/form-data">
                             <div class="form-group">
                                 <label for="nama">Nama</label>
-                                <input type="text" placeholder="Ahmad Syaifuddin" class="form-control" id="nama" name="nama" required>
+                                <input type="text" placeholder="Ahmad Syaifuddin" class="form-control" id="nama" name="nama" required autofocus="">
                             </div>
                             <div class="form-group">
                                 <label for="email">Email</label>
