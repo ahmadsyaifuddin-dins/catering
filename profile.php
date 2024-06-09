@@ -49,9 +49,9 @@ $j = mysqli_num_rows($q);
                                 <td><?php echo $user->email; ?></td>
                             </tr>
                             <tr>
-                                <td>Telephone</td>
+                                <td>Password</td>
                                 <td>:</td>
-                                <td><?php echo $user->telephone; ?></td>
+                                <td>--- *** --</td>
                             </tr>
                             <tr>
                                 <td>Alamat</td>
@@ -59,10 +59,27 @@ $j = mysqli_num_rows($q);
                                 <td><?php echo $user->alamat; ?></td>
                             </tr>
                             <tr>
-                                <td>Password</td>
+                                <td>Jenis Kelamin</td>
                                 <td>:</td>
-                                <td>--- *** --</td>
+                                <td><?php echo $user->jenis_kelamin; ?></td>
                             </tr>
+                            <tr>
+                                <td>Telephone</td>
+                                <td>:</td>
+                                <td><?php echo $user->telephone; ?></td>
+                            </tr>
+                            <tr>
+                                <td>Online</td>
+                                <td>:</td>
+                                <td><?php echo $user->last_login; ?></td>
+                            </tr>
+                            <tr>
+                                <td>Tanggal Registrasi</td>
+                                <td>:</td>
+                                <td><?php echo $user->created_acc; ?></td>
+                            </tr>
+                            
+                            
                         </table>
                     </div>
 

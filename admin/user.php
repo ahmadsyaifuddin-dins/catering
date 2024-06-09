@@ -17,7 +17,7 @@ if (!empty($_GET['act']) && $_GET['act'] == 'create') {
     if (!empty($_POST)) {
         extract($_POST);
         $password = md5($password);
-        $q = mysqli_query($konek, "insert into user Values(NULL,'$nama','$email','$telephone','$alamat','$password','$status')");
+        $q = mysqli_query($konek, "insert into user Values(NULL,'$nama','$email','$telephone','$alamat','$password','$jk','$status')");
         if ($q) {
             alert("Success");
             redir("user.php");
@@ -28,7 +28,7 @@ if (!empty($_GET['act']) && $_GET['act'] == 'edit') {
     if (!empty($_POST)) {
         extract($_POST);
         $password = md5($password);
-        $q = mysqli_query($konek, "update user SET nama='$nama',email='$email',telephone='$telephone',alamat='$alamat',password='$password',status='$status' where id=$_GET[id]") or die(mysqli_error());
+        $q = mysqli_query($konek, "update user SET nama='$nama',email='$email',telephone='$telephone',alamat='$alamat',password='$password',jk='$jk',status='$status' where id=$_GET[id]") or die(mysqli_error());
         if ($q) {
             alert("Success");
             redir("user.php");
@@ -126,11 +126,14 @@ include "inc/header.php";
         <thead style="background:#00b4d8">
             <tr>
                 <th>No</th>
-                <th>Nama User</th>
-                <th>Email User</th>
-                <th>Telephone User</th>
-                <th>Alamat User</th>
+                <th>Nama</th>
+                <th>Email</th>
+                <th>Telephone</th>
+                <th>Alamat</th>
+                <th>Kelamin</th>
+                <th>Waktu Online</th>
                 <th>Status</th>
+                <th>Created_Account</th>
                 <th>Aksi</th>
             </tr>
         </thead>
@@ -146,7 +149,10 @@ include "inc/header.php";
                     <td><?php echo $data->email ?></td>
                     <td><?php echo $data->telephone ?></td>
                     <td><?php echo $data->alamat ?></td>
+                    <td><?php echo $data->jenis_kelamin ?></td>
+                    <td><?php echo $data->last_login ?></td>
                     <td><?php echo $data->status ?></td>
+                    <td><?php echo $data->created_acc ?></td>
                     <td>
                         <a class="btn btn-sm btn-success" href="user.php?act=edit&&id=<?php echo $data->id ?>">Edit <i class="fa-solid fa-user-pen"></i> </a>
                         <a class="btn btn-sm btn-danger" href="user.php?act=delete&&id=<?php echo $data->id ?>">Delete <i class="fa-solid fa-trash"></i> </a>

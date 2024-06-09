@@ -28,8 +28,10 @@ include "layout/header.php";
                 if (!empty($_POST)) {
                     extract($_POST);
 
+                    $login_time = date('l/d/M/Y-H:i:s:a'); // Format datetime standar untuk MySQL
                     $password = md5($password);
-                    $q = mysqli_query($konek, "INSERT INTO user VALUES(NULL,'$nama','$email','$telephone','$alamat','$password','user')");
+                    
+                    $q = mysqli_query($konek, "INSERT INTO user (nama, email, password, alamat, jenis_kelamin, telephone, status, last_login) VALUES ('$nama', '$email', '$password', '$alamat', '$jenis_kelamin', '$telephone', 'user', '$login_time')");
                     if ($q) {
                 ?>
                         <script type='text/javascript'>
@@ -59,14 +61,25 @@ include "layout/header.php";
                             <input type="text" class="form-control" name="nama" required><br>
                             <label>Email</label><br>
                             <input type="email" class="form-control" name="email" required><br>
-                            <label>Telephone</label><br>
-                            <input type="text" class="form-control" name="telephone" required><br>
-                            <label>Alamat</label><br>
-                            <input type="text" class="form-control" name="alamat" required><br>
                             <label>Password</label><br>
                             <input type="password" class="form-control" name="password" required><br>
+                            <label>Alamat</label><br>
+                            <input type="text" class="form-control" name="alamat" required><br>
+                            <label for='jenis_kelamin'>Jenis Kelamin</label> <br>
+                            <select class="form-control" id="jenis-kelamin" name="jenis_kelamin" required>
+                                <option value="LAKI-LAKI">Laki-laki</option>
+                                <option value="PEREMPUAN">Perempuan</option>
+                                <br>
+                            </select>
+                            <br>
+                            <label>Telephone</label><br>
+                            <input type="text" class="form-control" name="telephone" required><br>
+                        
+                            <br>
 
-                            <input type="submit" name="form-input" value="Register" class="btn btn-success">
+                            <input type="hidden" name="login_time" value="<?php echo date('l/d/M/Y-H:i:s:a'); ?>">
+                            <button type="submit" class="btn btn-success">Register</button>                        
+                        
                         </form>
 
                     </div>
