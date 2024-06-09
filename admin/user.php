@@ -104,12 +104,17 @@ include "inc/header.php";
                     <input type="email" class="form-control" name="email" value="<?php echo $data->email; ?>" required><br>
                     <label>Username</label><br>
                     <input type="text" class="form-control" name="username" value="<?php echo $data->username; ?>" required><br>
+                    <label>Password</label><br>
+                    <input type="password" class="form-control" name="password" required><br>
                     <label>Telephone</label><br>
                     <input type="text" class="form-control" name="telephone" value="<?php echo $data->telephone; ?>" required><br>
                     <label>Alamat</label><br>
                     <input type="text" class="form-control" name="alamat" value="<?php echo $data->alamat; ?>" required><br>
-                    <label>Password</label><br>
-                    <input type="password" class="form-control" name="password" required><br>
+                    <label for="jenis_kelamin">Jenis Kelamin</label>
+                    <select class="form-control" id="jenis_kelamin" name="jk" required>
+                        <option value="LAKI-LAKI">Laki-laki</option>
+                        <option value="PEREMPUAN">Perempuan</option>
+                    </select><br>
                     <label>Status</label><br>
                     <select name="status" required class="form-control">
                         <?php if ($data->status === "User") : ?>
