@@ -20,7 +20,10 @@ $user = mysqli_fetch_object(mysqli_query($konek, "SELECT*FROM user WHERE id='$_S
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/driver.js@1.0.1/dist/driver.css"/>
+    <link rel="stylesheet" href="assets/css/drive.css">
+    <script src="https://cdn.jsdelivr.net/npm/driver.js@1.0.1/dist/driver.js.iife.js"></script>
 </head>
 
 <body>
@@ -163,6 +166,9 @@ $user = mysqli_fetch_object(mysqli_query($konek, "SELECT*FROM user WHERE id='$_S
 
             </div>
         </div>
+
+        <script src="<?php echo $url ?>assets/js/driveOrd.js"></script>
+
 </body>
 
 </html>
