@@ -1,10 +1,10 @@
 </div> <!-- /container -->
 </div> <!-- /container -->
-
-<div class="container footer" style="margin-top:20px;">
-    <br />
+<br>
+<div class="container" style="margin-top:20px;">
+    <br>
     <footer class="text-center">
-        <div class="col-md-12 "> <b>&#169; Ahmad Syaifuddin <span id="year"> </span> | AS Katering Online</b>
+        <div class="col-md-12"> <b>&#169; Ahmad Syaifuddin <span id="year"> </span> | AS Katering Online</b>
             <br>
             <br>
         </div>

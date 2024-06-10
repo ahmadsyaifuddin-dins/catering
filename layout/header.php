@@ -46,7 +46,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.php">Asai's Kitchen</a>
+                <a class="navbar-brand" href="index.php">Asai's 🍴🍝</a>
                 <ul class="nav navbar-nav navbar-right user-icon">
                     <?php if (!empty($_SESSION['iam_user'])) { 
                         $user = mysqli_fetch_object(mysqli_query($konek, "SELECT*FROM user where id='$_SESSION[iam_user]'"));

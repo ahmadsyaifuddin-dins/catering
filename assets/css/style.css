@@ -62,17 +62,40 @@
 }
 
 
-.content-menu {
-  background-color: #FFF;
-  padding: 5px;
+.centered-form {
+  justify-content: center;
+  align-items: center;
 }
+
+.form-container {
+  background-color: transparent;
+  backdrop-filter: blur(50px);
+  margin-top: 50px;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+
 
 .table-hove tbody tr:hover {
   background: #d9edf7;
 }
 
 .table {
-  border: 1px solid#CCC;
+  border: 1px solid#000;
+}
+
+
+/* Table bordered own Bootrap 3 Modify Color */
+.table-bordered>tbody>tr>td,
+.table-bordered>tbody>tr>th,
+.table-bordered>tfoot>tr>td,
+.table-bordered>tfoot>tr>th,
+.table-bordered>thead>tr>td,
+.table-bordered>thead>tr>th {
+  border: 1px solid #000;
 }
 
 table td,
@@ -83,6 +106,10 @@ table th {
 
 * {
   transition: all 100ms ease-in-out;
+}
+
+b {
+  color: #000;
 }
 
 body {

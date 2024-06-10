@@ -5,7 +5,7 @@ include "inc/config.php";
 if (!empty($_SESSION['iam_user'])) {
     redir("index.php");
 }
-include "layout/header.php";
+include "layout/nav.php";
 
 $message = '';
 $alertType = '';
@@ -44,12 +44,12 @@ if (!empty($_POST)) {
 
 <body>
     <font color="black">
-        <div class="col-md-9">
+        <div class="container centered-form">
             <div class="row">
-                <div class="col-md-12">
+                <div class="col-md-12 form-container">
                     <h3 class="text-color-heading"><b>Login User</b></h3>
                     <br>
-                    <div class="col-md-7 content-menu" style="margin-top:-20px;">
+                    <div class="col-md-7 centered-form" style="margin-top:-20px;">
                         <form action="" method="post" enctype="multipart/form-data">
                             <div class="form-group">
                                 <label for="email_or_username">Username atau Email</label>

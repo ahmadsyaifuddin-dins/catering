@@ -6,7 +6,7 @@ if (empty($_SESSION['iam_user'])) {
 }
 $user = mysqli_fetch_object(mysqli_query($konek, "SELECT * FROM user WHERE id='$_SESSION[iam_user]'"));
 
-include "layout/header.php";
+include "layout/nav.php";
 
 $q = mysqli_query($konek, "SELECT * FROM pesanan WHERE user_id='$_SESSION[iam_user]'");
 $j = mysqli_num_rows($q);
@@ -31,9 +31,9 @@ $j = mysqli_num_rows($q);
 <body>
 
     <font color="black">
-        <div class="col-md-9">
+        <div class="container centered-form">
             <div class="row">
-                <div class="col-md-12 content-menu">
+                <div class="col-md-12 form-container">
                     <h3>Profile: <?php echo $user->nama; ?></h3>
                     <br>
                     <div class="col-md-6" style="margin-top:-20px;">

@@ -1,6 +1,6 @@
 <?php
 include "inc/config.php";
-include "layout/header.php";
+include "layout/nav.php";
 ?>
 
 <!DOCTYPE html>
@@ -14,9 +14,9 @@ include "layout/header.php";
 </head>
 
 <body>
-    <div class="col-md-9">
+    <div class="container centered-form">
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-12 form-container">
 
                 <?php
                 if (!empty($_POST)) {
