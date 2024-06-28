@@ -94,7 +94,7 @@ include "layout/nav.php";
                 </div>
                 <div class="form-group">
                     <label for="telephone">Telephone / No. WhatsApp Aktif</label>
-                    <input type="tel" class="form-control" id="telephone" name="telephone" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" required>
+                    <input type="tel" class="form-control" id="telephone" name="telephone" required>
                 </div>
                 <input type="hidden" name="login_time" value="<?php echo date('l/d/M/Y-H:i:s:a'); ?>">
                 <button type="submit" class="btn btn-success">Register</button>

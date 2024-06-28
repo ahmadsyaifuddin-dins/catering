@@ -95,43 +95,47 @@ include "inc/header.php";
                 ?>
             <div class="col-md-6">
                 <h3> Detail Pembayaran</h3>
-                <table class="table table-striped">
-                    <thead>
-                        <tr>
-                            <td>Nama</td>
-                            <td><?php echo $dataPesanan->nama; ?></td>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Total Pembayaran</td>
-                            <td><?php echo "Rp. " . number_format($dataPembayaran->total); ?></td>
-                        </tr>
-                        <tr>
-                            <td>Keterangan</td>
-                            <td> <?php echo $dataPembayaran->keterangan; ?></td>
-                        </tr>
-                        <tr>
-                            <td>Bukti Transaksi</td>
-                            <td><a href="../uploads/<?php echo $dataPembayaran->file; ?>" target="_newtab">Bukti
-                                    Transaksi</a></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td>
-                                <?php
-                                        if ($dataPembayaran->status == "pending") {
-                                        ?>
-                                <a href="pembayaran.php?act=verified&id=<?php echo $dataPembayaran->id; ?>&id_pesanan=<?php echo $dataPembayaran->id_pesanan; ?>"
-                                    class="btn btn-sm btn-success">Verified <i
-                                        class="fa-regular fa-circle-check fa-bounce fa-lg"></i> </a>
-                                <?php
-                                        }
-                                        ?>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+
+                <div class="table-responsive">
+
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <td>Nama</td>
+                                <td><?php echo $dataPesanan->nama; ?></td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Total Pembayaran</td>
+                                <td><?php echo "Rp. " . number_format($dataPembayaran->total); ?></td>
+                            </tr>
+                            <tr>
+                                <td>Keterangan</td>
+                                <td> <?php echo $dataPembayaran->keterangan; ?></td>
+                            </tr>
+                            <tr>
+                                <td>Bukti Transaksi</td>
+                                <td><a href="../uploads/<?php echo $dataPembayaran->file; ?>" target="_newtab">Bukti
+                                        Transaksi</a></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <?php
+                                            if ($dataPembayaran->status == "pending") {
+                                            ?>
+                                    <a href="pembayaran.php?act=verified&id=<?php echo $dataPembayaran->id; ?>&id_pesanan=<?php echo $dataPembayaran->id_pesanan; ?>"
+                                        class="btn btn-sm btn-success">Verified <i
+                                            class="fa-regular fa-circle-check fa-bounce fa-lg"></i> </a>
+                                    <?php
+                                            }
+                                            ?>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
             <?php
                 }
@@ -144,44 +148,49 @@ include "inc/header.php";
     <h4>Daftar pembayaran Masuk (<?php echo ($j > 0) ? $j : 0; ?>)</h4>
     <a href="pembayaran.php?act=info" class="btn btn-info"> <i class="fa-solid fa-circle-info"></i> Info </a>
     <hr>
-    <table class="table">
-        <thead style="background:#00b4d8">
-            <tr>
-                <th>No</th>
-                <th>Nama Pelanggan</th>
-                <th>Total</th>
-                <th>Status</th>
-                <th>Aksi</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php while ($data = mysqli_fetch_object($q)) { ?>
-            <tr <?php
-                    if ($data->status == "pending") {
-                        echo 'style="background:#DF826C !important;"';
-                    } elseif ($data->status == "verified") {
-                        echo 'style="background:#9ADE7B !important;"';
-                    }
-                    ?>>
-                <th scope="row"><?php echo $no++; ?></th>
-                <?php
-                    $katpro = mysqli_query($konek, "select*from user where id='$data->id_user'");
-                    $user = mysqli_fetch_array($katpro);
-                    ?>
-                <td><?php echo $user['nama'] ?></td>
-                <td><?php echo 'Rp. ' . number_format($data->total, 0, ',', '.') ?></td>
-                <td><?php echo $data->status ?></td>
-                <td>
-                    <a class="btn btn-sm btn-info" href="pembayaran.php?act=detail&id=<?php echo $data->id ?>">Cek <i
-                            class="fa-solid fa-circle-info"></i> </a>
-                    <a class="btn btn-sm btn-success"
-                        href="detail_pesanan.php?id=<?php echo $data->id_pesanan ?>">Pesanan <i
-                            class="fa-solid fa-comment-dots"></i> </a>
-                    <a class="btn btn-sm btn-danger" href="pembayaran.php?act=delete&&id=<?php echo $data->id ?>">Delete
-                        <i class="fa-solid fa-trash"></i> </a>
-                </td>
-            </tr>
-            <?php } ?>
-        </tbody>
-    </table>
+    <div class="table-responsive">
+
+
+        <table class="table">
+            <thead style="background:#00b4d8">
+                <tr>
+                    <th>No</th>
+                    <th>Nama Pelanggan</th>
+                    <th>Total</th>
+                    <th>Status</th>
+                    <th>Aksi</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php while ($data = mysqli_fetch_object($q)) { ?>
+                <tr <?php
+                        if ($data->status == "pending") {
+                            echo 'style="background:#DF826C !important;"';
+                        } elseif ($data->status == "verified") {
+                            echo 'style="background:#9ADE7B !important;"';
+                        }
+                        ?>>
+                    <th scope="row"><?php echo $no++; ?></th>
+                    <?php
+                        $katpro = mysqli_query($konek, "select*from user where id='$data->id_user'");
+                        $user = mysqli_fetch_array($katpro);
+                        ?>
+                    <td><?php echo $user['nama'] ?></td>
+                    <td><?php echo 'Rp. ' . number_format($data->total, 0, ',', '.') ?></td>
+                    <td><?php echo $data->status ?></td>
+                    <td>
+                        <a class="btn btn-sm btn-info" href="pembayaran.php?act=detail&id=<?php echo $data->id ?>">Cek
+                            <i class="fa-solid fa-circle-info"></i> </a>
+                        <a class="btn btn-sm btn-success"
+                            href="detail_pesanan.php?id=<?php echo $data->id_pesanan ?>">Pesanan <i
+                                class="fa-solid fa-comment-dots"></i> </a>
+                        <a class="btn btn-sm btn-danger"
+                            href="pembayaran.php?act=delete&&id=<?php echo $data->id ?>">Delete
+                            <i class="fa-solid fa-trash"></i> </a>
+                    </td>
+                </tr>
+                <?php } ?>
+            </tbody>
+        </table>
+    </div>
 </div> <!-- /container -->

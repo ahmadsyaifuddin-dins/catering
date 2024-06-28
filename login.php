@@ -53,11 +53,14 @@ if (!empty($_POST)) {
                         <form action="" method="post" enctype="multipart/form-data">
                             <div class="form-group">
                                 <label for="email_or_username">Username atau Email</label>
-                                <input type="text" placeholder="Username atau Email" class="form-control" id="email_or_username" name="email_or_username" placeholder="" required="" autofocus="" />
+                                <input type="text" placeholder="Username atau Email" class="form-control"
+                                    id="email_or_username" name="email_or_username" placeholder="" required=""
+                                    autofocus="" />
                             </div>
                             <div class="form-group">
                                 <label for="password">Password</label>
-                                <input type="password" class="form-control" id="password" name="password" placeholder="Password" required="" />
+                                <input type="password" class="form-control" id="password" name="password"
+                                    placeholder="Password" required="" />
                             </div>
                             <input type="hidden" name="login_time" value="<?php echo date('l/d/M/Y-H:i:s:a'); ?>">
                             <button type="submit" class="btn btn-success">Login</button>
@@ -70,18 +73,18 @@ if (!empty($_POST)) {
             </div>
         </div>
         <?php if (!empty($message)): ?>
-            <script type="text/javascript">
-                Swal.fire({
-                    title: '<?php echo $alertType == "success" ? "Berhasil" : "Gagal"; ?>',
-                    text: '<?php echo $message; ?>',
-                    icon: '<?php echo $alertType; ?>',
-                    confirmButtonText: 'OK'
-                }).then((result) => {
-                    <?php if ($alertType == "success"): ?>
-                        window.location.href = 'menu.php';
-                    <?php endif; ?>
-                });
-            </script>
+        <script type="text/javascript">
+        Swal.fire({
+            title: '<?php echo $alertType == "success" ? "Berhasil" : "Gagal"; ?>',
+            text: '<?php echo $message; ?>',
+            icon: '<?php echo $alertType; ?>',
+            confirmButtonText: 'OK'
+        }).then((result) => {
+            <?php if ($alertType == "success"): ?>
+            window.location.href = 'menu.php';
+            <?php endif; ?>
+        });
+        </script>
         <?php endif; ?>
 </body>
 

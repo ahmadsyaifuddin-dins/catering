@@ -93,7 +93,7 @@ $user = mysqli_fetch_object(mysqli_query($konek, "SELECT*FROM user WHERE id='$_S
                         </div>
                         <label>Nama</label><br>
                         <input type="text" class="form-control" name="nama" required value="<?php echo (!empty($_POST['nama'])) ? $_POST['nama'] : $user->nama; ?>"><br>
-                        <label>Telephone (HP)</label><br>
+                        <label>Telephone (WA)</label><br>
                         <input type="text" class="form-control" name="telephone" required value="<?php echo (!empty($_POST['telephone'])) ? $_POST['telephone'] : $user->telephone; ?>"><br>
                         <label>Alamat Pengiriman</label><br>
                         <input type="text" class="form-control" name="alamat" required value="<?php echo (!empty($_POST['alamat'])) ? $_POST['alamat'] : $user->alamat; ?>"><br>

@@ -7,7 +7,14 @@ if (empty($_SESSION['iam_admin'])) {
     exit; // Stop further execution if the user is not logged in
 }
 
+$user = mysqli_fetch_object(mysqli_query($konek, "SELECT * FROM user WHERE id='$_SESSION[iam_admin]'"));
+
 include "inc/header.php";
+
+
+$q = mysqli_query($konek, "SELECT * FROM pesanan WHERE user_id='$_SESSION[iam_admin]'");
+$j = mysqli_num_rows($q);
+
 ?>
 
 <!DOCTYPE html>
@@ -25,7 +32,7 @@ include "inc/header.php";
     <div class="container">
         <div class="row">
             <div class="col-sm-12">
-                <h2 class="title-head animate__hinge animate__delay-3s"> <i class="fa-solid fa-gear"></i> Administrator Asai </h2>
+                <h2 class="title-head animate__hinge animate__delay-3s"> <i class="fa-solid fa-gear"></i> Administrator (<?php echo $user->nama; ?>) </h2>
             </div>
         </div>
     </div>

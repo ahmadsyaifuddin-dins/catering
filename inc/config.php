@@ -3,7 +3,7 @@ session_start();
 $servername = "localhost";
 $username = "root";
 $password = "";
-$database = "if0_34535842_e_commerce"; //nama database yg di tuju
+$database = "if0_36712978_e_commerce"; //nama database yg di tuju
 
 // Create connection
 $konek = mysqli_connect($servername, $username, $password, $database);

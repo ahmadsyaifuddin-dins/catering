@@ -3,39 +3,39 @@ ob_start();
 include "../inc/config.php";
 // Check if the admin is not logged in, redirect to login page
 if (empty($_SESSION['iam_admin'])) {
-    redir("index.php");
-    exit; // Stop further execution if the user is not logged in
+	redir("index.php");
+	exit; // Stop further execution if the user is not logged in
 }
 include "inc/header.php";
 ?>
 
 
 <div class="container">
-	<!-- icons link cdn -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-	<link rel="stylesheet" href="../assets/css/border.css">
-	<h3>Laporan Penjualan</h3>
-	<a href="export.php" class="btn btn-success"> <i class="fa-solid fa-file-excel"></i> Export ke Excel</a>
-	<div class="col-md-12">
-		<hr />
-	</div>
+    <!-- icons link cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/border.css">
+    <h3>Laporan Penjualan</h3>
+    <a href="export.php" class="btn btn-success"> <i class="fa-solid fa-file-excel"></i> Export ke Excel</a>
+    <div class="col-md-12">
+        <hr />
+    </div>
 
-	<div class="row">
-		<table class="table" border="1">
-			<thead style="background:#00b4d8">
-				<tr>
-					<th>No</th>
-					<th>Nama Pelanggan</th>
-					<th>Tanggal Tempo</th>
-					<th>Tanggal Pesan</th>
-					<th>Total</th>
-					<th>Ongkir</th>
-					<th>Status</th>
-				</tr>
-			</thead>
+    <div class="row">
+        <table class="table" border="1">
+            <thead style="background:#00b4d8">
+                <tr>
+                    <th>No</th>
+                    <th>Nama Pelanggan</th>
+                    <th>Tanggal Tempo</th>
+                    <th>Tanggal Pesan</th>
+                    <th>Total</th>
+                    <th>Ongkir</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
 
-			<tbody>
-				<?php
+            <tbody>
+                <?php
 				$totalSemua = 0;
 				$totalOngkir = 0;
 				$totalHabis = 0;
@@ -53,45 +53,45 @@ include "inc/header.php";
 					$totalHabis += $totalHarga + $data->ongkir;
 
 				?>
-					<tr>
-						<td><?php echo $no; ?></td>
-						<td><?php echo $data->nama; ?></td>
-						<td><?php echo $data->tanggal_digunakan; ?></td>
-						<td><?php echo $data->tanggal_pesan; ?></td>
-						<td><?php echo "Rp. " . number_format($totalHarga, 0, ",", "."); ?></td>
-						<td><?php echo "Rp. " . number_format($data->ongkir, 0, ",", "."); ?></td>
-						<td><?php echo $data->status; ?></td>
-					</tr>
-				<?php
+                <tr>
+                    <td><?php echo $no; ?></td>
+                    <td><?php echo $data->nama; ?></td>
+                    <td><?php echo $data->tanggal_digunakan; ?></td>
+                    <td><?php echo $data->tanggal_pesan; ?></td>
+                    <td><?php echo "Rp. " . number_format($totalHarga, 0, ",", "."); ?></td>
+                    <td><?php echo "Rp. " . number_format($data->ongkir, 0, ",", "."); ?></td>
+                    <td><?php echo $data->status; ?></td>
+                </tr>
+                <?php
 				}
 				?>
-				<tr>
-					<td colspan="4" align="right">
-						<font size="3">
-							<b>SUB TOTAL</b>
-						</font>
-					</td>
-					<td>
-						<font size="3"><?php echo "Rp. " . number_format($totalSemua, 0, ",", "."); ?></font>
-					</td>
-					<td>
-						<font size="3">
-							<?php echo "Rp. " . number_format($totalOngkir, 0, ",", "."); ?>
-						</font>
-					</td>
-					<!-- <td></td> -->
-				</tr>
-				<tr>
-					<td colspan="4" align="center">
-						<font size="4">
-							<b>TOTAL SEMUA</b>
-						</font>
-					</td>
-					<td colspan="2" align="center">
-						<font size="3"> <b><?php echo "Rp. " . number_format($totalHabis, 0, ",", "."); ?> </b></font>
-					</td>
-				</tr>
-			</tbody>
-		</table>
-	</div>
+                <tr>
+                    <td colspan="4" align="right">
+                        <font size="3">
+                            <b>SUB TOTAL</b>
+                        </font>
+                    </td>
+                    <td>
+                        <font size="3"><?php echo "Rp. " . number_format($totalSemua, 0, ",", "."); ?></font>
+                    </td>
+                    <td>
+                        <font size="3">
+                            <?php echo "Rp. " . number_format($totalOngkir, 0, ",", "."); ?>
+                        </font>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="4" align="center">
+                        <font size="4">
+                            <b>TOTAL SEMUA</b>
+                        </font>
+                    </td>
+                    <td colspan="2" align="center">
+                        <font size="3"> <b><?php echo "Rp. " . number_format($totalHabis, 0, ",", "."); ?> </b>
+                        </font>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </div>

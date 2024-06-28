@@ -12,6 +12,9 @@ $user = mysqli_fetch_object(mysqli_query($konek, "SELECT*FROM user WHERE id='$_S
 
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.0/dist/sweetalert2.all.min.js"></script>
 <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.0/dist/sweetalert2.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/driver.js@1.0.1/dist/driver.css"/>
+<link rel="stylesheet" href="assets/css/drive.css">
+<script src="https://cdn.jsdelivr.net/npm/driver.js@1.0.1/dist/driver.js.iife.js"></script>
 
 <style>
 div:where(.swal2-container) div:where(.swal2-popup) {
@@ -95,7 +98,7 @@ div:where(.swal2-container) div:where(.swal2-popup) {
                                 <h5><b>TOTAL HARGA</b></h5>
                             </td>
                             <td class="text-bold">
-                                <h5><b><?php echo number_format($total + $ongkir, 0, ',', '.') ?></b></h5>
+                                <h5 id="bayar"><b><?php echo number_format($total + $ongkir, 0, ',', '.') ?></b></h5>
                             </td>
                         </tr>
                     </tbody>
@@ -104,5 +107,7 @@ div:where(.swal2-container) div:where(.swal2-popup) {
             </div>
 
         </div>
+        <script src="<?php echo $url ?>assets/js/driveBayar.js"></script>
+
     </div>
     <?php include "layout/footer.php"; ?>
