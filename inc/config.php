@@ -13,7 +13,7 @@ if ($konek->connect_error) {
 	die("Connection failed: " . $konek->connect_error);
 }
 
-// settings
+// settings posisi/tempat path folder aplikasi ini
 $url = "http://localhost/catering/";
 $title = "Asai's Kitchen 🍴🍉";
 $no = 1;
