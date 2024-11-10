@@ -11,7 +11,7 @@ include "../inc/config.php";
 
     ?>
     <div class="col-md-12">
-        <hr>
+        <!-- <hr> -->
     </div>
 
     <div class="row">
